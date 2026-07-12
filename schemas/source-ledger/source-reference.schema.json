@@ -1,0 +1,172 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/kiencuongnguyen88/diamond-os/schemas/source-ledger/source-reference.schema.json",
+  "title": "DIAMOND OS Source Reference Registry",
+  "type": "object",
+  "required": [
+    "registry_id",
+    "active_source_pair",
+    "references",
+    "claim_boundary"
+  ],
+  "properties": {
+    "registry_id": {
+      "const": "PG_U01_SOURCE_REFERENCE_REGISTRY_v0_1"
+    },
+    "active_source_pair": {
+      "type": "object",
+      "required": [
+        "version",
+        "boot",
+        "runtime_zip"
+      ],
+      "properties": {
+        "version": {
+          "const": "v0.6.2.16"
+        },
+        "boot": {
+          "type": "object",
+          "required": [
+            "file",
+            "bytes",
+            "sha256"
+          ],
+          "properties": {
+            "file": {
+              "type": "string"
+            },
+            "bytes": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          },
+          "additionalProperties": false
+        },
+        "runtime_zip": {
+          "type": "object",
+          "required": [
+            "file",
+            "bytes",
+            "sha256"
+          ],
+          "properties": {
+            "file": {
+              "type": "string"
+            },
+            "bytes": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "references": {
+      "type": "array",
+      "minItems": 4,
+      "items": {
+        "type": "object",
+        "required": [
+          "source_ref_id",
+          "path",
+          "bytes",
+          "sha256",
+          "role",
+          "source_state",
+          "public_copy_included",
+          "authority_effect",
+          "proof_ref"
+        ],
+        "properties": {
+          "source_ref_id": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "bytes": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "role": {
+            "enum": [
+              "primary_migration_source",
+              "continuity_anchor"
+            ]
+          },
+          "source_state": {
+            "enum": [
+              "LEGACY_ACTIVE",
+              "PLANNING_CONTINUITY"
+            ]
+          },
+          "public_copy_included": {
+            "const": false
+          },
+          "authority_effect": {
+            "const": "none"
+          },
+          "proof_ref": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "claim_boundary": {
+      "type": "object",
+      "required": [
+        "source_apply",
+        "DB_write",
+        "RLDB_writeback",
+        "canon",
+        "commit",
+        "push",
+        "publish",
+        "runtime_activation"
+      ],
+      "properties": {
+        "source_apply": {
+          "const": false
+        },
+        "DB_write": {
+          "const": false
+        },
+        "RLDB_writeback": {
+          "const": false
+        },
+        "canon": {
+          "const": false
+        },
+        "commit": {
+          "const": false
+        },
+        "push": {
+          "const": false
+        },
+        "publish": {
+          "const": false
+        },
+        "runtime_activation": {
+          "const": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

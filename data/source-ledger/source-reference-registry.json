@@ -1,0 +1,83 @@
+{
+  "registry_id": "PG_U01_SOURCE_REFERENCE_REGISTRY_v0_1",
+  "active_source_pair": {
+    "version": "v0.6.2.16",
+    "boot": {
+      "file": "00_00_DIAMOND_OS_CORE_BOOT_DRAFT_ZIP_FIRST_FIT_v0_6_2_16(1).md",
+      "bytes": 20612,
+      "sha256": "e2b35618072213aa47c89f9617c1799a2606bea1b9ea371f8f667635e2fc7602"
+    },
+    "runtime_zip": {
+      "file": "DIAMOND_OS_CORE_RUNTIME_SOURCE_FIT_v0_6_2_16(1).zip",
+      "bytes": 1846700,
+      "sha256": "b2668113eb15d774ef770bc535371e8b65940bec0ce0b76c60febffaeb5ca273"
+    }
+  },
+  "references": [
+    {
+      "source_ref_id": "PGU01-SRC-A01",
+      "path": "00_BOOTSTRAP_AND_INDEX/00_SOURCE_MANIFEST_CLEAN_FIT_v0_6_2_16.yaml",
+      "bytes": 67574,
+      "sha256": "78120138208d1b9f96771537e052ac2a40925fd30e1d2ecc34c0d3204475b79c",
+      "role": "primary_migration_source",
+      "source_state": "LEGACY_ACTIVE",
+      "public_copy_included": false,
+      "authority_effect": "none",
+      "proof_ref": "PG_U01_SOURCE_READBACK_PROOF_v0_1"
+    },
+    {
+      "source_ref_id": "PGU01-SRC-A02",
+      "path": "10_DRC_RUNTIME_CORE/DRC19_SOURCE_IMPORTED_READONLY/00_PACKAGE_MANIFEST.yaml",
+      "bytes": 19993,
+      "sha256": "75869545aa19563b4d2424985233044116b89829b6b2fe4aceb81867e149de70",
+      "role": "primary_migration_source",
+      "source_state": "LEGACY_ACTIVE",
+      "public_copy_included": false,
+      "authority_effect": "none",
+      "proof_ref": "PG_U01_SOURCE_READBACK_PROOF_v0_1"
+    },
+    {
+      "source_ref_id": "PGU01-SRC-A03",
+      "path": "10_DRC_RUNTIME_CORE/DRC19_SOURCE_IMPORTED_READONLY/00_SOURCE_ROUTE_INDEX.yaml",
+      "bytes": 18290,
+      "sha256": "cb21dbdc2e55489d347ffd760cfe08af9d5c176d752847398b5a373557abda50",
+      "role": "primary_migration_source",
+      "source_state": "LEGACY_ACTIVE",
+      "public_copy_included": false,
+      "authority_effect": "none",
+      "proof_ref": "PG_U01_SOURCE_READBACK_PROOF_v0_1"
+    },
+    {
+      "source_ref_id": "PGU01-SRC-A04",
+      "path": "90_READBACK_AND_AUDIT_LEDGER/DZN32_SOURCE_PAIR_UPDATE_v0_6_2_16_BUILD_READBACK.md",
+      "bytes": 577,
+      "sha256": "4ff808855eee3264c322a4b1b69f49b433692f53a912868de9b9c0763f88af86",
+      "role": "primary_migration_source",
+      "source_state": "LEGACY_ACTIVE",
+      "public_copy_included": false,
+      "authority_effect": "none",
+      "proof_ref": "PG_U01_SOURCE_READBACK_PROOF_v0_1"
+    },
+    {
+      "source_ref_id": "PGU01-CONTINUITY-A01",
+      "path": "DZN32_PUBLIC_GITHUB_PROJECT_SOURCE_ANCHOR_v0_2_1_CANDIDATE.md",
+      "bytes": 4709,
+      "sha256": "233533cd51a9f47ae52f90b21ac2a177897da65110e617231c602fdab1bcfb16",
+      "role": "continuity_anchor",
+      "source_state": "PLANNING_CONTINUITY",
+      "public_copy_included": false,
+      "authority_effect": "none",
+      "proof_ref": "Human_ne已_neo_Project_Source_Anchor_v0_2_1"
+    }
+  ],
+  "claim_boundary": {
+    "source_apply": false,
+    "DB_write": false,
+    "RLDB_writeback": false,
+    "canon": false,
+    "commit": false,
+    "push": false,
+    "publish": false,
+    "runtime_activation": false
+  }
+}

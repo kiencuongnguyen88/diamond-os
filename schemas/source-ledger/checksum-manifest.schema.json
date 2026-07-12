@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/kiencuongnguyen88/diamond-os/schemas/source-ledger/checksum-manifest.schema.json",
+  "title": "DIAMOND OS Unit Checksum Manifest",
+  "type": "object",
+  "required": [
+    "manifest_id",
+    "unit_id",
+    "hash_algorithm",
+    "normalization",
+    "self_included",
+    "files",
+    "claim_boundary"
+  ],
+  "properties": {
+    "manifest_id": {
+      "const": "PG_U01_CHECKSUM_MANIFEST_v0_1"
+    },
+    "unit_id": {
+      "const": "PG-U01"
+    },
+    "hash_algorithm": {
+      "const": "SHA256"
+    },
+    "normalization": {
+      "const": "canonical_lf"
+    },
+    "self_included": {
+      "const": false
+    },
+    "files": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "path",
+          "bytes",
+          "sha256"
+        ],
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "bytes": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "claim_boundary": {
+      "type": "object",
+      "required": [
+        "source_apply",
+        "DB_write",
+        "RLDB_writeback",
+        "canon",
+        "commit",
+        "push",
+        "publish",
+        "runtime_activation"
+      ],
+      "properties": {
+        "source_apply": {
+          "const": false
+        },
+        "DB_write": {
+          "const": false
+        },
+        "RLDB_writeback": {
+          "const": false
+        },
+        "canon": {
+          "const": false
+        },
+        "commit": {
+          "const": false
+        },
+        "push": {
+          "const": false
+        },
+        "publish": {
+          "const": false
+        },
+        "runtime_activation": {
+          "const": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

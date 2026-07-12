@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/kiencuongnguyen88/diamond-os/schemas/source-ledger/compatibility-record.schema.json",
+  "title": "DIAMOND OS Compatibility Registry",
+  "type": "object",
+  "required": [
+    "registry_id",
+    "records",
+    "claim_boundary"
+  ],
+  "properties": {
+    "registry_id": {
+      "const": "PG_U01_COMPATIBILITY_REGISTRY_v0_1"
+    },
+    "records": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "record_id",
+          "from_authority",
+          "to_unit",
+          "relationship",
+          "state",
+          "can_promote_canon",
+          "requires_atomic_human_promotion",
+          "authority_effect",
+          "source_ref_ids"
+        ],
+        "properties": {
+          "record_id": {
+            "type": "string"
+          },
+          "from_authority": {
+            "const": "LEGACY_ACTIVE"
+          },
+          "to_unit": {
+            "type": "string"
+          },
+          "relationship": {
+            "const": "semantic_reference_not_replacement"
+          },
+          "state": {
+            "const": "COMPATIBILITY_ONLY"
+          },
+          "can_promote_canon": {
+            "const": false
+          },
+          "requires_atomic_human_promotion": {
+            "const": true
+          },
+          "authority_effect": {
+            "const": "none"
+          },
+          "source_ref_ids": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "claim_boundary": {
+      "type": "object",
+      "required": [
+        "source_apply",
+        "DB_write",
+        "RLDB_writeback",
+        "canon",
+        "commit",
+        "push",
+        "publish",
+        "runtime_activation"
+      ],
+      "properties": {
+        "source_apply": {
+          "const": false
+        },
+        "DB_write": {
+          "const": false
+        },
+        "RLDB_writeback": {
+          "const": false
+        },
+        "canon": {
+          "const": false
+        },
+        "commit": {
+          "const": false
+        },
+        "push": {
+          "const": false
+        },
+        "publish": {
+          "const": false
+        },
+        "runtime_activation": {
+          "const": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

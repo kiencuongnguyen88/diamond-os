@@ -1,0 +1,44 @@
+{
+  "registry_id": "PG_U01_COMPATIBILITY_REGISTRY_v0_1",
+  "records": [
+    {
+      "record_id": "PGU01-COMPAT-LEGACY-v0_6_2_16",
+      "from_authority": "LEGACY_ACTIVE",
+      "to_unit": "PG-U01",
+      "relationship": "semantic_reference_not_replacement",
+      "state": "COMPATIBILITY_ONLY",
+      "can_promote_canon": false,
+      "requires_atomic_human_promotion": true,
+      "authority_effect": "none",
+      "source_ref_ids": [
+        "PGU01-SRC-A01",
+        "PGU01-SRC-A02",
+        "PGU01-SRC-A03",
+        "PGU01-SRC-A04"
+      ]
+    },
+    {
+      "record_id": "PGU01-COMPAT-PGU00-VALIDATOR-GROWTH",
+      "from_authority": "LEGACY_ACTIVE",
+      "to_unit": "PG-U01",
+      "relationship": "semantic_reference_not_replacement",
+      "state": "COMPATIBILITY_ONLY",
+      "can_promote_canon": false,
+      "requires_atomic_human_promotion": true,
+      "authority_effect": "none",
+      "source_ref_ids": [
+        "PGU01-CONTINUITY-A01"
+      ]
+    }
+  ],
+  "claim_boundary": {
+    "source_apply": false,
+    "DB_write": false,
+    "RLDB_writeback": false,
+    "canon": false,
+    "commit": false,
+    "push": false,
+    "publish": false,
+    "runtime_activation": false
+  }
+}

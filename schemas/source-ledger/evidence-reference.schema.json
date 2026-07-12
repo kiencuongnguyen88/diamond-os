@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/kiencuongnguyen88/diamond-os/schemas/source-ledger/evidence-reference.schema.json",
+  "title": "DIAMOND OS Evidence Reference Registry",
+  "type": "object",
+  "required": [
+    "registry_id",
+    "evidence",
+    "raw_evidence_in_repo",
+    "claim_boundary"
+  ],
+  "properties": {
+    "registry_id": {
+      "const": "PG_U01_EVIDENCE_REFERENCE_REGISTRY_v0_1"
+    },
+    "evidence": {
+      "type": "array",
+      "minItems": 4,
+      "items": {
+        "type": "object",
+        "required": [
+          "evidence_id",
+          "type",
+          "state",
+          "ref",
+          "content_in_repo",
+          "authority_effect"
+        ],
+        "properties": {
+          "evidence_id": {
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "source_readback",
+              "repository_readback",
+              "validator",
+              "human_gate"
+            ]
+          },
+          "state": {
+            "type": "string"
+          },
+          "ref": {
+            "type": "string"
+          },
+          "content_in_repo": {
+            "type": "boolean"
+          },
+          "authority_effect": {
+            "const": "none"
+          },
+          "sha256": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "raw_evidence_in_repo": {
+      "const": false
+    },
+    "claim_boundary": {
+      "type": "object",
+      "required": [
+        "source_apply",
+        "DB_write",
+        "RLDB_writeback",
+        "canon",
+        "commit",
+        "push",
+        "publish",
+        "runtime_activation"
+      ],
+      "properties": {
+        "source_apply": {
+          "const": false
+        },
+        "DB_write": {
+          "const": false
+        },
+        "RLDB_writeback": {
+          "const": false
+        },
+        "canon": {
+          "const": false
+        },
+        "commit": {
+          "const": false
+        },
+        "push": {
+          "const": false
+        },
+        "publish": {
+          "const": false
+        },
+        "runtime_activation": {
+          "const": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

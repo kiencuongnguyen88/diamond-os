@@ -1,0 +1,52 @@
+{
+  "registry_id": "PG_U01_EVIDENCE_REFERENCE_REGISTRY_v0_1",
+  "evidence": [
+    {
+      "evidence_id": "PGU01-E01",
+      "type": "source_readback",
+      "state": "PASS",
+      "ref": "PG_U01_SOURCE_READBACK_PROOF_v0_1",
+      "content_in_repo": false,
+      "authority_effect": "none",
+      "sha256": null
+    },
+    {
+      "evidence_id": "PGU01-E02",
+      "type": "repository_readback",
+      "state": "PASS_BASE_HEAD",
+      "ref": "https://github.com/kiencuongnguyen88/diamond-os/commit/a58ddb51f65cd22493424a215def370176474376",
+      "content_in_repo": false,
+      "authority_effect": "none",
+      "sha256": null
+    },
+    {
+      "evidence_id": "PGU01-E03",
+      "type": "validator",
+      "state": "REPRODUCIBLE_IN_REPO",
+      "ref": "tests/validate_pg_u01.py",
+      "content_in_repo": true,
+      "authority_effect": "none",
+      "sha256": null
+    },
+    {
+      "evidence_id": "PGU01-E04",
+      "type": "human_gate",
+      "state": "COMMIT_GATE_PENDING",
+      "ref": "PG_U01_HUMAN_COMMIT_GATE",
+      "content_in_repo": false,
+      "authority_effect": "none",
+      "sha256": null
+    }
+  ],
+  "raw_evidence_in_repo": false,
+  "claim_boundary": {
+    "source_apply": false,
+    "DB_write": false,
+    "RLDB_writeback": false,
+    "canon": false,
+    "commit": false,
+    "push": false,
+    "publish": false,
+    "runtime_activation": false
+  }
+}
