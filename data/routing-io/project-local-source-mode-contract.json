@@ -1,0 +1,64 @@
+{
+  "contract_id": "PG_U03_PROJECT_LOCAL_SOURCE_MODE_CONTRACT_v0_1",
+  "unit_id": "PG-U03",
+  "state": "GIT_CANDIDATE",
+  "canon": false,
+  "source_ref": "PGU03-SRC-A03",
+  "logical_source": {
+    "rule": "one_content_lineage_two_environment_representations",
+    "shared": [
+      "source_content_version",
+      "manifest_semantics",
+      "authority_rules",
+      "required_read_order",
+      "checksums_and_proof"
+    ],
+    "must_not_drift": true
+  },
+  "Project_surface": {
+    "representation": "boot_plus_runtime_ZIP",
+    "runtime_ZIP_required": true,
+    "unzip_before_source_analysis": true,
+    "extracted_tree_uploaded_as_many_project_files": false,
+    "activation": "Human_manual_replace_plus_readback"
+  },
+  "Local_surface": {
+    "representation": "direct_source_root_directory",
+    "runtime_ZIP_required": false,
+    "ZIP_allowed_for": [
+      "transport",
+      "release_bundle",
+      "backup",
+      "Project_source_generation"
+    ],
+    "direct_read_patch_test_allowed": true,
+    "mutation_requires_Human_gate": true
+  },
+  "parity_guard": {
+    "Project_ZIP_generated_from": "approved_local_or_staged_source_tree",
+    "compare": [
+      "logical_source_version",
+      "required_path_inventory",
+      "per_file_SHA256",
+      "manifest_current_refs",
+      "authority_current_refs"
+    ],
+    "parallel_untracked_sources_forbidden": true
+  },
+  "DB_boundary": {
+    "live_private_DB_inside_runtime_source_ZIP": false,
+    "local_DB_use_requires_pointer_and_Human_gate": true,
+    "DB_ZIP_use": "transport_or_cold_archive_only",
+    "DB_source_truth_recoverable": true
+  },
+  "claim_boundary": {
+    "source_apply": false,
+    "DB_write": false,
+    "RLDB_writeback": false,
+    "canon": false,
+    "commit": false,
+    "push": false,
+    "publish": false,
+    "runtime_activation": false
+  }
+}

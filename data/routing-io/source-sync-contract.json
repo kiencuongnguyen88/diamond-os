@@ -1,0 +1,109 @@
+{
+  "contract_id": "PG_U03_SOURCE_SYNC_CONTRACT_v0_1",
+  "unit_id": "PG-U03",
+  "state": "GIT_CANDIDATE",
+  "canon": false,
+  "source_refs": [
+    "PGU03-SRC-A02",
+    "PGU03-SRC-A03"
+  ],
+  "patch_intent_lock": [
+    "what_changes",
+    "new_current_file",
+    "old_file_history_policy",
+    "active_surfaces_to_update"
+  ],
+  "minimum_source_surface_map": [
+    "boot",
+    "read_this_first",
+    "current_manifest",
+    "latest_authority_index",
+    "runtime_executor",
+    "runtime_box_if_any",
+    "rolling_runtime_export_if_any",
+    "package_manifest_checksum_readback"
+  ],
+  "reference_impact_graph": {
+    "required": [
+      "old_ref",
+      "new_ref",
+      "scan_boot_and_runtime_tree"
+    ],
+    "active_stale_ref_result": "BLOCKED",
+    "historical_labeled_ref_result": "ALLOWED_WITH_REASON"
+  },
+  "consistency_sweep": [
+    "boot_current_pair",
+    "read_this_first_current_files",
+    "manifest_current_files",
+    "authority_index_current_pointer",
+    "active_runtime_metadata",
+    "historical_refs_labeled"
+  ],
+  "human_readable_surface_sweep": [
+    "copyable_content_in_blocks",
+    "machine_keys_not_in_main_surface_unless_requested",
+    "long_technical_detail_in_proof_or_runtime_box"
+  ],
+  "BFL_readback_fields": [
+    "files_added_or_modified",
+    "indirectly_affected_files",
+    "old_refs_remaining",
+    "allowed_historical_refs",
+    "active_stale_refs_remaining",
+    "verdict"
+  ],
+  "verdicts": {
+    "PASS": "active_stale_refs_zero",
+    "PASS_WITH_WATCH": "old_refs_only_historical_or_need_human_confirmation",
+    "BLOCKED": "active_current_surface_contains_stale_ref"
+  },
+  "apply_modes": {
+    "manual_replace_mode": {
+      "activation_actor": "Human",
+      "apply_step": "Human_replaces_boot_and_runtime_ZIP",
+      "active_condition": "pair_present_and_readback_passes",
+      "forbidden_extra_activation_step": true
+    },
+    "agent_apply_mode": {
+      "activation_actor": "authorized_agent",
+      "requires_explicit_Human_permission": true,
+      "applied_claim_requires_execution_and_readback": true
+    }
+  },
+  "version_bump_rule": {
+    "source_content_change_requires_new_pair_version": true,
+    "old_pair_immutable": true,
+    "reuse_old_version_for_changed_content": false,
+    "candidate_suffix_allowed_for_review": true
+  },
+  "environment_branch": {
+    "Project": {
+      "representation": "boot_plus_one_runtime_ZIP",
+      "ZIP_required": true,
+      "unzip_before_readback": true
+    },
+    "Local": {
+      "representation": "direct_source_root",
+      "ZIP_required": false,
+      "direct_file_readback_allowed": true
+    }
+  },
+  "fail_stops": [
+    "BLOCKED_SOURCE_CONTENT_CHANGE_WITHOUT_SOURCE_PAIR_VERSION_BUMP",
+    "BLOCKED_SOURCE_VERSION_COLLISION_RISK",
+    "BLOCKED_MANIFEST_VERSION_DRIFT",
+    "BLOCKED_SOURCE_APPLY_OVERCLAIM",
+    "BLOCKED_PROJECT_LOCAL_SOURCE_PARITY_UNPROVEN"
+  ],
+  "claim_boundary": {
+    "source_apply": false,
+    "DB_write": false,
+    "RLDB_writeback": false,
+    "canon": false,
+    "commit": false,
+    "push": false,
+    "publish": false,
+    "runtime_activation": false
+  }
+}

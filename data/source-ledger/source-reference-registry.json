@@ -1,16 +1,16 @@
 {
   "registry_id": "PG_U01_SOURCE_REFERENCE_REGISTRY_v0_1",
   "active_source_pair": {
-    "version": "v0.6.2.16",
+    "version": "v0.6.2.17",
     "boot": {
-      "file": "00_00_DIAMOND_OS_CORE_BOOT_DRAFT_ZIP_FIRST_FIT_v0_6_2_16(1).md",
-      "bytes": 20612,
-      "sha256": "e2b35618072213aa47c89f9617c1799a2606bea1b9ea371f8f667635e2fc7602"
+      "file": "00_00_DIAMOND_OS_CORE_BOOT_DRAFT_ZIP_FIRST_FIT_v0_6_2_17(1).md",
+      "bytes": 22542,
+      "sha256": "134ee777427d96ce74e3826513b3b93100a56285e2cbbe7b84774d616603471d"
     },
     "runtime_zip": {
-      "file": "DIAMOND_OS_CORE_RUNTIME_SOURCE_FIT_v0_6_2_16(1).zip",
-      "bytes": 1846700,
-      "sha256": "b2668113eb15d774ef770bc535371e8b65940bec0ce0b76c60febffaeb5ca273"
+      "file": "DIAMOND_OS_CORE_RUNTIME_SOURCE_FIT_v0_6_2_17(1).zip",
+      "bytes": 1876252,
+      "sha256": "1212c3dd90e065b3c98e7661821ac903ae676e47a1d18b298aba27ebadacbaac"
     }
   },
   "references": [
@@ -123,6 +123,50 @@
       "public_copy_included": false,
       "authority_effect": "none",
       "proof_ref": "Human_neo_Project_Source_Anchor_v0_2_2"
+    },
+    {
+      "source_ref_id": "PGU03-SRC-A01",
+      "path": "10_DRC_RUNTIME_CORE/DRC19_SOURCE_IMPORTED_READONLY/00_runtime_executor/DZN32_IO_ORCHESTRATOR_BOX_v0_1_4.md",
+      "bytes": 30562,
+      "sha256": "7eebc5a0080720594b08d19f5a8f57d406bdb08db6f01e1a6fafff43173907cf",
+      "role": "primary_migration_source",
+      "source_state": "LEGACY_ACTIVE",
+      "public_copy_included": false,
+      "authority_effect": "none",
+      "proof_ref": "PG_U03_SOURCE_REFRESH_READBACK_PROOF_v0_1"
+    },
+    {
+      "source_ref_id": "PGU03-SRC-A02",
+      "path": "10_DRC_RUNTIME_CORE/DRC19_SOURCE_IMPORTED_READONLY/00_runtime_executor/SOURCE_PATCH_UPDATE_AND_SOURCE_SYNC_FLOW_v0_1.md",
+      "bytes": 13307,
+      "sha256": "eff7171d9d0bf9ad1023c03aa99747b9fcc1a5d92d9ae0d179271eb759349aa5",
+      "role": "primary_migration_source",
+      "source_state": "LEGACY_ACTIVE",
+      "public_copy_included": false,
+      "authority_effect": "none",
+      "proof_ref": "PG_U03_SOURCE_REFRESH_READBACK_PROOF_v0_1"
+    },
+    {
+      "source_ref_id": "PGU03-SRC-A03",
+      "path": "10_DRC_RUNTIME_CORE/DRC19_SOURCE_IMPORTED_READONLY/00_runtime_executor/DZN32_PROJECT_SOURCE_ZIP_LOCAL_DIRECT_SOURCE_MODE_CONTRACT_v0_1.md",
+      "bytes": 3682,
+      "sha256": "9f6cb64846a6aba4458892dbcbd9f84a29b2df3ac510df0b62e7117207817979",
+      "role": "primary_migration_source",
+      "source_state": "LEGACY_ACTIVE",
+      "public_copy_included": false,
+      "authority_effect": "none",
+      "proof_ref": "PG_U03_SOURCE_REFRESH_READBACK_PROOF_v0_1"
+    },
+    {
+      "source_ref_id": "PGU03-SRC-A04",
+      "path": "01_ROUTING_AND_TASK_CORE/10_TASK_ROUTING/TASK_CLASSIFIER.md",
+      "bytes": 992,
+      "sha256": "df15056bf1340965a9968b3287345da4c1ad90e1ba8d851813ef851269b78253",
+      "role": "primary_migration_source",
+      "source_state": "LEGACY_ACTIVE",
+      "public_copy_included": false,
+      "authority_effect": "none",
+      "proof_ref": "PG_U03_SOURCE_REFRESH_READBACK_PROOF_v0_1"
     }
   ],
   "claim_boundary": {

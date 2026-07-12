@@ -1,0 +1,156 @@
+{
+  "contract_id": "PG_U03_IO_ORCHESTRATOR_CONTRACT_v0_1",
+  "unit_id": "PG-U03",
+  "state": "GIT_CANDIDATE",
+  "canon": false,
+  "source_selection": {
+    "current_source_ref": "PGU03-SRC-A01",
+    "current_source_version": "v0.1.4",
+    "preserved_base_version": "v0.1.3",
+    "active_source_pair_version": "v0.6.2.17",
+    "mapping_refresh_from": "PG_U03_SOURCE_SCOPE_MAPPING_v0_1"
+  },
+  "scope_lock": {
+    "task_level_agency_and_orchestration_only": true,
+    "new_subsystem_created": false,
+    "adapter_implemented": false,
+    "authority_granted": false
+  },
+  "visible_flow": [
+    "input_readback",
+    "output_contract",
+    "result",
+    "proof",
+    "human_gate"
+  ],
+  "human_ownership": [
+    "input_material",
+    "desired_output",
+    "boundary"
+  ],
+  "system_ownership": [
+    "intent_parse",
+    "task_classification",
+    "boundary_scan",
+    "route_selection",
+    "execution_order",
+    "self_check",
+    "proof_pack",
+    "output_assembly"
+  ],
+  "agency_axis": {
+    "meaning": "decision_freedom_inside_one_task",
+    "independent_from_orchestration": true,
+    "active_levels": [
+      "AG0_SUGGEST_ONLY",
+      "AG1_INSTRUCTION_BOUND",
+      "AG2_CHECKPOINTED_EXECUTION",
+      "AG3_BOUNDED_GOAL_DRIVEN"
+    ],
+    "current_ceiling": "AG3_BOUNDED_GOAL_DRIVEN",
+    "deferred_levels": [
+      "AG4_POLICY_BOUNDED_ADAPTIVE",
+      "AG5_EXCEPTION_ESCALATION_AUTONOMY"
+    ]
+  },
+  "orchestration_axis": {
+    "meaning": "actor_model_tool_topology",
+    "independent_from_agency": true,
+    "active_levels": [
+      "OR0_SINGLE_ACTOR",
+      "OR1_SEQUENTIAL_HANDOFF"
+    ],
+    "current_ceiling": "OR1_SEQUENTIAL_HANDOFF",
+    "deferred_levels": [
+      "OR2_MANAGER_WORKER",
+      "OR3_PARALLEL_SPECIALISTS",
+      "OR4_PERSISTENT_MULTI_AGENT"
+    ]
+  },
+  "selection_order": [
+    "required_source_and_state",
+    "safety_scope_privacy_boundary",
+    "requested_agency_and_orchestration",
+    "verified_adapter_and_capability_ceiling",
+    "proof_budget_and_detection_latency",
+    "authority_tuple_invariants",
+    "deterministic_optional_context_rule",
+    "one_terminal_decision"
+  ],
+  "selection_rule": "use_lowest_agency_and_smallest_topology_sufficient_for_goal_scope_and_proof",
+  "authority_tuple": {
+    "fields": [
+      "mutation_requested",
+      "mutation_approved",
+      "approval_state",
+      "approved_authority_ref",
+      "approved_authority_ref_verified"
+    ],
+    "no_mutation": {
+      "mutation_requested": false,
+      "mutation_approved": false,
+      "approval_state": "not_required",
+      "approved_authority_ref": "",
+      "approved_authority_ref_verified": false
+    },
+    "mutation_pending": {
+      "mutation_approved": false,
+      "approval_state": "required",
+      "decision": "HUMAN_GATE_REQUIRED"
+    },
+    "mutation_approved_requires": [
+      "approval_state_approved",
+      "approved_authority_ref_nonempty",
+      "approved_authority_ref_verified_true"
+    ],
+    "conflict_stop": "BLOCKED_AUTHORITY_STATE_INCONSISTENT",
+    "unproven_approval_stop": "BLOCKED_UNPROVEN_HUMAN_GATE_AUTHORITY"
+  },
+  "optional_context_rule": {
+    "affects_safety_scope_boundary_or_level_selection": "REQUEST_CONTEXT",
+    "does_not_affect_safe_nonexecuting_answer": {
+      "approved_agency": "AG0_SUGGEST_ONLY",
+      "outcome": "CONTINUE_WITH_EXPLICIT_UNCERTAINTY",
+      "mutation_allowed": false
+    }
+  },
+  "route_map": {
+    "structure_and_synthesis": "GPT",
+    "independent_audit": "Claude",
+    "public_wording_after_audit": "Gemini",
+    "repo_implementation_after_gate": "Codex",
+    "durable_files_and_readback": "Sandbox_Runner",
+    "authority_actions": "Human_Gate"
+  },
+  "stop_codes": {
+    "required_source_missing": "BLOCKED_SOURCE_READBACK_REQUIRED",
+    "future_capability_unavailable": "PARKED_CAPABILITY_NOT_ACTIVE",
+    "execution_above_ceiling": "BLOCKED_EXECUTION_ABOVE_CAPABILITY_CEILING",
+    "authority_conflict": "BLOCKED_AUTHORITY_STATE_INCONSISTENT",
+    "authority_proof_missing": "BLOCKED_UNPROVEN_HUMAN_GATE_AUTHORITY",
+    "runner_visibility_unclear": "BLOCKED_RUNNER_VISIBILITY_UNCLEAR",
+    "private_P1_to_public_P2": "BLOCKED_PRIVATE_P1_TO_PUBLIC_P2_RISK"
+  },
+  "proof_contract": [
+    "input_readback",
+    "output_contract",
+    "route_selected",
+    "internal_steps_summary",
+    "risk_checks",
+    "missing_context",
+    "boundary_status",
+    "artifact_status",
+    "result_status",
+    "next_valid_move"
+  ],
+  "claim_boundary": {
+    "source_apply": false,
+    "DB_write": false,
+    "RLDB_writeback": false,
+    "canon": false,
+    "commit": false,
+    "push": false,
+    "publish": false,
+    "runtime_activation": false
+  }
+}

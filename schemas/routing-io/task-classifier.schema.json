@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/kiencuongnguyen88/diamond-os/schemas/routing-io/task-classifier.schema.json",
+  "title": "PG-U03 Task Classifier",
+  "type": "object",
+  "required": [
+    "classifier_id",
+    "unit_id",
+    "state",
+    "source_ref",
+    "selection_rule",
+    "blind_full_runtime_ZIP_load",
+    "legacy_slot_names_authoritative",
+    "task_modes",
+    "unknown_or_missing_required_source",
+    "runner_visibility_missing",
+    "claim_boundary"
+  ],
+  "properties": {
+    "classifier_id": {
+      "const": "PG_U03_TASK_CLASSIFIER_v0_1"
+    },
+    "unit_id": {
+      "const": "PG-U03"
+    },
+    "state": {
+      "const": "GIT_CANDIDATE"
+    },
+    "source_ref": {
+      "const": "PGU03-SRC-A04"
+    },
+    "selection_rule": {
+      "type": "string"
+    },
+    "blind_full_runtime_ZIP_load": {
+      "const": false
+    },
+    "legacy_slot_names_authoritative": {
+      "const": false
+    },
+    "task_modes": {
+      "type": "object"
+    },
+    "unknown_or_missing_required_source": {
+      "const": "BLOCKED_SOURCE_READBACK_REQUIRED"
+    },
+    "runner_visibility_missing": {
+      "const": "BLOCKED_RUNNER_VISIBILITY_UNCLEAR"
+    },
+    "claim_boundary": {
+      "type": "object",
+      "required": [
+        "source_apply",
+        "DB_write",
+        "RLDB_writeback",
+        "canon",
+        "commit",
+        "push",
+        "publish",
+        "runtime_activation"
+      ],
+      "properties": {
+        "source_apply": {
+          "const": false
+        },
+        "DB_write": {
+          "const": false
+        },
+        "RLDB_writeback": {
+          "const": false
+        },
+        "canon": {
+          "const": false
+        },
+        "commit": {
+          "const": false
+        },
+        "push": {
+          "const": false
+        },
+        "publish": {
+          "const": false
+        },
+        "runtime_activation": {
+          "const": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

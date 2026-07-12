@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/kiencuongnguyen88/diamond-os/schemas/routing-io/source-sync-contract.schema.json",
+  "title": "PG-U03 Source Sync Contract",
+  "type": "object",
+  "required": [
+    "contract_id",
+    "unit_id",
+    "state",
+    "canon",
+    "source_refs",
+    "patch_intent_lock",
+    "minimum_source_surface_map",
+    "reference_impact_graph",
+    "consistency_sweep",
+    "human_readable_surface_sweep",
+    "BFL_readback_fields",
+    "verdicts",
+    "apply_modes",
+    "version_bump_rule",
+    "environment_branch",
+    "fail_stops",
+    "claim_boundary"
+  ],
+  "properties": {
+    "contract_id": {
+      "const": "PG_U03_SOURCE_SYNC_CONTRACT_v0_1"
+    },
+    "unit_id": {
+      "const": "PG-U03"
+    },
+    "state": {
+      "const": "GIT_CANDIDATE"
+    },
+    "canon": {
+      "const": false
+    },
+    "source_refs": {
+      "const": [
+        "PGU03-SRC-A02",
+        "PGU03-SRC-A03"
+      ]
+    },
+    "patch_intent_lock": {
+      "type": "array",
+      "minItems": 4
+    },
+    "minimum_source_surface_map": {
+      "type": "array",
+      "minItems": 8
+    },
+    "reference_impact_graph": {
+      "type": "object"
+    },
+    "consistency_sweep": {
+      "type": "array",
+      "minItems": 6
+    },
+    "human_readable_surface_sweep": {
+      "type": "array"
+    },
+    "BFL_readback_fields": {
+      "type": "array",
+      "minItems": 6
+    },
+    "verdicts": {
+      "type": "object"
+    },
+    "apply_modes": {
+      "type": "object"
+    },
+    "version_bump_rule": {
+      "type": "object"
+    },
+    "environment_branch": {
+      "type": "object"
+    },
+    "fail_stops": {
+      "type": "array",
+      "minItems": 5
+    },
+    "claim_boundary": {
+      "type": "object",
+      "required": [
+        "source_apply",
+        "DB_write",
+        "RLDB_writeback",
+        "canon",
+        "commit",
+        "push",
+        "publish",
+        "runtime_activation"
+      ],
+      "properties": {
+        "source_apply": {
+          "const": false
+        },
+        "DB_write": {
+          "const": false
+        },
+        "RLDB_writeback": {
+          "const": false
+        },
+        "canon": {
+          "const": false
+        },
+        "commit": {
+          "const": false
+        },
+        "push": {
+          "const": false
+        },
+        "publish": {
+          "const": false
+        },
+        "runtime_activation": {
+          "const": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

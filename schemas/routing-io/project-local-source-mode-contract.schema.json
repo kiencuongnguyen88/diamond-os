@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/kiencuongnguyen88/diamond-os/schemas/routing-io/project-local-source-mode-contract.schema.json",
+  "title": "PG-U03 Project/Local Source Mode Contract",
+  "type": "object",
+  "required": [
+    "contract_id",
+    "unit_id",
+    "state",
+    "canon",
+    "source_ref",
+    "logical_source",
+    "Project_surface",
+    "Local_surface",
+    "parity_guard",
+    "DB_boundary",
+    "claim_boundary"
+  ],
+  "properties": {
+    "contract_id": {
+      "const": "PG_U03_PROJECT_LOCAL_SOURCE_MODE_CONTRACT_v0_1"
+    },
+    "unit_id": {
+      "const": "PG-U03"
+    },
+    "state": {
+      "const": "GIT_CANDIDATE"
+    },
+    "canon": {
+      "const": false
+    },
+    "source_ref": {
+      "const": "PGU03-SRC-A03"
+    },
+    "logical_source": {
+      "type": "object"
+    },
+    "Project_surface": {
+      "type": "object"
+    },
+    "Local_surface": {
+      "type": "object"
+    },
+    "parity_guard": {
+      "type": "object"
+    },
+    "DB_boundary": {
+      "type": "object"
+    },
+    "claim_boundary": {
+      "type": "object",
+      "required": [
+        "source_apply",
+        "DB_write",
+        "RLDB_writeback",
+        "canon",
+        "commit",
+        "push",
+        "publish",
+        "runtime_activation"
+      ],
+      "properties": {
+        "source_apply": {
+          "const": false
+        },
+        "DB_write": {
+          "const": false
+        },
+        "RLDB_writeback": {
+          "const": false
+        },
+        "canon": {
+          "const": false
+        },
+        "commit": {
+          "const": false
+        },
+        "push": {
+          "const": false
+        },
+        "publish": {
+          "const": false
+        },
+        "runtime_activation": {
+          "const": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

@@ -4,7 +4,7 @@
   "repository": {
     "full_name": "kiencuongnguyen88/diamond-os",
     "branch": "main",
-    "base_head": "df735725a1a724ca3c138a373fdb6dfd3372e4ed"
+    "base_head": "d1e293703cbb5e504327228dff3aa32a8f71807c"
   },
   "units": [
     {
@@ -134,17 +134,74 @@
         }
       ],
       "human_gate": {
-        "state": "candidate_build_allowed_commit_gate_pending",
-        "action": "approve_runtime_contracts_and_atomic_unit_commit",
+        "state": "repository_commit_gate_consumed_canon_gate_pending",
+        "action": "atomic_authority_promotion",
         "exact_scope": "PG-U02"
       },
       "proof_refs": [
-        "tests/validate_pg_u02.py",
-        "PG_U02_SOURCE_MAPPING_READBACK_PROOF_v0_1"
+        "https://github.com/kiencuongnguyen88/diamond-os/commit/d1e293703cbb5e504327228dff3aa32a8f71807c",
+        "PG_U02_POST_PUSH_READBACK_v0_1.yaml",
+        "tests/validate_pg_u02.py"
+      ],
+      "repository_binding": {
+        "mode": "exact_commit",
+        "base_commit": "df735725a1a724ca3c138a373fdb6dfd3372e4ed",
+        "commit_sha": "d1e293703cbb5e504327228dff3aa32a8f71807c"
+      },
+      "claim_boundary": {
+        "source_apply": false,
+        "DB_write": false,
+        "RLDB_writeback": false,
+        "canon": false,
+        "commit": false,
+        "push": false,
+        "publish": false,
+        "runtime_activation": false
+      }
+    },
+    {
+      "unit_id": "PG-U03",
+      "name": "routing_and_io_public_core",
+      "migration_order": 4,
+      "state": "GIT_CANDIDATE",
+      "authority": false,
+      "canon": false,
+      "dependency_unit_ids": [
+        "PG-U00",
+        "PG-U01",
+        "PG-U02"
+      ],
+      "source_hashes": [
+        {
+          "source_ref_id": "PGU03-SRC-A01",
+          "sha256": "7eebc5a0080720594b08d19f5a8f57d406bdb08db6f01e1a6fafff43173907cf"
+        },
+        {
+          "source_ref_id": "PGU03-SRC-A02",
+          "sha256": "eff7171d9d0bf9ad1023c03aa99747b9fcc1a5d92d9ae0d179271eb759349aa5"
+        },
+        {
+          "source_ref_id": "PGU03-SRC-A03",
+          "sha256": "9f6cb64846a6aba4458892dbcbd9f84a29b2df3ac510df0b62e7117207817979"
+        },
+        {
+          "source_ref_id": "PGU03-SRC-A04",
+          "sha256": "df15056bf1340965a9968b3287345da4c1ad90e1ba8d851813ef851269b78253"
+        }
+      ],
+      "human_gate": {
+        "state": "candidate_build_allowed_commit_gate_pending",
+        "action": "approve_routing_core_and_atomic_unit_commit",
+        "exact_scope": "PG-U03"
+      },
+      "proof_refs": [
+        "tests/validate_pg_u03.py",
+        "PG_U03_SOURCE_MAPPING_v0_1",
+        "PG_U03_SOURCE_REFRESH_READBACK_PROOF_v0_1"
       ],
       "repository_binding": {
         "mode": "containing_commit",
-        "base_commit": "df735725a1a724ca3c138a373fdb6dfd3372e4ed",
+        "base_commit": "d1e293703cbb5e504327228dff3aa32a8f71807c",
         "commit_sha": null
       },
       "claim_boundary": {

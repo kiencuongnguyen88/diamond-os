@@ -1,0 +1,72 @@
+{
+  "classifier_id": "PG_U03_TASK_CLASSIFIER_v0_1",
+  "unit_id": "PG-U03",
+  "state": "GIT_CANDIDATE",
+  "source_ref": "PGU03-SRC-A04",
+  "selection_rule": "classify_before_load_and_choose_smallest_valid_role_lane_and_source_set",
+  "blind_full_runtime_ZIP_load": false,
+  "legacy_slot_names_authoritative": false,
+  "task_modes": {
+    "minimal_direct_flow": {
+      "load_roles": [
+        "none_or_boot_only"
+      ],
+      "mutation": false
+    },
+    "source_patch_or_readback": {
+      "load_roles": [
+        "source_governance",
+        "relevant_source_module"
+      ],
+      "required_fail_stop": "BLOCKED_SOURCE_READBACK_REQUIRED"
+    },
+    "DRC_runtime_task": {
+      "load_roles": [
+        "DRC_runtime_core"
+      ]
+    },
+    "P1_task": {
+      "load_roles": [
+        "P1_private_module_contract"
+      ],
+      "privacy": "private_internal_only",
+      "public_export_requires": "anonymization_and_Human_gate"
+    },
+    "P2_task": {
+      "load_roles": [
+        "P2_public_safe_content_contract"
+      ],
+      "private_P1_bridge_default": false
+    },
+    "chat_data_harvest_task": {
+      "load_roles": [
+        "harvest_object_schema",
+        "route_matrix",
+        "capture_protocol",
+        "privacy_gates"
+      ],
+      "blocked": [
+        "DB_write_without_Human_Gate",
+        "source_apply_claim_from_harvest_packet",
+        "raw_CRM_export_without_anonymization_and_Human_Gate"
+      ]
+    },
+    "domain_project_task": {
+      "load_roles": [
+        "domain_boundary_contract"
+      ]
+    }
+  },
+  "unknown_or_missing_required_source": "BLOCKED_SOURCE_READBACK_REQUIRED",
+  "runner_visibility_missing": "BLOCKED_RUNNER_VISIBILITY_UNCLEAR",
+  "claim_boundary": {
+    "source_apply": false,
+    "DB_write": false,
+    "RLDB_writeback": false,
+    "canon": false,
+    "commit": false,
+    "push": false,
+    "publish": false,
+    "runtime_activation": false
+  }
+}

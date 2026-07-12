@@ -57,6 +57,32 @@
         "PGU02-SRC-A02",
         "PGU02-SRC-A04"
       ]
+    },
+    {
+      "record_id": "PGU03-COMPAT-IO-v0_1_3",
+      "from_authority": "LEGACY_ACTIVE",
+      "to_unit": "PG-U03",
+      "relationship": "semantic_reference_not_replacement",
+      "state": "COMPATIBILITY_ONLY",
+      "can_promote_canon": false,
+      "requires_atomic_human_promotion": true,
+      "authority_effect": "none",
+      "source_ref_ids": [
+        "PGU03-SRC-A01"
+      ]
+    },
+    {
+      "record_id": "PGU03-COMPAT-TASK-CLASSIFIER-LEGACY-SLOTS",
+      "from_authority": "LEGACY_ACTIVE",
+      "to_unit": "PG-U03",
+      "relationship": "semantic_reference_not_replacement",
+      "state": "COMPATIBILITY_ONLY",
+      "can_promote_canon": false,
+      "requires_atomic_human_promotion": true,
+      "authority_effect": "none",
+      "source_ref_ids": [
+        "PGU03-SRC-A04"
+      ]
     }
   ],
   "claim_boundary": {

@@ -44,13 +44,13 @@
     },
     {
       "path": "tests/PG_U02_TEST_MATRIX.json",
-      "bytes": 2195,
-      "sha256": "de19030d197153873645f4121512c0aa08424d3a99ebe1307543ffe9849cb075"
+      "bytes": 2191,
+      "sha256": "b051f45d9459135e7600510057a5618e84cfb9839b0d90606eba71756a22b57e"
     },
     {
       "path": "tests/validate_pg_u02.py",
-      "bytes": 14274,
-      "sha256": "87ae43f2aaaa6bc4785553f466e5538f500246a9852d8cc2747b02692e61e25d"
+      "bytes": 14266,
+      "sha256": "b5c3f6de167327716a953c024b342e276627f1f07a056a53658bd25dcf8950eb"
     }
   ],
   "claim_boundary": {

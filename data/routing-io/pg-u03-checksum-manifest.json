@@ -1,0 +1,91 @@
+{
+  "manifest_id": "PG_U03_CHECKSUM_MANIFEST_v0_1",
+  "unit_id": "PG-U03",
+  "hash_algorithm": "SHA256",
+  "normalization": "canonical_lf",
+  "self_included": false,
+  "ownership_mode": "unit_owned_files_only",
+  "shared_registry_policy": "record_level_validation_not_whole_file_hash",
+  "files": [
+    {
+      "path": "src/routing-io/io-orchestrator-contract.md",
+      "bytes": 1207,
+      "sha256": "400c2905de85402b3427ea186cd71b21d7b6c77682caaccf72a6af449322737f"
+    },
+    {
+      "path": "src/routing-io/source-sync-contract.md",
+      "bytes": 990,
+      "sha256": "76cd746f5f1c8aef2afd715ad94a0f751ac6073e96996509e082f4204779e40b"
+    },
+    {
+      "path": "src/routing-io/project-local-source-mode-contract.md",
+      "bytes": 521,
+      "sha256": "aea6662758878359250b9f4acd20767726fe380be90c5837eff2960c8d482e97"
+    },
+    {
+      "path": "data/routing-io/io-orchestrator-contract.json",
+      "bytes": 4634,
+      "sha256": "2217d1dab65bd5c2b4633a71de8c2075286d2f552c16c89f8b69f2d83e241206"
+    },
+    {
+      "path": "data/routing-io/source-sync-contract.json",
+      "bytes": 3086,
+      "sha256": "a983874f5e28ba297864083003fb28480f7616cf489315cd56ef7b01f269b395"
+    },
+    {
+      "path": "data/routing-io/project-local-source-mode-contract.json",
+      "bytes": 1823,
+      "sha256": "361464f0a4937d589f9019566ff0329ca8ddebd8ad2ca5801348296fb184c994"
+    },
+    {
+      "path": "data/routing-io/task-classifier.json",
+      "bytes": 1901,
+      "sha256": "6a4da1cd2c2d295f305c215d29163963670ef5045e40da9d23fd7780da4a67f5"
+    },
+    {
+      "path": "schemas/routing-io/io-orchestrator-contract.schema.json",
+      "bytes": 2677,
+      "sha256": "b96b3360b393b295f2b068a8f29efe2d7bfa969b3c7165aab5811dbfb464090e"
+    },
+    {
+      "path": "schemas/routing-io/source-sync-contract.schema.json",
+      "bytes": 2544,
+      "sha256": "4a643c74aa0b62bb50f6bccc561477397c4c2c12debe595ddbab468afcfe3e73"
+    },
+    {
+      "path": "schemas/routing-io/project-local-source-mode-contract.schema.json",
+      "bytes": 1898,
+      "sha256": "7b81efb0b4f3bbabc9779e6d2c565a40d36461fcea5e3d6acf377ab62f2cd2dc"
+    },
+    {
+      "path": "schemas/routing-io/task-classifier.schema.json",
+      "bytes": 2040,
+      "sha256": "29ef762c48fce6119376eeb4be862ed8ffb5ffbba8c06d69eb6b3197e4f797cd"
+    },
+    {
+      "path": "docs/routing-io/README.md",
+      "bytes": 869,
+      "sha256": "39f5def4fb8bfd7d45db2b504efb8d31152a67db83695f644839ba1eb6eed102"
+    },
+    {
+      "path": "tests/PG_U03_TEST_MATRIX.json",
+      "bytes": 2633,
+      "sha256": "7ba0bd86fbbbac3ffc432dd78b19022387caf1863db1a1fd1bff2d88d878d879"
+    },
+    {
+      "path": "tests/validate_pg_u03.py",
+      "bytes": 16904,
+      "sha256": "4719692d7b6a78679af7e7c603109458eebe7af921816125d99a56083df290e2"
+    }
+  ],
+  "claim_boundary": {
+    "source_apply": false,
+    "DB_write": false,
+    "RLDB_writeback": false,
+    "canon": false,
+    "commit": false,
+    "push": false,
+    "publish": false,
+    "runtime_activation": false
+  }
+}

@@ -80,7 +80,7 @@ expected={"PGU01-SRC-A01":"78120138208d1b9f96771537e052ac2a40925fd30e1d2ecc34c0d
 check("exact_four_PG_U01_primary_source_anchors",[r["source_ref_id"] for r in primary]==list(expected))
 check("PG_U01_primary_source_hashes_match_readback",{r["source_ref_id"]:r["sha256"] for r in primary}==expected)
 pair=src["active_source_pair"]
-check("active_pair_hashes_present",pair["boot"]["sha256"]=="e2b35618072213aa47c89f9617c1799a2606bea1b9ea371f8f667635e2fc7602" and pair["runtime_zip"]["sha256"]=="b2668113eb15d774ef770bc535371e8b65940bec0ce0b76c60febffaeb5ca273")
+check("active_pair_hashes_present",pair["version"]=="v0.6.2.17" and pair["boot"]["sha256"]=="134ee777427d96ce74e3826513b3b93100a56285e2cbbe7b84774d616603471d" and pair["runtime_zip"]["sha256"]=="1212c3dd90e065b3c98e7661821ac903ae676e47a1d18b298aba27ebadacbaac")
 check("raw_legacy_source_not_copied",all(r["public_copy_included"] is False for r in src["references"]))
 check("raw_evidence_absent",ev["raw_evidence_in_repo"] is False and all(e["authority_effect"]=="none" for e in ev["evidence"]))
 all_files=[p.relative_to(ROOT).as_posix() for p in ROOT.rglob("*") if p.is_file() and ".git" not in p.parts]
