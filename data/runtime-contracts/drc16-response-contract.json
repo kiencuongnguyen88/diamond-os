@@ -1,0 +1,176 @@
+{
+  "contract_id": "DRC16_PUBLIC_RESPONSE_RUNTIME_CONTRACT_v0_1",
+  "unit_id": "PG-U02",
+  "version": "v0.1",
+  "state": "GIT_CANDIDATE",
+  "role": "Human-visible response compiler and machine-work-to-authority-gate boundary",
+  "source_refs": [
+    "PGU02-SRC-A01",
+    "PGU02-SRC-A03"
+  ],
+  "source_selection": {
+    "current_primary": "PGU02-SRC-A01",
+    "compatibility_semantics_merged_from": [
+      "PGU02-SRC-A03"
+    ],
+    "historical_parallel_contracts_created": false
+  },
+  "layer_contract": {
+    "sandbox_flow": "underlying machine execution before answer",
+    "runtime_box_block": "Human-facing mainline and active-node map at top",
+    "visible_response": "fixed DRC16 frame after runtime box",
+    "downloadable_state_files": "created only when physical state or rolling export is needed",
+    "machine_analysis": "optional trace, not a mandatory visible artifact"
+  },
+  "visible_surface": {
+    "runtime_box_at_top": true,
+    "header_fields": [
+      "HeaderMode",
+      "Writeback State",
+      "Source State",
+      "Artifact State",
+      "Box State",
+      "Human Gate"
+    ],
+    "layers": [
+      {
+        "name": "Lớp 1 — Hộp chạy",
+        "items": [
+          {
+            "number": 1,
+            "title": "Mục tiêu"
+          },
+          {
+            "number": 2,
+            "title": "Hộp việc"
+          },
+          {
+            "number": 3,
+            "title": "Nguồn đúng vai"
+          },
+          {
+            "number": 4,
+            "title": "State hiện tại"
+          },
+          {
+            "number": 5,
+            "title": "Plan nhỏ"
+          }
+        ]
+      },
+      {
+        "name": "Lớp 2 — Chú thích Tiếng Việt / ANNOTATE",
+        "items": [
+          {
+            "number": 6,
+            "title": "AI chạy trong hộp"
+          },
+          {
+            "number": 7,
+            "title": "Tự kiểm bằng checklist"
+          },
+          {
+            "number": 8,
+            "title": "Báo lỗi / lệch / thiếu dữ liệu"
+          }
+        ]
+      },
+      {
+        "name": "Lớp 3 — DIAMOND SIGNAL",
+        "items": [
+          {
+            "number": 9,
+            "title": "Đề xuất repair / điều chỉnh"
+          },
+          {
+            "number": 10,
+            "title": "Trả proof / readback"
+          },
+          {
+            "number": 11,
+            "title": "Human chốt bước tiếp theo"
+          }
+        ]
+      }
+    ],
+    "footer_fields": [
+      "Current Task",
+      "Pending Tasks",
+      "Priority",
+      "System Mode",
+      "Phase",
+      "Next Step",
+      "Status"
+    ],
+    "all_11_items_required": true,
+    "depth_may_shrink": true
+  },
+  "machine_execution": {
+    "runs_before_true_human_gate": [
+      "classify_request_and_operational_need",
+      "create_sandbox_for_source_DB_file_patch_or_audit_tasks",
+      "route_objects_to_correct_role",
+      "run_BFL_until_converged_or_BLOCKED",
+      "inspect_schema_FK_duplicate_and_proof",
+      "create_candidate_repair_dry_run_and_readback",
+      "emit_PASS_ADOPTABLE_BLOCKED_REPAIR_REQUIRED_or_FAIL_RETRY"
+    ],
+    "must_not_delegate_to_human": [
+      "machine_checkable_role_fit",
+      "row_by_row_schema_review",
+      "routine_BFL_or_proof_audit"
+    ],
+    "sandbox_pass_is_not_live_adoption": true
+  },
+  "human_gate": {
+    "purpose": "authority_not_routine_machine_labor",
+    "options": [
+      "approve",
+      "reject",
+      "revise",
+      "fail_retry"
+    ],
+    "required_for": [
+      "active_source_or_DB_replacement",
+      "live_DB_or_RLDB_write",
+      "canon_promotion",
+      "destructive_action",
+      "external_publish_send_share",
+      "privacy_sensitive_export",
+      "unresolved_authority_conflict",
+      "repository_commit_or_push"
+    ],
+    "not_required_for": [
+      "readonly_inspection",
+      "sandbox_creation",
+      "candidate_build",
+      "BFL_self_review",
+      "dry_run",
+      "readback_packaging"
+    ]
+  },
+  "proof_and_readback": {
+    "visible_required": [
+      "self_review_verdict",
+      "checks_completed",
+      "changed_and_not_changed",
+      "exact_human_gate",
+      "next_valid_move"
+    ],
+    "cannot_be_replaced_by_artifact_only": true
+  },
+  "relation_to_drc17": {
+    "audit_contract_ref": "data/runtime-contracts/drc17-audit-contract.json",
+    "audit_verdict_must_surface_in_DRC16": true
+  },
+  "claim_boundary": {
+    "source_apply": false,
+    "DB_write": false,
+    "RLDB_writeback": false,
+    "canon": false,
+    "commit": false,
+    "push": false,
+    "publish": false,
+    "runtime_activation": false
+  }
+}

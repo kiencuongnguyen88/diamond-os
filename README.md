@@ -14,18 +14,26 @@ Defines source-authority precedence, Human Gate and claim boundaries, Git/legacy
 
 ### PG-U01 — Source Ledger and Reference Schema
 
-Defines machine-readable public-unit ledger, source-reference, evidence-reference, compatibility and checksum contracts. Source files remain outside the public repository; only public-safe identities, hashes, states, gates and proof references are recorded.
+Defines machine-readable public-unit ledger, source-reference, evidence-reference, compatibility and checksum contracts.
 
 - Repository unit state: `GIT_CANDIDATE`
 - Canonical authority: `false`
-- Dependency: `PG-U00`
-- Self commit binding: resolved as the Git commit containing the ledger record; the record does not embed its own commit SHA.
+- Exact commit: `df735725a1a724ca3c138a373fdb6dfd3372e4ed`
+- Repository commit gate: consumed
+
+### PG-U02 — DRC16/DRC17 Public Runtime Contracts
+
+Consolidates the current Human-visible DRC16 response contract and DRC17 audit/BFL contract without copying historical duplicates.
+
+- Candidate state: `GIT_CANDIDATE`
+- Canonical authority: `false`
+- Dependencies: `PG-U00`, `PG-U01`
+- Repository commit gate: pending
 
 ## Authority state
 
-- Canonical authority: `false`
 - Active legacy source remains authoritative until an exact-scope Human promotion transaction completes.
-- A Git commit proves repository history; it does not by itself promote a unit to canon.
+- A Git commit proves repository history; it does not itself promote a unit to canon.
 
 ## Public-source boundary
 
@@ -36,9 +44,10 @@ This repository does **not** contain raw legacy source evidence, private P1/P2/F
 ```bash
 python -S tests/validate_pg_u00.py
 python -S tests/validate_pg_u01.py
+python -S tests/validate_pg_u02.py
 ```
 
-Both bootstrap validators use only the Python standard library.
+The validators use only the Python standard library.
 
 ## Build rule
 

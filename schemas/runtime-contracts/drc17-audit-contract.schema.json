@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/kiencuongnguyen88/diamond-os/schemas/runtime-contracts/DRC17_PUBLIC_AUDIT_RUNTIME_CONTRACT_v0_1.schema.json",
+  "title": "DRC17 Public Audit Runtime Contract",
+  "type": "object",
+  "required": [
+    "contract_id",
+    "unit_id",
+    "version",
+    "state",
+    "role",
+    "source_refs",
+    "source_selection",
+    "invocation",
+    "run_shape",
+    "BFL_checks",
+    "verdict_map",
+    "required_readback",
+    "peer_audit_before_implementation",
+    "relation_to_drc16",
+    "claim_boundary"
+  ],
+  "properties": {
+    "contract_id": {
+      "const": "DRC17_PUBLIC_AUDIT_RUNTIME_CONTRACT_v0_1"
+    },
+    "unit_id": {
+      "const": "PG-U02"
+    },
+    "version": {
+      "const": "v0.1"
+    },
+    "state": {
+      "const": "GIT_CANDIDATE"
+    },
+    "role": {
+      "type": "string",
+      "minLength": 10
+    },
+    "source_refs": {
+      "type": "array",
+      "minItems": 2,
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "claim_boundary": {
+      "type": "object",
+      "required": [
+        "source_apply",
+        "DB_write",
+        "RLDB_writeback",
+        "canon",
+        "commit",
+        "push",
+        "publish",
+        "runtime_activation"
+      ],
+      "properties": {
+        "source_apply": {
+          "const": false
+        },
+        "DB_write": {
+          "const": false
+        },
+        "RLDB_writeback": {
+          "const": false
+        },
+        "canon": {
+          "const": false
+        },
+        "commit": {
+          "const": false
+        },
+        "push": {
+          "const": false
+        },
+        "publish": {
+          "const": false
+        },
+        "runtime_activation": {
+          "const": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "source_selection": {
+      "type": "object"
+    },
+    "invocation": {
+      "type": "object"
+    },
+    "run_shape": {
+      "type": "array",
+      "minItems": 6,
+      "items": {
+        "type": "string"
+      }
+    },
+    "BFL_checks": {
+      "type": "array",
+      "minItems": 8,
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "verdict_map": {
+      "type": "object"
+    },
+    "required_readback": {
+      "type": "array",
+      "minItems": 7,
+      "items": {
+        "type": "string"
+      }
+    },
+    "peer_audit_before_implementation": {
+      "type": "object"
+    },
+    "relation_to_drc16": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false
+}

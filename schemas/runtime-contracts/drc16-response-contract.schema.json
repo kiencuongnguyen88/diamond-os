@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/kiencuongnguyen88/diamond-os/schemas/runtime-contracts/DRC16_PUBLIC_RESPONSE_RUNTIME_CONTRACT_v0_1.schema.json",
+  "title": "DRC16 Public Response Runtime Contract",
+  "type": "object",
+  "required": [
+    "contract_id",
+    "unit_id",
+    "version",
+    "state",
+    "role",
+    "source_refs",
+    "source_selection",
+    "layer_contract",
+    "visible_surface",
+    "machine_execution",
+    "human_gate",
+    "proof_and_readback",
+    "relation_to_drc17",
+    "claim_boundary"
+  ],
+  "properties": {
+    "contract_id": {
+      "const": "DRC16_PUBLIC_RESPONSE_RUNTIME_CONTRACT_v0_1"
+    },
+    "unit_id": {
+      "const": "PG-U02"
+    },
+    "version": {
+      "const": "v0.1"
+    },
+    "state": {
+      "const": "GIT_CANDIDATE"
+    },
+    "role": {
+      "type": "string",
+      "minLength": 10
+    },
+    "source_refs": {
+      "type": "array",
+      "minItems": 2,
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "claim_boundary": {
+      "type": "object",
+      "required": [
+        "source_apply",
+        "DB_write",
+        "RLDB_writeback",
+        "canon",
+        "commit",
+        "push",
+        "publish",
+        "runtime_activation"
+      ],
+      "properties": {
+        "source_apply": {
+          "const": false
+        },
+        "DB_write": {
+          "const": false
+        },
+        "RLDB_writeback": {
+          "const": false
+        },
+        "canon": {
+          "const": false
+        },
+        "commit": {
+          "const": false
+        },
+        "push": {
+          "const": false
+        },
+        "publish": {
+          "const": false
+        },
+        "runtime_activation": {
+          "const": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "source_selection": {
+      "type": "object"
+    },
+    "layer_contract": {
+      "type": "object"
+    },
+    "visible_surface": {
+      "type": "object"
+    },
+    "machine_execution": {
+      "type": "object"
+    },
+    "human_gate": {
+      "type": "object"
+    },
+    "proof_and_readback": {
+      "type": "object"
+    },
+    "relation_to_drc17": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,66 @@
+{
+  "manifest_id": "PG_U02_CHECKSUM_MANIFEST_v0_1",
+  "unit_id": "PG-U02",
+  "hash_algorithm": "SHA256",
+  "normalization": "canonical_lf",
+  "self_included": false,
+  "ownership_mode": "unit_owned_files_only",
+  "shared_registry_policy": "record_level_validation_not_whole_file_hash",
+  "files": [
+    {
+      "path": "src/runtime-contracts/drc16-response-contract.md",
+      "bytes": 1640,
+      "sha256": "a3ebc5f59d88d37b6a1a4f1f673b12b5d54a4ae35ab2e5454c7972d4ebdb9b93"
+    },
+    {
+      "path": "src/runtime-contracts/drc17-audit-contract.md",
+      "bytes": 1383,
+      "sha256": "6b98f129e0204cef105dfd162cff89b9258835d1f1ba50409c5ff7666b559862"
+    },
+    {
+      "path": "data/runtime-contracts/drc16-response-contract.json",
+      "bytes": 4622,
+      "sha256": "81b20dadc52db904377f4e74b50671da3470eecd7de9016585110e1277b00cb4"
+    },
+    {
+      "path": "data/runtime-contracts/drc17-audit-contract.json",
+      "bytes": 2626,
+      "sha256": "dddd2392257a5ed9f22ea59779e696adb7972397ea617461644b083d37061486"
+    },
+    {
+      "path": "schemas/runtime-contracts/drc16-response-contract.schema.json",
+      "bytes": 2264,
+      "sha256": "8e2f0f207e9301521c286616c05b986760734d44c7c842482f5f8bd4799154c5"
+    },
+    {
+      "path": "schemas/runtime-contracts/drc17-audit-contract.schema.json",
+      "bytes": 2573,
+      "sha256": "5c103ed36fef0e01aff6f89126517fd97bb770dd1b1b5452591063a4a9482329"
+    },
+    {
+      "path": "docs/runtime-contracts/README.md",
+      "bytes": 1186,
+      "sha256": "8c1e704b34c45f3534233feaff01a8a0975996e38bdebbd14bff4e053aaa3e5d"
+    },
+    {
+      "path": "tests/PG_U02_TEST_MATRIX.json",
+      "bytes": 2195,
+      "sha256": "de19030d197153873645f4121512c0aa08424d3a99ebe1307543ffe9849cb075"
+    },
+    {
+      "path": "tests/validate_pg_u02.py",
+      "bytes": 14274,
+      "sha256": "87ae43f2aaaa6bc4785553f466e5538f500246a9852d8cc2747b02692e61e25d"
+    }
+  ],
+  "claim_boundary": {
+    "source_apply": false,
+    "DB_write": false,
+    "RLDB_writeback": false,
+    "canon": false,
+    "commit": false,
+    "push": false,
+    "publish": false,
+    "runtime_activation": false
+  }
+}

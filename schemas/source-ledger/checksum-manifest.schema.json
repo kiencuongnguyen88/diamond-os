@@ -9,6 +9,8 @@
     "hash_algorithm",
     "normalization",
     "self_included",
+    "shared_registry_policy",
+    "ownership_mode",
     "files",
     "claim_boundary"
   ],
@@ -93,6 +95,12 @@
         }
       },
       "additionalProperties": false
+    },
+    "ownership_mode": {
+      "const": "unit_owned_files_only"
+    },
+    "shared_registry_policy": {
+      "const": "record_level_validation_not_whole_file_hash"
     }
   },
   "additionalProperties": false

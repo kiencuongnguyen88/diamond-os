@@ -29,6 +29,34 @@
       "source_ref_ids": [
         "PGU01-CONTINUITY-A01"
       ]
+    },
+    {
+      "record_id": "PGU02-COMPAT-DRC16-v0_5_8",
+      "from_authority": "LEGACY_ACTIVE",
+      "to_unit": "PG-U02",
+      "relationship": "semantic_reference_not_replacement",
+      "state": "COMPATIBILITY_ONLY",
+      "can_promote_canon": false,
+      "requires_atomic_human_promotion": true,
+      "authority_effect": "none",
+      "source_ref_ids": [
+        "PGU02-SRC-A01",
+        "PGU02-SRC-A03"
+      ]
+    },
+    {
+      "record_id": "PGU02-COMPAT-DRC17-v0_5_5",
+      "from_authority": "LEGACY_ACTIVE",
+      "to_unit": "PG-U02",
+      "relationship": "semantic_reference_not_replacement",
+      "state": "COMPATIBILITY_ONLY",
+      "can_promote_canon": false,
+      "requires_atomic_human_promotion": true,
+      "authority_effect": "none",
+      "source_ref_ids": [
+        "PGU02-SRC-A02",
+        "PGU02-SRC-A04"
+      ]
     }
   ],
   "claim_boundary": {

@@ -103,10 +103,8 @@
             "pattern": "^[0-9a-f]{64}$"
           },
           "role": {
-            "enum": [
-              "primary_migration_source",
-              "continuity_anchor"
-            ]
+            "type": "string",
+            "pattern": "^(primary|compatibility)_migration_source$|^continuity_anchor$"
           },
           "source_state": {
             "enum": [

@@ -68,6 +68,61 @@
       "public_copy_included": false,
       "authority_effect": "none",
       "proof_ref": "Human_ne已_neo_Project_Source_Anchor_v0_2_1"
+    },
+    {
+      "source_ref_id": "PGU02-SRC-A01",
+      "path": "10_DRC_RUNTIME_CORE/20_RESPONSE_RUNTIME/DRC16_GPT_AUTONOMOUS_RUN_HUMAN_GATE_SURFACE_v0_6_0.md",
+      "bytes": 5595,
+      "sha256": "4e987fb7f786baa8ac50b991a6cd6a0d612d7085880cc715fc5531efd9a48aab",
+      "role": "primary_migration_source",
+      "source_state": "LEGACY_ACTIVE",
+      "public_copy_included": false,
+      "authority_effect": "none",
+      "proof_ref": "PG_U02_SOURCE_MAPPING_READBACK_PROOF_v0_1"
+    },
+    {
+      "source_ref_id": "PGU02-SRC-A02",
+      "path": "10_DRC_RUNTIME_CORE/30_AUDIT_RUNTIME/DRC17_GPT_AUTONOMOUS_RUN_HUMAN_GATE_AUDIT_v0_6_0.md",
+      "bytes": 3229,
+      "sha256": "38ba6c18febd2e4ddb1a0c0de51fdaa3b223be0e53fdf7590ab19907dedc4eec",
+      "role": "primary_migration_source",
+      "source_state": "LEGACY_ACTIVE",
+      "public_copy_included": false,
+      "authority_effect": "none",
+      "proof_ref": "PG_U02_SOURCE_MAPPING_READBACK_PROOF_v0_1"
+    },
+    {
+      "source_ref_id": "PGU02-SRC-A03",
+      "path": "10_DRC_RUNTIME_CORE/20_RESPONSE_RUNTIME/DRC16_DEFAULT_RESPONSE_SURFACE_v0_5_8.md",
+      "bytes": 7819,
+      "sha256": "e7520c9f1919541bf039b03e7abc19f1a8129876405895abafb6cd3848d8d897",
+      "role": "compatibility_migration_source",
+      "source_state": "LEGACY_ACTIVE",
+      "public_copy_included": false,
+      "authority_effect": "none",
+      "proof_ref": "PG_U02_SOURCE_MAPPING_READBACK_PROOF_v0_1"
+    },
+    {
+      "source_ref_id": "PGU02-SRC-A04",
+      "path": "10_DRC_RUNTIME_CORE/30_AUDIT_RUNTIME/DRC17_BFL_AUDIT_KEY_AUDIT_v0_5_5.md",
+      "bytes": 2079,
+      "sha256": "5e7057d9d5fe611a566734f6bd063bcdea75e086c74d4e784190feb5d321e843",
+      "role": "compatibility_migration_source",
+      "source_state": "LEGACY_ACTIVE",
+      "public_copy_included": false,
+      "authority_effect": "none",
+      "proof_ref": "PG_U02_SOURCE_MAPPING_READBACK_PROOF_v0_1"
+    },
+    {
+      "source_ref_id": "PGU02-CONTINUITY-A01",
+      "path": "DZN32_PUBLIC_GITHUB_PROJECT_SOURCE_ANCHOR_v0_2_2.md",
+      "bytes": 7603,
+      "sha256": "6a713ab2411502364969c11c40f39693eaaf7064c6627986075fc3a95f0da639",
+      "role": "continuity_anchor",
+      "source_state": "PLANNING_CONTINUITY",
+      "public_copy_included": false,
+      "authority_effect": "none",
+      "proof_ref": "Human_neo_Project_Source_Anchor_v0_2_2"
     }
   ],
   "claim_boundary": {

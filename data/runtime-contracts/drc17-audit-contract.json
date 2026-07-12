@@ -1,0 +1,102 @@
+{
+  "contract_id": "DRC17_PUBLIC_AUDIT_RUNTIME_CONTRACT_v0_1",
+  "unit_id": "PG-U02",
+  "version": "v0.1",
+  "state": "GIT_CANDIDATE",
+  "role": "Audit whether machine-fit work, source discipline, proof and Human Gate boundaries are correct",
+  "source_refs": [
+    "PGU02-SRC-A02",
+    "PGU02-SRC-A04"
+  ],
+  "source_selection": {
+    "current_primary": "PGU02-SRC-A02",
+    "compatibility_semantics_merged_from": [
+      "PGU02-SRC-A04"
+    ],
+    "blind_full_runtime_ZIP_load": false,
+    "canonical_role_lane_selection_required": true
+  },
+  "invocation": {
+    "keys": [
+      "Audit",
+      "audit",
+      "RUN_AUDIT"
+    ],
+    "long_prompt_repaste_required": false
+  },
+  "run_shape": [
+    "identify_real_human_need",
+    "lock_runtime_box_and_blocked_claims",
+    "select_required_canonical_role_lane",
+    "run_DRC17_BFL_audit_pass",
+    "answer_with_DRC16_surface",
+    "leave_readback"
+  ],
+  "BFL_checks": [
+    "mainline_drift",
+    "sentence_force_loss",
+    "wrong_source_role",
+    "role_collision",
+    "missing_gate",
+    "missing_proof_or_readback",
+    "source_DB_writeback_boundary",
+    "blocked_claims",
+    "machine_work_manualized_to_human"
+  ],
+  "verdict_map": {
+    "PASS": [
+      "machine_fit_work_complete",
+      "proof_readback_exists",
+      "clear_gate_options"
+    ],
+    "BLOCKED": [
+      "required_source_schema_missing",
+      "authority_conflict",
+      "live_or_destructive_action_without_gate"
+    ],
+    "REPAIR_REQUIRED": [
+      "wrong_role_route",
+      "schema_FK_duplicate_or_proof_mismatch",
+      "missing_gate_options"
+    ],
+    "FAIL_RETRY": [
+      "pipeline_manualized_to_human",
+      "BFL_skipped",
+      "readback_cannot_prove_change"
+    ]
+  },
+  "required_readback": [
+    "key_used",
+    "DRC16_response_surface",
+    "DRC17_BFL_audit_pass",
+    "pass_for",
+    "not_done",
+    "blocked_claims",
+    "next_valid_move"
+  ],
+  "peer_audit_before_implementation": {
+    "required_for": [
+      "architecture_or_runtime_flow",
+      "source_boot_manifest_authority_index",
+      "DB_RLDB_CRM_boundary",
+      "activation_or_mutation_controls",
+      "repeated_failure_mode"
+    ],
+    "independent_output_must_be_real_not_simulated": true,
+    "human_gate_preserved_before_implementation": true
+  },
+  "relation_to_drc16": {
+    "response_contract_ref": "data/runtime-contracts/drc16-response-contract.json",
+    "DRC17_audits_DRC16": true
+  },
+  "claim_boundary": {
+    "source_apply": false,
+    "DB_write": false,
+    "RLDB_writeback": false,
+    "canon": false,
+    "commit": false,
+    "push": false,
+    "publish": false,
+    "runtime_activation": false
+  }
+}
