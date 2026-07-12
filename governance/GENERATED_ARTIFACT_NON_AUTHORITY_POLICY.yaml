@@ -1,0 +1,16 @@
+policy_id: PG_U00_GENERATED_ARTIFACT_NON_AUTHORITY_POLICY_v0_1_1
+classification: source_authority_policy_not_privacy_category
+generated_classes:
+- SQLite_or_DB_build_output
+- boot_output
+- runtime_ZIP
+- proof_bundle
+- rendered_documentation
+- release_checksum
+rules:
+  hand_edit_as_canonical_source: false
+  existence_or_validation_confers_authority: false
+  may_be_release_asset: true
+  must_record_source_commit_and_build_manifest: true
+  rebuild_from_canonical_text_source: true
+fail_stop: BLOCKED_GENERATED_ARTIFACT_AUTHORITY_DRIFT

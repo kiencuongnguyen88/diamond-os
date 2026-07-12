@@ -1,0 +1,101 @@
+scope_lock_id: PG_U00_SOURCE_SCOPE_LOCK_v0_1_2_PUBLIC
+unit_id: PG-U00
+unit_name: governance_authority_seed
+candidate_version: v0.1.2
+state: GIT_CANDIDATE
+source_pair:
+  version: v0.6.2.16
+  boot:
+    file: 00_00_DIAMOND_OS_CORE_BOOT_DRAFT_ZIP_FIRST_FIT_v0_6_2_16.md
+    bytes: 20612
+    sha256: e2b35618072213aa47c89f9617c1799a2606bea1b9ea371f8f667635e2fc7602
+  runtime_zip:
+    file: DIAMOND_OS_CORE_RUNTIME_SOURCE_FIT_v0_6_2_16.zip
+    bytes: 1846700
+    sha256: b2668113eb15d774ef770bc535371e8b65940bec0ce0b76c60febffaeb5ca273
+scope_authority: PUBLIC_GITHUB_DETAILED_UNIT_ROADMAP_v0_2.yaml / PG-U00 row; exact six-anchor lineage preserved
+  from v0.1.1
+primary_source_anchor_count: 6
+primary_source_anchors:
+- path: 00_READ_THIS_FIRST.md
+  bytes: 54319
+  sha256: dd44d7474430d028d1142fc15b4dc578089fffb5a9982d8ab40886db75b84265
+  role: primary_migration_source
+- path: 00_BOOTSTRAP_AND_INDEX/00_SOURCE_MANIFEST_CLEAN_FIT_v0_6_2_16.yaml
+  bytes: 67574
+  sha256: 78120138208d1b9f96771537e052ac2a40925fd30e1d2ecc34c0d3204475b79c
+  role: primary_migration_source
+- path: 99_INDEX_AND_COMPATIBILITY_MAPS/LATEST_AUTHORITY_INDEX.yaml
+  bytes: 81827
+  sha256: 28a225c1b44cb5905a2f98c63529bcf58deb6036478a4b33c651abb64e6481dd
+  role: primary_migration_source
+- path: 01_ROUTING_AND_TASK_CORE/20_CROSS_SOURCE_QUERY/SOURCE_AUTHORITY_RULE.md
+  bytes: 388
+  sha256: e148669659ca01de742d6dc0f276ef6df165a2364901a68018c39cf926ad0856
+  role: primary_migration_source
+- path: 70_APPLY_GATES_AND_SANDBOX_PROTOCOLS/10_SANDBOX_APPLY_GATE/GPT_AUTONOMOUS_RUN_WITH_HUMAN_GATE_POLICY_v0_6_0.md
+  bytes: 1695
+  sha256: d6337f38ae5541d08646ad69220a08f0c5ba3deb97a83b1b5a4b6b666e8bef74
+  role: primary_migration_source
+- path: 70_APPLY_GATES_AND_SANDBOX_PROTOCOLS/10_SANDBOX_APPLY_GATE/PEER_AUDIT_BEFORE_IMPLEMENTATION_GATE_v0_1.md
+  bytes: 3017
+  sha256: 96b757af7d4f05d22022a490f53afe0eeae982f66bf17998a9b70161fd2ed781
+  role: primary_migration_source
+included_objects:
+- source_authority_resolution_by_phase_and_scope
+- current_vs_historical_pointer_rule
+- human_gate_one_run_policy
+- claim_boundary_defaults
+- public_Git_unit_state_machine
+- legacy_source_state_machine
+- atomic_authority_promotion_transaction
+- public_private_deny_rules
+- generated_artifact_non_authority_policy
+- peer_audit_before_implementation_gate
+- conflict_and_fail_stop_policy
+- partial_overlap_authority_resolution
+- current_pointer_freshness_gate
+- repo_import_allowlist_and_exclusion_template
+supporting_evidence_role: read_only_planning_context_not_migration_source
+excluded_from_migration_source:
+- pattern: 10_DRC_RUNTIME_CORE/20_RESPONSE_RUNTIME/DRC16_*
+  deferred_to: PG-U02
+- pattern: 10_DRC_RUNTIME_CORE/30_AUDIT_RUNTIME/DRC17_*
+  deferred_to: PG-U02
+- pattern: '**/DZN32_IO_ORCHESTRATOR_BOX_*'
+  deferred_to: PG-U03
+- pattern: '**/SOURCE_PATCH_UPDATE_AND_SOURCE_SYNC_FLOW_*'
+  deferred_to: PG-U03
+- pattern: '**/DZN32_PROJECT_SOURCE_ZIP_LOCAL_DIRECT_SOURCE_MODE_CONTRACT_*'
+  deferred_to: PG-U03
+- pattern: preserved_legacy_documents_below_current_manifest_or_index
+  deferred_to: lineage_reference_only
+- pattern: private_P1_P2_Family_P7_content_or_DB_rows
+  deferred_to: private_scope
+- pattern: generated_DB_boot_ZIP_proof_outputs
+  deferred_to: release_artifacts
+semantic_change: false
+repo_create: false
+repo_import_allowed: true
+external_peer_audit_state: DUAL_PEER_COMPLETE__BOUNDED_PORTABILITY_REPAIR_HUMAN_ACCEPTED_FOR_COMMIT
+claim_boundary:
+  source_apply: false
+  DB_write: false
+  RLDB_writeback: false
+  memory_writeback: false
+  canon: false
+  repo_create: false
+  commit: false
+  push: false
+  publish: false
+  runtime_activation: false
+errata_basis:
+  exact_base_version: v0.1.1
+  exact_base_zip_sha256: f645d9157243fb9dd9b150e82f9300eb16cbc84b5d2d2f3a0ba5f8b94f0f0314
+  dual_peer_architecture: PASS
+  dual_peer_operability: PASS_WITH_MINOR_REPAIR
+  combined_verdict: PASS_WITH_MINOR_REPAIR_BEFORE_REPO_IMPORT
+source_fingerprint_registry: schemas/governance/PG_U00_SOURCE_FINGERPRINTS.yaml
+raw_source_evidence_in_repo: false
+repository: kiencuongnguyen88/diamond-os
+repo_import_state: HUMAN_APPROVED_FIRST_UNIT_COMMIT

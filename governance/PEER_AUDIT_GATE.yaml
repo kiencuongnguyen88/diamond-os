@@ -1,0 +1,41 @@
+policy_id: PG_U00_PEER_AUDIT_GATE_v0_1_2_PUBLIC
+state: candidate_not_canon
+trigger_when:
+- architecture_or_runtime_flow_change
+- source_boot_manifest_authority_change
+- DB_RLDB_CRM_boundary_change
+- Human_will_import_commit_push_publish_or_approve_implementation
+auditor_applicability:
+  external_architecture_boundary_auditor:
+    required: true
+    state: COMPLETE_PASS
+    input: exact v0.1.1 candidate ZIP with peer evidence
+    verdict: PASS
+  external_surface_or_product_fit_auditor:
+    applicability: APPLIED_AS_REPOSITORY_OPERABILITY_PEER
+    state: COMPLETE_PASS_WITH_MINOR_REPAIR
+    verdict: PASS_WITH_MINOR_REPAIR
+    reason: Audited repository cleanliness, machine usability, and multi-chat continuity rather than product UI.
+  internal_fresh_reader_audit:
+    role: preflight_only_not_external_peer
+    state: PASS_v0_1_2_PRE_FLIGHT
+required_external_output:
+- verdict
+- source_fidelity_findings
+- authority_transfer_findings
+- state_machine_findings
+- boundary_risks
+- exact_repairs
+- required_Human_Gate
+current_package_audit:
+  dual_peer_architecture: PASS
+  dual_peer_operability: PASS_WITH_MINOR_REPAIR
+  bounded_portability_repair: IMPLEMENTED_IN_PUBLIC_TREE
+  first_commit_gate: HUMAN_APPROVED
+  canon_promotion_allowed: false
+blocked_failure_modes:
+- peer_audit_claimed_without_actual_peer_output
+- implementation_before_Human_Gate
+- source_apply_or_DB_write_claimed_from_sandbox_pass
+future_trigger_rule: New architecture, authority, privacy, or runtime-flow changes require peer audit before implementation
+  or promotion.

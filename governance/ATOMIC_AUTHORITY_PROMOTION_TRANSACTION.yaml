@@ -1,0 +1,59 @@
+transaction_schema_id: PG_U00_ATOMIC_AUTHORITY_PROMOTION_TRANSACTION_v0_1_2_PUBLIC
+purpose: Transfer exact-scope authority without a moment of duplicate or missing authority.
+preconditions:
+  Git_unit_state: GIT_VERIFIED
+  legacy_source_state: LEGACY_ACTIVE
+  external_architecture_peer_verdict: PASS_or_Human_accepted_minor_repair
+  Human_gate: explicit_exact_scope
+  repo_commit_and_content_hash: required
+  rollback_pointer: required
+  current_pointer_freshness_proof: required_PASS_from_governance/CURRENT_POINTER_FRESHNESS_GATE.yaml
+  public_repo_unit_validation: required_PASS_from_tests/validate_pg_u00.py
+atomic_changes:
+- object: Git_unit
+  from: GIT_VERIFIED
+  to: GIT_CANONICAL
+- object: legacy_source_counterpart
+  from: LEGACY_ACTIVE
+  to: LEGACY_REFERENCE
+- object: authority_resolution
+  from: UNMIGRATED_SCOPE
+  to: PROMOTED_UNIT_SCOPE
+all_or_nothing: true
+failure_rule: If any atomic change or readback fails, no authority transfer is claimed and both objects remain at
+  pre-transaction states.
+required_ledger_fields:
+- transaction_id
+- unit_id
+- exact_scope
+- Git_repo
+- Git_commit
+- unit_content_sha256
+- legacy_source_refs
+- Human_decision_ref
+- technical_proof_refs
+- peer_audit_ref
+- rollback_instruction
+- post_promotion_readback
+- freshness_proof_ref
+- public_repo_validation_proof_ref
+current_transaction_state: NOT_EXECUTED
+claim_boundary:
+  source_apply: false
+  DB_write: false
+  RLDB_writeback: false
+  memory_writeback: false
+  canon: false
+  repo_create: false
+  commit: false
+  push: false
+  publish: false
+  runtime_activation: false
+precondition_order:
+- technical_verification
+- focused_peer_regression_or_Human_accepted_minor_repair
+- current_pointer_freshness_PASS
+- public_repo_unit_validation_PASS
+- explicit_exact_scope_Human_gate
+- atomic_changes_and_post_promotion_readback
+stale_evidence_result: BLOCKED_STALE_PROMOTION_EVIDENCE

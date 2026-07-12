@@ -1,0 +1,63 @@
+policy_id: PG_U00_SOURCE_AUTHORITY_PRECEDENCE_v0_1_2_PUBLIC
+state: candidate_not_canon
+scope: public_Git_unit_migration_and_generated_release_governance
+resolution_key:
+- requested_object_or_scope
+- promotion_state_for_each_exact_segment
+- recent_explicit_Human_decision
+- current_source_pointer
+universal_top_rule:
+  authority: recent_explicit_Human_Gate_decision
+  requirement: must name exact scope, unit/version/hash and action
+modes:
+  UNMIGRATED_SCOPE:
+    applies_when: no Human-approved Git canonical unit covers the exact requested scope
+    ordered_authority:
+    - active_boot_contract
+    - current_source_manifest_current_document
+    - latest_authority_index_current_document
+    - current_task_specific_anchor_or_registry
+    - reviewed_candidate_or_supporting_evidence
+    legacy_state: LEGACY_ACTIVE
+    Git_candidate_authority: false
+  PROMOTED_UNIT_SCOPE:
+    applies_when: a completed atomic promotion ledger covers the exact requested unit scope
+    ordered_authority:
+    - exact_Human_promotion_decision
+    - Human_approved_Git_canonical_unit_exact_commit_and_content_hash
+    - active_boot_manifest_index_as_locator_and_compatibility_context_only
+    - legacy_counterpart_as_lineage_reference
+    Git_state: GIT_CANONICAL
+    legacy_state: LEGACY_REFERENCE
+    hard_rule: For the exact promoted scope, the Git canonical unit outranks the legacy counterpart after atomic
+      promotion readback.
+  OUTSIDE_PROMOTED_SCOPE:
+    applies_when: the request is outside or broader than the exact promoted unit scope
+    rule: Do not extend Git authority by inference; resolve that scope under UNMIGRATED_SCOPE or another exact promotion
+      ledger.
+  PARTIAL_OVERLAP_SCOPE:
+    applies_when: the request intersects promoted and unmigrated segments, or multiple exact promoted units
+    rule: partition and resolve each segment under governance/PARTIAL_OVERLAP_AUTHORITY_RESOLUTION.yaml
+    cross_segment_authority_inference: false
+    fail_stop_if_unsegmentable: BLOCKED_PARTIAL_SCOPE_AUTHORITY_AMBIGUITY
+promotion_authority_source: governance/ATOMIC_AUTHORITY_PROMOTION_TRANSACTION.yaml
+conflict_rule: surface_to_Human_do_not_resolve_silently
+current_active_pointer:
+  version: v0.6.2.16
+  manifest: 00_BOOTSTRAP_AND_INDEX/00_SOURCE_MANIFEST_CLEAN_FIT_v0_6_2_16.yaml
+  authority_index: 99_INDEX_AND_COMPATIBILITY_MAPS/LATEST_AUTHORITY_INDEX.yaml
+  PG_U00_promotion_applied: false
+  source_fingerprint_registry: schemas/governance/PG_U00_SOURCE_FINGERPRINTS.yaml
+claim_boundary:
+  source_apply: false
+  DB_write: false
+  RLDB_writeback: false
+  memory_writeback: false
+  canon: false
+  repo_create: false
+  commit: false
+  push: false
+  publish: false
+  runtime_activation: false
+partial_overlap_policy: governance/PARTIAL_OVERLAP_AUTHORITY_RESOLUTION.yaml
+freshness_gate: governance/CURRENT_POINTER_FRESHNESS_GATE.yaml

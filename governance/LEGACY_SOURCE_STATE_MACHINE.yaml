@@ -1,0 +1,32 @@
+state_machine_id: PG_U00_LEGACY_SOURCE_STATE_MACHINE_v0_1_1
+object_type: legacy_source_object
+states:
+  LEGACY_ACTIVE:
+    authority: true
+    meaning: Human-selected active source for an unmigrated exact scope
+  LEGACY_REFERENCE:
+    authority: false
+    meaning: lineage/rollback reference after exact-scope Git promotion
+  LEGACY_RETIRED:
+    authority: false
+    meaning: cold archive after separate Human retention decision
+  BLOCKED:
+    authority: false
+    required_fields:
+    - blocked_from_state
+    - block_reason
+    - missing_requirement
+allowed_transitions:
+- LEGACY_ACTIVE->LEGACY_REFERENCE_via_atomic_promotion
+- LEGACY_REFERENCE->LEGACY_RETIRED_via_separate_Human_gate
+- any_nonterminal->BLOCKED
+- BLOCKED->blocked_from_state_only_after_repair_proof
+blocked_resume_rule:
+  deterministic: true
+  required:
+  - same_object_id
+  - recorded_blocked_from_state
+  - repair_proof
+  - missing_requirement_resolved
+  forbidden: resume_to_unspecified_prior_state
+current_PG_U00_legacy_state: LEGACY_ACTIVE

@@ -1,0 +1,19 @@
+policy_id: PG_U00_CURRENT_POINTER_POLICY_v0_1_2_PUBLIC
+current_selector:
+  required_version: v0.6.2.16
+  preserved_following_documents_state: LEGACY_REFERENCE
+  manifest_current_source_path: 00_BOOTSTRAP_AND_INDEX/00_SOURCE_MANIFEST_CLEAN_FIT_v0_6_2_16.yaml
+  manifest_current_document_sha256: 2df3fe9d661c2d8df9b96949bb900d6bcd4c708d190bb60b54289e6ffdd4b817
+  authority_index_current_source_path: 99_INDEX_AND_COMPATIBILITY_MAPS/LATEST_AUTHORITY_INDEX.yaml
+  authority_index_current_document_sha256: 20144c48a16c3271388c4ee3b1dceabf0107ecb0032233824c298eeede7a8942
+selection_rule: Read and parse the current document before using a pointer; filename recency alone is insufficient.
+prohibited:
+- selecting a lower preserved version because it appears later
+- treating latest filename alone as proof
+- promoting a historical pointer by model inference
+test:
+  no_historical_pointer_is_current: true
+freshness_gate_ref: governance/CURRENT_POINTER_FRESHNESS_GATE.yaml
+promotion_rule: selection proof must be recomputed immediately before promotion; old verification proof cannot substitute
+  for freshness proof
+source_fingerprint_registry: schemas/governance/PG_U00_SOURCE_FINGERPRINTS.yaml

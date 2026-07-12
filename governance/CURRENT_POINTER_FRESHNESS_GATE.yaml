@@ -1,0 +1,51 @@
+gate_id: PG_U00_CURRENT_POINTER_FRESHNESS_GATE_v0_1_2_PUBLIC
+state: candidate_not_canon
+purpose: Prevent promotion with source evidence that became stale after technical verification.
+execution_timing: immediately_before_Human_promotion_transaction
+required_compare:
+  active_boot:
+    file: 00_00_DIAMOND_OS_CORE_BOOT_DRAFT_ZIP_FIRST_FIT_v0_6_2_16.md
+    expected_version: v0.6.2.16
+    expected_sha256: e2b35618072213aa47c89f9617c1799a2606bea1b9ea371f8f667635e2fc7602
+  current_manifest_document:
+    source_path: 00_BOOTSTRAP_AND_INDEX/00_SOURCE_MANIFEST_CLEAN_FIT_v0_6_2_16.yaml
+    expected_sha256: 2df3fe9d661c2d8df9b96949bb900d6bcd4c708d190bb60b54289e6ffdd4b817
+  current_authority_index_document:
+    source_path: 99_INDEX_AND_COMPATIBILITY_MAPS/LATEST_AUTHORITY_INDEX.yaml
+    expected_sha256: 20144c48a16c3271388c4ee3b1dceabf0107ecb0032233824c298eeede7a8942
+  candidate_verification:
+    required_fields:
+    - unit_id
+    - candidate_version
+    - candidate_zip_sha256
+    - verification_timestamp
+    - verification_proof_ref
+  exact_legacy_source_hashes_ref: schemas/governance/PG_U00_SOURCE_FINGERPRINTS.yaml#primary_source_anchors
+pass_condition: all current pointers and exact source hashes match the verification basis and no newer Human authority
+  decision supersedes it
+mismatch_result: BLOCKED_STALE_PROMOTION_EVIDENCE
+proof_output:
+- freshness_check_id
+- checked_at
+- actual_hashes
+- expected_hashes
+- mismatches
+- verdict
+current_gate_state: NOT_EXECUTED
+claim_boundary:
+  source_apply: false
+  DB_write: false
+  RLDB_writeback: false
+  memory_writeback: false
+  canon: false
+  repo_create: false
+  commit: false
+  push: false
+  publish: false
+  runtime_activation: false
+fingerprint_registry: schemas/governance/PG_U00_SOURCE_FINGERPRINTS.yaml
+candidate_verification_basis:
+- Git_commit_sha
+- unit_tree_hash_or_content_manifest
+- validator_output
+- Human_gate_ref

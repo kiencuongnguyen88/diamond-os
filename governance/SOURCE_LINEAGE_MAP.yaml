@@ -1,0 +1,73 @@
+lineage_id: PG_U00_SOURCE_LINEAGE_MAP_v0_1_2_PUBLIC
+unit_id: PG-U00
+current_source_version: v0.6.2.16
+rules:
+  raw_source_evidence_is_not_stored_in_public_repo: true
+  source_fingerprints_preserve_public_lineage: true
+  preserved_legacy_documents_are_lineage_not_current_authority: true
+  generated_outputs_do_not_replace_active_source: true
+mappings:
+- anchor_id: A01
+  source: 00_READ_THIS_FIRST.md
+  hash: dd44d7474430d028d1142fc15b4dc578089fffb5a9982d8ab40886db75b84265
+  target:
+  - governance/SOURCE_AUTHORITY_PRECEDENCE.yaml
+  - governance/CLAIM_BOUNDARY_DEFAULTS.yaml
+  fingerprint_ref: schemas/governance/PG_U00_SOURCE_FINGERPRINTS.yaml#A01
+- anchor_id: A02
+  source: 00_BOOTSTRAP_AND_INDEX/00_SOURCE_MANIFEST_CLEAN_FIT_v0_6_2_16.yaml
+  hash: 78120138208d1b9f96771537e052ac2a40925fd30e1d2ecc34c0d3204475b79c
+  target:
+  - governance/SOURCE_AUTHORITY_PRECEDENCE.yaml
+  - governance/CURRENT_POINTER_POLICY.yaml
+  fingerprint_ref: schemas/governance/PG_U00_SOURCE_FINGERPRINTS.yaml#A02
+- anchor_id: A03
+  source: 99_INDEX_AND_COMPATIBILITY_MAPS/LATEST_AUTHORITY_INDEX.yaml
+  hash: 28a225c1b44cb5905a2f98c63529bcf58deb6036478a4b33c651abb64e6481dd
+  target:
+  - governance/SOURCE_AUTHORITY_PRECEDENCE.yaml
+  - governance/CURRENT_POINTER_POLICY.yaml
+  fingerprint_ref: schemas/governance/PG_U00_SOURCE_FINGERPRINTS.yaml#A03
+- anchor_id: A04
+  source: 01_ROUTING_AND_TASK_CORE/20_CROSS_SOURCE_QUERY/SOURCE_AUTHORITY_RULE.md
+  hash: e148669659ca01de742d6dc0f276ef6df165a2364901a68018c39cf926ad0856
+  target:
+  - governance/SOURCE_AUTHORITY_PRECEDENCE.yaml
+  - governance/CONFLICT_AND_FAIL_STOP_POLICY.yaml
+  fingerprint_ref: schemas/governance/PG_U00_SOURCE_FINGERPRINTS.yaml#A04
+- anchor_id: A05
+  source: 70_APPLY_GATES_AND_SANDBOX_PROTOCOLS/10_SANDBOX_APPLY_GATE/GPT_AUTONOMOUS_RUN_WITH_HUMAN_GATE_POLICY_v0_6_0.md
+  hash: d6337f38ae5541d08646ad69220a08f0c5ba3deb97a83b1b5a4b6b666e8bef74
+  target:
+  - governance/HUMAN_GATE_AND_RUN_POLICY.yaml
+  fingerprint_ref: schemas/governance/PG_U00_SOURCE_FINGERPRINTS.yaml#A05
+- anchor_id: A06
+  source: 70_APPLY_GATES_AND_SANDBOX_PROTOCOLS/10_SANDBOX_APPLY_GATE/PEER_AUDIT_BEFORE_IMPLEMENTATION_GATE_v0_1.md
+  hash: 96b757af7d4f05d22022a490f53afe0eeae982f66bf17998a9b70161fd2ed781
+  target:
+  - governance/PEER_AUDIT_GATE.yaml
+  fingerprint_ref: schemas/governance/PG_U00_SOURCE_FINGERPRINTS.yaml#A06
+candidate_extensions:
+- object: public_Git_and_legacy_state_machines
+  basis: Human-approved public Git planning package + v0.1.1 repair
+  source_fact: false
+- object: atomic_authority_promotion_transaction
+  basis: repair of authority-transfer ambiguity
+  source_fact: false
+- object: public_private_deny_rules
+  basis: Human corrections + privacy boundary evidence
+  source_fact: false
+- object: generated_artifact_non_authority_policy
+  basis: Git canonical/generated separation
+  source_fact: false
+- object: partial_overlap_authority_resolution
+  basis: dual-peer minor gap closure
+  source_fact: false
+- object: current_pointer_freshness_gate
+  basis: dual-peer promotion safety repair
+  source_fact: false
+- object: repo_import_allowlist
+  basis: dual-peer clean-repository repair
+  source_fact: false
+repository_ref: kiencuongnguyen88/diamond-os
+public_unit_state: GIT_CANDIDATE

@@ -1,0 +1,48 @@
+registry_id: PG_U00_SOURCE_FINGERPRINTS_v0_1
+unit_id: PG-U00
+source_pair:
+  version: v0.6.2.16
+  boot:
+    file: 00_00_DIAMOND_OS_CORE_BOOT_DRAFT_ZIP_FIRST_FIT_v0_6_2_16.md
+    bytes: 20612
+    sha256: e2b35618072213aa47c89f9617c1799a2606bea1b9ea371f8f667635e2fc7602
+  runtime_zip:
+    file: DIAMOND_OS_CORE_RUNTIME_SOURCE_FIT_v0_6_2_16.zip
+    bytes: 1846700
+    sha256: b2668113eb15d774ef770bc535371e8b65940bec0ce0b76c60febffaeb5ca273
+current_documents:
+  manifest:
+    source_path: 00_BOOTSTRAP_AND_INDEX/00_SOURCE_MANIFEST_CLEAN_FIT_v0_6_2_16.yaml
+    current_document_sha256: 2df3fe9d661c2d8df9b96949bb900d6bcd4c708d190bb60b54289e6ffdd4b817
+  authority_index:
+    source_path: 99_INDEX_AND_COMPATIBILITY_MAPS/LATEST_AUTHORITY_INDEX.yaml
+    current_document_sha256: 20144c48a16c3271388c4ee3b1dceabf0107ecb0032233824c298eeede7a8942
+primary_source_anchor_count: 6
+primary_source_anchors:
+- anchor_id: A01
+  path: 00_READ_THIS_FIRST.md
+  bytes: 54319
+  sha256: dd44d7474430d028d1142fc15b4dc578089fffb5a9982d8ab40886db75b84265
+- anchor_id: A02
+  path: 00_BOOTSTRAP_AND_INDEX/00_SOURCE_MANIFEST_CLEAN_FIT_v0_6_2_16.yaml
+  bytes: 67574
+  sha256: 78120138208d1b9f96771537e052ac2a40925fd30e1d2ecc34c0d3204475b79c
+- anchor_id: A03
+  path: 99_INDEX_AND_COMPATIBILITY_MAPS/LATEST_AUTHORITY_INDEX.yaml
+  bytes: 81827
+  sha256: 28a225c1b44cb5905a2f98c63529bcf58deb6036478a4b33c651abb64e6481dd
+- anchor_id: A04
+  path: 01_ROUTING_AND_TASK_CORE/20_CROSS_SOURCE_QUERY/SOURCE_AUTHORITY_RULE.md
+  bytes: 388
+  sha256: e148669659ca01de742d6dc0f276ef6df165a2364901a68018c39cf926ad0856
+- anchor_id: A05
+  path: 70_APPLY_GATES_AND_SANDBOX_PROTOCOLS/10_SANDBOX_APPLY_GATE/GPT_AUTONOMOUS_RUN_WITH_HUMAN_GATE_POLICY_v0_6_0.md
+  bytes: 1695
+  sha256: d6337f38ae5541d08646ad69220a08f0c5ba3deb97a83b1b5a4b6b666e8bef74
+- anchor_id: A06
+  path: 70_APPLY_GATES_AND_SANDBOX_PROTOCOLS/10_SANDBOX_APPLY_GATE/PEER_AUDIT_BEFORE_IMPLEMENTATION_GATE_v0_1.md
+  bytes: 3017
+  sha256: 96b757af7d4f05d22022a490f53afe0eeae982f66bf17998a9b70161fd2ed781
+raw_evidence_in_public_repo: false
+purpose: Public-safe source identity registry. Hashes and paths preserve lineage without importing raw legacy evidence.
+authority_note: Fingerprints are verification data, not a substitute for active source readback or Human authority.

@@ -1,0 +1,46 @@
+state_machine_id: PG_U00_PUBLIC_GIT_UNIT_STATE_MACHINE_v0_1_1
+object_type: public_Git_unit
+states:
+  GIT_CANDIDATE:
+    authority: false
+    meaning: candidate folder outside active source
+  GIT_VERIFIED:
+    authority: false
+    meaning: technical validation and required audits pass; verification is evidence, not authority
+  GIT_CANONICAL:
+    authority: true
+    requires:
+    - explicit_Human_Gate
+    - exact_unit_version_hash
+    - technical_proof
+    - completed_atomic_promotion_ledger
+  SUPERSEDED:
+    authority: false
+    meaning: replaced candidate with lineage retained
+  DEFERRED:
+    authority: false
+    meaning: deliberately postponed
+  BLOCKED:
+    authority: false
+    required_fields:
+    - blocked_from_state
+    - block_reason
+    - missing_requirement
+allowed_transitions:
+- GIT_CANDIDATE->GIT_VERIFIED
+- GIT_VERIFIED->GIT_CANONICAL_via_atomic_promotion
+- GIT_CANDIDATE->SUPERSEDED
+- GIT_CANDIDATE->DEFERRED
+- GIT_VERIFIED->DEFERRED
+- any_nonterminal->BLOCKED
+- BLOCKED->blocked_from_state_only_after_repair_proof
+blocked_resume_rule:
+  deterministic: true
+  required:
+  - same_object_id
+  - recorded_blocked_from_state
+  - repair_proof
+  - missing_requirement_resolved
+  forbidden: resume_to_unspecified_prior_state
+current_unit_state: GIT_CANDIDATE
+canon: false

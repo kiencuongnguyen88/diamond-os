@@ -1,0 +1,47 @@
+policy_id: PG_U00_CLAIM_BOUNDARY_DEFAULTS_v0_1_1
+defaults:
+  source_apply: false
+  DB_write: false
+  RLDB_writeback: false
+  memory_writeback: false
+  canon: false
+  repo_create: false
+  commit: false
+  push: false
+  publish: false
+  runtime_activation: false
+proof_required_to_change_state:
+  source_apply:
+  - explicit_Human_gate
+  - exact_target
+  - post_action_readback
+  DB_write:
+  - explicit_Human_gate
+  - current_pointer
+  - backup_or_transaction_proof
+  - integrity_readback
+  RLDB_writeback:
+  - explicit_Human_gate
+  - current_pointer
+  - write_proof
+  - readback
+  canon:
+  - explicit_Human_gate
+  - exact_unit_version_hash
+  - technical_verification
+  - atomic_promotion_ledger
+  commit:
+  - explicit_Human_gate
+  - exact_repo_branch
+  - diff_readback
+  push:
+  - explicit_Human_gate
+  - remote_ref_readback
+  publish:
+  - explicit_Human_gate
+  - release_content_privacy_readback
+  runtime_activation:
+  - explicit_Human_gate
+  - activation_proof
+  - post_activation_readback
+blocked_overclaim: Any true claim without its proof packet is BLOCKED_OVERCLAIM.

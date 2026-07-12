@@ -1,0 +1,39 @@
+policy_id: PG_U00_HUMAN_GATE_AND_RUN_POLICY_v0_1_2_PUBLIC
+state: candidate_not_canon
+machine_run_before_Human_gate:
+- lock_task_scope
+- create_sandbox
+- read_required_source_or_DB_readonly
+- classify_role_and_target
+- run_BFL_until_converged_or_blocked
+- create_candidate_or_repair
+- dry_run_or_sandbox_copy_test_if_applicable
+- readback_proof
+- emit_verdict
+Human_gate_options:
+- approve
+- reject
+- revise
+- fail_retry
+stop_for_Human_when:
+- live_adoption_or_replacement
+- destructive_or_external_action
+- unresolved_authority_conflict
+- canon_promotion
+- repo_import_commit_push_publish
+- DB_or_RLDB_write
+- runtime_activation
+approval_scope_rule: Approval must name exact unit/version/hash and does not authorize another unit or authority
+  action.
+candidate_build_by_this_unit: allowed_in_sandbox_or_repository_worktree_before_Human_authority_promotion
+claim_boundary:
+  source_apply: false
+  DB_write: false
+  RLDB_writeback: false
+  memory_writeback: false
+  canon: false
+  repo_create: false
+  commit: false
+  push: false
+  publish: false
+  runtime_activation: false

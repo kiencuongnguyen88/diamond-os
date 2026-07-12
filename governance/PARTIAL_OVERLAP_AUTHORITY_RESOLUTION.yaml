@@ -1,0 +1,60 @@
+policy_id: PG_U00_PARTIAL_OVERLAP_AUTHORITY_RESOLUTION_v0_1_2
+state: candidate_not_canon
+purpose: Resolve a request that intersects promoted Git scope and unmigrated legacy scope without extending either
+  authority by inference.
+applies_when: requested object set intersects at least one PROMOTED_UNIT_SCOPE and at least one UNMIGRATED_SCOPE,
+  or intersects multiple exact promoted units
+required_inputs:
+- requested_object_ids_or_machine_resolvable_scope
+- promotion_ledgers_for_all_intersected_units
+- current_legacy_pointer_for_unmigrated_segments
+- provenance_ref_per_segment
+segmentation_algorithm:
+- step: 1
+  action: normalize requested objects into the smallest independently authoritative segments
+- step: 2
+  action: map each segment to exactly one completed promotion ledger or to UNMIGRATED_SCOPE
+- step: 3
+  action: resolve promoted segments from exact Git canonical commit/content hash
+- step: 4
+  action: resolve unmigrated segments from current active legacy source
+- step: 5
+  action: retain authority class and provenance on every segment in the combined response
+hard_rules:
+  cross_segment_authority_inference: false
+  Git_authority_may_expand_beyond_exact_promoted_scope: false
+  legacy_authority_may_override_exact_promoted_scope: false
+  combined_answer_must_preserve_segment_provenance: true
+  unsegmentable_request_may_be_answered_by_guess: false
+scenario_matrix:
+- scenario: fully_promoted_request
+  resolution: PROMOTED_UNIT_SCOPE
+- scenario: fully_unmigrated_request
+  resolution: UNMIGRATED_SCOPE
+- scenario: one_promoted_plus_legacy
+  resolution: PARTITION_AND_RESOLVE_PER_SEGMENT
+- scenario: multiple_promoted_units_plus_legacy
+  resolution: PARTITION_BY_PROMOTION_LEDGER_AND_LEGACY_SCOPE
+- scenario: unsegmentable_request
+  resolution: BLOCKED_PARTIAL_SCOPE_AUTHORITY_AMBIGUITY
+- scenario: conflicting_provenance
+  resolution: SURFACE_TO_HUMAN_DO_NOT_RESOLVE_SILENTLY
+required_output:
+- segment_id
+- object_scope
+- authority_mode
+- authority_ref
+- provenance_ref
+- resolution_status
+fail_stop: BLOCKED_PARTIAL_SCOPE_AUTHORITY_AMBIGUITY
+claim_boundary:
+  source_apply: false
+  DB_write: false
+  RLDB_writeback: false
+  memory_writeback: false
+  canon: false
+  repo_create: false
+  commit: false
+  push: false
+  publish: false
+  runtime_activation: false
