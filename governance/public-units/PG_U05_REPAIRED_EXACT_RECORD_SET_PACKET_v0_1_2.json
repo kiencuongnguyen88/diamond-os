@@ -1,0 +1,104 @@
+{
+  "packet_id": "PG_U05_REPAIRED_EXACT_RECORD_SET_PACKET_v0_1_2",
+  "created_at_utc": "2026-07-13T10:25:18+00:00",
+  "unit_id": "PG-U05",
+  "state": "PENDING_REPAIRED_EXACT_RECORD_SET_APPROVAL",
+  "original_gate": {
+    "gate_id": "HUMAN_APPROVES_EXACT_PG_U05_PUBLIC_RLDB_RECORD_SET_v0_1",
+    "effect": "approved_original_v0_1_bytes_only",
+    "superseded_for_repaired_fixture_bytes": true
+  },
+  "required_new_gate": "HUMAN_APPROVES_REPAIRED_EXACT_PG_U05_PUBLIC_RLDB_RECORD_SET_v0_1_2",
+  "record_set": {
+    "system_protocol_rows": 30,
+    "synthetic_fixture_bundles": 4,
+    "live_RLDB_rows": 0,
+    "tracked_SQLite_binaries": 0
+  },
+  "original_approved_hashes": {
+    "system_rows_sha256": "64c499a710bcf49410544d0f82d1e3fa1a0bdffed7fa07c952ca3137e79f37f6",
+    "privacy_classification_sha256": "a2de47f8f1013b2eadf8ff5fa47204666cbbed804888d4b65c254f64170c9d12",
+    "synthetic_fixtures_sha256": "a1516fbe4cefdf696852398208d1de6d662c802ee99d9a96b7ab14b8ef0240ca"
+  },
+  "repaired_candidate_hashes": {
+    "system_rows_sha256": "8c226c5bd79d8621969ed3aa117e117a565e9b3acf052931764869ec29fb85b4",
+    "privacy_classification_sha256": "06718d2ccc652fcd9a423348cbbdb08485ea357a1255415e05b8f930f9f28377",
+    "synthetic_fixtures_sha256": "17bbb3cc163af0a360a96ae2f67439b3f66914d29429bbc89993e61c02d376a3"
+  },
+  "semantic_delta_count": 8,
+  "semantic_deltas": [
+    {
+      "fixture_id": "PUB-RL-001",
+      "path": "rows.rldb_recall_index.saturation_state",
+      "approved_v0_1": "fixture_complete",
+      "repaired_v0_1_2": "reached",
+      "reason": "Align with active RLDB CHECK constraint."
+    },
+    {
+      "fixture_id": "PUB-RL-001",
+      "path": "rows.drc_import_rldb_eval_cases.learning_state",
+      "approved_v0_1": "reference",
+      "repaired_v0_1_2": "evidence_only",
+      "reason": "Align with active RLDB CHECK constraint."
+    },
+    {
+      "fixture_id": "PUB-RL-002",
+      "path": "rows.rldb_recall_index.saturation_state",
+      "approved_v0_1": "fixture_complete",
+      "repaired_v0_1_2": "reached",
+      "reason": "Align with active RLDB CHECK constraint."
+    },
+    {
+      "fixture_id": "PUB-RL-002",
+      "path": "rows.drc_import_rldb_eval_cases.learning_state",
+      "approved_v0_1": "reference",
+      "repaired_v0_1_2": "evidence_only",
+      "reason": "Align with active RLDB CHECK constraint."
+    },
+    {
+      "fixture_id": "PUB-RL-003",
+      "path": "rows.rldb_recall_index.saturation_state",
+      "approved_v0_1": "fixture_complete",
+      "repaired_v0_1_2": "reached",
+      "reason": "Align with active RLDB CHECK constraint."
+    },
+    {
+      "fixture_id": "PUB-RL-003",
+      "path": "rows.drc_import_rldb_eval_cases.learning_state",
+      "approved_v0_1": "reference",
+      "repaired_v0_1_2": "evidence_only",
+      "reason": "Align with active RLDB CHECK constraint."
+    },
+    {
+      "fixture_id": "PUB-RL-004",
+      "path": "rows.rldb_recall_index.saturation_state",
+      "approved_v0_1": "fixture_complete",
+      "repaired_v0_1_2": "reached",
+      "reason": "Align with active RLDB CHECK constraint."
+    },
+    {
+      "fixture_id": "PUB-RL-004",
+      "path": "rows.drc_import_rldb_eval_cases.learning_state",
+      "approved_v0_1": "observe",
+      "repaired_v0_1_2": "evidence_only",
+      "reason": "Align with active RLDB CHECK constraint."
+    }
+  ],
+  "metadata_normalization": {
+    "system_row_gate_states_changed": 30,
+    "privacy_classification_gate_states_changed": 30,
+    "fixture_gate_states_changed": 4,
+    "normalized_state": "PENDING_REPAIRED_EXACT_RECORD_SET_APPROVAL"
+  },
+  "claim_boundary": {
+    "repository_mutation": false,
+    "commit": false,
+    "push": false,
+    "source_apply": false,
+    "DB_write": false,
+    "RLDB_writeback": false,
+    "canon": false,
+    "runtime_activation": false,
+    "publish": false
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "canon": false,
+  "claim_boundary": {
+    "DB_write": false,
+    "RLDB_writeback": false,
+    "canon": false,
+    "commit": false,
+    "implementation": false,
+    "publish": false,
+    "push": false,
+    "repository_mutation": false,
+    "runtime_activation": false,
+    "source_apply": false
+  },
+  "contract_id": "PG_U05_PUBLIC_SUBSET_CANDIDATE_v0_1",
+  "created_at_utc": "2026-07-13T08:03:15+00:00",
+  "human_selection": {
+    "original_gate": "HUMAN_APPROVES_EXACT_PG_U05_PUBLIC_RLDB_RECORD_SET_v0_1",
+    "original_gate_effect": "approved_original_v0_1_bytes_only",
+    "repaired_gate": "HUMAN_APPROVES_REPAIRED_EXACT_PG_U05_PUBLIC_RLDB_RECORD_SET_v0_1_2",
+    "repaired_gate_consumed": true,
+    "normalized_record_level_state": "APPROVED_REPAIRED_EXACT_RECORD_SET"
+  },
+  "privacy_boundary": {
+    "all_30_system_rows_direct_identifier_scan": "PASS",
+    "all_30_system_rows_prohibited_field_scan": "PASS",
+    "default_policy": "EXCLUDE",
+    "live_DB_binary_included": false,
+    "live_learning_records_included": false,
+    "private_capture_rows_included": false,
+    "raw_edge_rows_included": false,
+    "record_level_classification_file": "PG_U05_RECORD_LEVEL_PRIVACY_CLASSIFICATION_v0_1.jsonl",
+    "record_level_classification_sha256": "52a2c0d777256406ab88eef01bda4db4c20614e366aae9273ae26d021a0c5cc9",
+    "synthetic_fixture_live_row_equality_scan": "PASS",
+    "synthetic_fixture_privacy_scan": "PASS"
+  },
+  "record_scope": {
+    "live_rows_exported": 0,
+    "synthetic_fixture_bundles": {
+      "candidate_file": "PG_U05_SYNTHETIC_PUBLIC_FIXTURES_CANDIDATE_v0_1.jsonl",
+      "candidate_file_sha256": "123c947553772114d92260998fde9c765b71d3ea011aebad397bde54f409242c",
+      "common_synthetic_project_code": "PUBLIC_RLDB",
+      "count": 4
+    },
+    "system_protocol_rows": {
+      "candidate_file": "PG_U05_PUBLIC_SYSTEM_PROTOCOL_ROWS_CANDIDATE_v0_1.jsonl",
+      "candidate_file_sha256": "c6afd40a0632cda8bc0bd6236868e6869522051474f0ac86b009517212ee69d7",
+      "count": 30,
+      "tables": {
+        "learning_types": 11,
+        "lifecycle_status": 9,
+        "lifecycle_transition_rules": 7,
+        "rldb_hold_protocols": 3
+      }
+    }
+  },
+  "repository_continuity_for_future_unit": {
+    "PG_U03_README_gate_residual": "MUST_CLOSE_BEFORE_OR_IN_PG_U05_ATOMIC_UNIT",
+    "PG_U04_README_and_ledger_residual": "MUST_CLOSE_BEFORE_OR_IN_PG_U05_ATOMIC_UNIT",
+    "base_HEAD": "3bd2c1d4685d1519b02e559f33f09185ef20de79",
+    "repository_files_built_now": false
+  },
+  "schema_scope_reference": {
+    "mode": "DDL_and_contract_semantics_only",
+    "source_scope_file": "PG_U05_EXACT_SOURCE_SCOPE_MAP_v0_1.yaml",
+    "tables": 15,
+    "views": 11
+  },
+  "source_refs": [
+    {
+      "id": "PGU05-SRC-A01",
+      "role": "active_RLDB_read_only",
+      "sha256": "e22340e6b332a65dc50803c5f3f1f1dc17c422bc84fb5c219dbdee62d32caf9b"
+    },
+    {
+      "id": "PGU05-SRC-A02",
+      "role": "exact_source_scope",
+      "sha256": "ed787bd379268a1b62c03c6921ea7f0f4d29754eb48fb5e352e88fd6e0f5fc3e"
+    },
+    {
+      "id": "PGU05-CONTINUITY-A01",
+      "role": "Project_anchor",
+      "sha256": "98e1015ba59b1610d27b25c9d320f3cb8148ce0fb5ed48d07f7bdc043f70e3fe"
+    },
+    {
+      "id": "PGU05-PROOF-A01",
+      "role": "Project_anchor_post_replace_readback",
+      "sha256": "99925862d3b0a627e5170a8737134ecb54aaea2bde3f130a1566fe079a540f85"
+    }
+  ],
+  "state": "HUMAN_APPROVED_REPAIRED_EXACT_RECORD_SET_REPOSITORY_CANDIDATE",
+  "unit_id": "PG-U05",
+  "unit_name": "rldb_public_protocol_and_schema_core",
+  "repository_candidate": {
+    "built": true,
+    "version": "v0.1.3",
+    "base_HEAD": "3bd2c1d4685d1519b02e559f33f09185ef20de79",
+    "base_tree": "8be476f59d6b6595046c64a4b212878d57f261a3",
+    "exact_candidate_tree": "PENDING_CODEX_DISPOSABLE_WORKTREE_RECOMPUTE",
+    "commit_authorized": false,
+    "push_authorized": false
+  },
+  "repair_packet": {
+    "path": "governance/public-units/PG_U05_REPAIRED_EXACT_RECORD_SET_PACKET_v0_1_2.json",
+    "sha256": "8bbb7a90417eb99f907548606ae19e99cc78bace3a3d951cb0d006064c28fa38",
+    "semantic_delta_count": 8,
+    "state": "PENDING_REPAIRED_EXACT_RECORD_SET_APPROVAL"
+  },
+  "approval_registration": {
+    "path": "governance/public-units/PG_U05_REPAIRED_EXACT_RECORD_SET_APPROVAL_v0_1_2.json",
+    "sha256": "d9db731b2cc679d55b3701b916bf58a80459619ad5c4463085698695f403dce2",
+    "approval_proof_sha256": "5070f6a7c5a29eb2d535556836e8fe83bbd6d140157d3715d514896001d5e8d5",
+    "state": "APPROVED_REPAIRED_EXACT_RECORD_SET"
+  }
+}

@@ -54,8 +54,8 @@
     },
     {
       "path": "tests/validate_pg_u04.py",
-      "bytes": 15088,
-      "sha256": "c17ef9b783cb833354c8ca68e5cdf0573fc88b5e0530160a6ad01672c2852d1f"
+      "bytes": 15615,
+      "sha256": "f57a5f1133159a0a2129d4442949a872acfa03a0500103ac5143f4adf1af9e55"
     },
     {
       "path": "data/sun-graph/seeds/sun_layers.jsonl",

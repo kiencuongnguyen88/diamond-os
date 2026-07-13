@@ -4,7 +4,7 @@
   "repository": {
     "full_name": "kiencuongnguyen88/diamond-os",
     "branch": "main",
-    "base_head": "34f7caa61c9aa8afe8723170bb50982ab406e2f3"
+    "base_head": "3bd2c1d4685d1519b02e559f33f09185ef20de79"
   },
   "units": [
     {
@@ -242,18 +242,84 @@
         }
       ],
       "human_gate": {
-        "state": "candidate_build_allowed_commit_gate_pending",
+        "state": "repository_commit_gate_consumed_canon_gate_pending",
         "action": "approve_sun_graph_git_native_core_and_atomic_unit_commit",
         "exact_scope": "PG-U04"
       },
       "proof_refs": [
-        "tests/validate_pg_u04.py",
-        "PG_U04_SOURCE_MAPPING_v0_1",
-        "PG_U04_OPTION_A_HUMAN_SELECTION_v0_1"
+        "https://github.com/kiencuongnguyen88/diamond-os/commit/3bd2c1d4685d1519b02e559f33f09185ef20de79",
+        "PG_U04_POST_PUSH_CLOSEOUT_READBACK_v0_1.yaml",
+        "tests/validate_pg_u04.py"
+      ],
+      "repository_binding": {
+        "mode": "exact_commit",
+        "base_commit": "34f7caa61c9aa8afe8723170bb50982ab406e2f3",
+        "commit_sha": "3bd2c1d4685d1519b02e559f33f09185ef20de79"
+      },
+      "claim_boundary": {
+        "source_apply": false,
+        "DB_write": false,
+        "RLDB_writeback": false,
+        "canon": false,
+        "commit": false,
+        "push": false,
+        "publish": false,
+        "runtime_activation": false
+      }
+    },
+    {
+      "unit_id": "PG-U05",
+      "name": "rldb_public_protocol_and_schema_core",
+      "migration_order": 6,
+      "state": "GIT_CANDIDATE",
+      "authority": false,
+      "canon": false,
+      "dependency_unit_ids": [
+        "PG-U00",
+        "PG-U01",
+        "PG-U03"
+      ],
+      "source_hashes": [
+        {
+          "source_ref_id": "PGU05-ACTIVE-RLDB",
+          "sha256": "e22340e6b332a65dc50803c5f3f1f1dc17c422bc84fb5c219dbdee62d32caf9b"
+        },
+        {
+          "source_ref_id": "PGU05-PUBLIC-SUBSET-CONTRACT",
+          "sha256": "7b724c2717c2c625a7dd3916c59ad304805bff75df94764e7497b266d105dd4d"
+        },
+        {
+          "source_ref_id": "PGU05-PRIVACY-CLASSIFICATION",
+          "sha256": "52a2c0d777256406ab88eef01bda4db4c20614e366aae9273ae26d021a0c5cc9"
+        },
+        {
+          "source_ref_id": "PGU05-SYNTHETIC-FIXTURES",
+          "sha256": "123c947553772114d92260998fde9c765b71d3ea011aebad397bde54f409242c"
+        },
+        {
+          "source_ref_id": "PGU05-REPAIRED-EXACT-RECORD-SET",
+          "sha256": "8bbb7a90417eb99f907548606ae19e99cc78bace3a3d951cb0d006064c28fa38"
+        },
+        {
+          "source_ref_id": "PGU05-REPAIRED-EXACT-RECORD-SET-APPROVAL",
+          "sha256": "d9db731b2cc679d55b3701b916bf58a80459619ad5c4463085698695f403dce2"
+        }
+      ],
+      "human_gate": {
+        "state": "repaired_exact_record_set_gate_consumed_repository_commit_gate_pending",
+        "action": "build_and_audit_exact_repository_candidate_before_atomic_commit",
+        "exact_scope": "PG-U05-v0.1.3"
+      },
+      "proof_refs": [
+        "governance/public-units/PG_U05_REPAIRED_EXACT_RECORD_SET_APPROVAL_v0_1_2.json",
+        "governance/public-units/PG_U05_REPAIRED_EXACT_RECORD_SET_PACKET_v0_1_2.json",
+        "governance/public-units/PG_U05_RLDB_PUBLIC_CORE.yaml",
+        "docs/PG_U05_RLDB_PUBLIC_CORE.md",
+        "tests/validate_pg_u05.py"
       ],
       "repository_binding": {
         "mode": "containing_commit",
-        "base_commit": "34f7caa61c9aa8afe8723170bb50982ab406e2f3",
+        "base_commit": "3bd2c1d4685d1519b02e559f33f09185ef20de79",
         "commit_sha": null
       },
       "claim_boundary": {

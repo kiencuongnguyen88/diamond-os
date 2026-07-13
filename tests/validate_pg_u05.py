@@ -1,0 +1,98 @@
+from __future__ import annotations
+import hashlib, json, sqlite3, subprocess, sys, tempfile
+from pathlib import Path
+ROOT=Path(__file__).resolve().parents[1]
+APPROVED='APPROVED_REPAIRED_EXACT_RECORD_SET'
+GATE='HUMAN_APPROVES_REPAIRED_EXACT_PG_U05_PUBLIC_RLDB_RECORD_SET_v0_1_2'
+APPROVAL_PROOF_SHA='5070f6a7c5a29eb2d535556836e8fe83bbd6d140157d3715d514896001d5e8d5'
+R=[]
+def check(n,c,d=''):R.append({'name':n,'result':'PASS' if c else 'FAIL','detail':'' if c else d})
+def j(p):return json.loads((ROOT/p).read_text(encoding='utf-8'))
+def jl(p):return [json.loads(x) for x in (ROOT/p).read_text(encoding='utf-8').splitlines() if x.strip()]
+def sha(p):return hashlib.sha256((ROOT/p).read_bytes()).hexdigest()
+def canon(v):return hashlib.sha256((json.dumps(v,ensure_ascii=False,sort_keys=True,separators=(',',':'))+'\n').encode()).hexdigest()
+subset=j('data/rldb/public-subset-contract.json')
+rows=jl('data/rldb/public-system-protocol-rows.jsonl')
+classes=jl('data/rldb/record-level-privacy-classification.jsonl')
+fixtures=jl('data/rldb/synthetic-public-fixtures.jsonl')
+ledger=j('data/source-ledger/public-unit-ledger.json')
+packet=j('governance/public-units/PG_U05_REPAIRED_EXACT_RECORD_SET_PACKET_v0_1_2.json')
+approval=j('governance/public-units/PG_U05_REPAIRED_EXACT_RECORD_SET_APPROVAL_v0_1_2.json')
+unit=(ROOT/'governance/public-units/PG_U05_RLDB_PUBLIC_CORE.yaml').read_text(encoding='utf-8')
+readme=(ROOT/'README.md').read_text(encoding='utf-8')
+check('subset_unit',subset['unit_id']=='PG-U05')
+check('subset_approved',subset['state']=='HUMAN_APPROVED_REPAIRED_EXACT_RECORD_SET_REPOSITORY_CANDIDATE')
+check('rows_30',len(rows)==30);check('classes_30',len(classes)==30);check('fixtures_4',len(fixtures)==4)
+check('all_row_states_approved',all(r['human_gate_state']==APPROVED for r in rows))
+check('all_class_states_approved',all(r['human_gate_state']==APPROVED for r in classes))
+check('all_fixture_states_approved',all(f['human_gate_state']==APPROVED and f['state']==APPROVED for f in fixtures))
+check('privacy_join',{r['public_record_id'] for r in rows}=={c['public_record_id'] for c in classes})
+check('all_privacy_scans_pass',all(c['direct_identifier_scan']=='PASS' and c['prohibited_field_overlap_scan']=='PASS' for c in classes))
+check('approval_registration_id',approval['registration_id']=='PG_U05_REPAIRED_EXACT_RECORD_SET_APPROVAL_v0_1_2')
+check('approval_state',approval['state']==APPROVED)
+check('approval_gate',approval['Human_gate']['gate_id']==GATE and approval['Human_gate']['consumed'] is True)
+check('approval_proof_hash',approval['Human_gate']['approval_proof_sha256']==APPROVAL_PROOF_SHA)
+check('record_set_gate_scope_exact',approval['Human_gate']['scope']=='repaired_record_set_bytes_only')
+check('state_registration_build_gate_exact',approval['state_registration_build_gate']['gate_id']=='HUMAN_APPROVES_BUILD_PG_U05_POST_GATE_STATE_REGISTRATION_CANDIDATE_v0_1_3')
+check('state_registration_build_scope_exact',approval['state_registration_build_gate']['scope']=='local_candidate_build_only_no_repository_mutation')
+check('state_registration_build_gate_consumed',approval['state_registration_build_gate']['consumed'] is True)
+check('authority_roles_separated',approval['authority_separation']['scope_collapse_forbidden'] is True)
+check('record_set_gate_does_not_authorize_state_build','state_registration_candidate_build' in approval['Human_gate']['does_not_authorize'])
+check('state_build_gate_does_not_authorize_commit','commit' in approval['state_registration_build_gate']['does_not_authorize'] and 'push' in approval['state_registration_build_gate']['does_not_authorize'])
+check('approval_packet_hash',approval['approved_pre_registration_hashes']['repair_packet_sha256']==sha('governance/public-units/PG_U05_REPAIRED_EXACT_RECORD_SET_PACKET_v0_1_2.json'))
+check('approval_post_system_hash',approval['post_registration_candidate_hashes']['system_protocol_rows_sha256']==sha('data/rldb/public-system-protocol-rows.jsonl'))
+check('approval_post_class_hash',approval['post_registration_candidate_hashes']['privacy_classification_sha256']==sha('data/rldb/record-level-privacy-classification.jsonl'))
+check('approval_post_fixture_hash',approval['post_registration_candidate_hashes']['synthetic_fixture_bundles_sha256']==sha('data/rldb/synthetic-public-fixtures.jsonl'))
+check('semantic_system_preserved',approval['semantic_preservation']['system_rows_pre_sha256']==approval['semantic_preservation']['system_rows_post_sha256'])
+check('semantic_class_preserved',approval['semantic_preservation']['privacy_classifications_pre_sha256']==approval['semantic_preservation']['privacy_classifications_post_sha256'])
+check('semantic_fixture_preserved',approval['semantic_preservation']['synthetic_fixtures_pre_sha256']==approval['semantic_preservation']['synthetic_fixtures_post_sha256'])
+check('semantic_changed_false',approval['semantic_preservation']['semantic_content_changed'] is False)
+system_sem=[{'public_record_id':r['public_record_id'],'source_row_sha256':r['source_row_sha256'],'row':r['row']} for r in rows]
+class_sem=[{k:v for k,v in r.items() if k!='human_gate_state'} for r in classes]
+fixture_sem=[{'fixture_id':f['fixture_id'],'theme':f['theme'],'provenance':f['provenance'],'privacy':f['privacy'],'rows':f['rows'],'fixture_content_sha256':f['fixture_content_sha256']} for f in fixtures]
+check('semantic_system_recompute',canon(system_sem)==approval['semantic_preservation']['system_rows_post_sha256'])
+check('semantic_class_recompute',canon(class_sem)==approval['semantic_preservation']['privacy_classifications_post_sha256'])
+check('semantic_fixture_recompute',canon(fixture_sem)==approval['semantic_preservation']['synthetic_fixtures_post_sha256'])
+check('source_row_hashes_recompute',all(hashlib.sha256((json.dumps(r['row'],ensure_ascii=False,sort_keys=True,separators=(',',':'))+'\n').encode()).hexdigest()==r['source_row_sha256'] for r in rows))
+check('fixture_content_hashes_recompute',all(hashlib.sha256((json.dumps(f['rows'],ensure_ascii=False,sort_keys=True,separators=(',',':'))+'\n').encode()).hexdigest()==f['fixture_content_sha256'] for f in fixtures))
+check('fixture_saturation_valid',all(f['rows']['rldb_recall_index']['saturation_state']=='reached' for f in fixtures))
+check('fixture_eval_state_valid',all(f['rows']['drc_import_rldb_eval_cases']['learning_state']=='evidence_only' for f in fixtures))
+check('packet_semantic_delta_8',packet['semantic_delta_count']==8)
+check('subset_gate_consumed',subset['human_selection']['repaired_gate']==GATE and subset['human_selection']['repaired_gate_consumed'] is True)
+check('subset_state_approved',subset['human_selection']['normalized_record_level_state']==APPROVED)
+check('subset_approval_hash',subset['approval_registration']['sha256']==sha('governance/public-units/PG_U05_REPAIRED_EXACT_RECORD_SET_APPROVAL_v0_1_2.json'))
+check('subset_approval_proof_hash',subset['approval_registration']['approval_proof_sha256']==APPROVAL_PROOF_SHA)
+check('subset_system_hash',subset['record_scope']['system_protocol_rows']['candidate_file_sha256']==sha('data/rldb/public-system-protocol-rows.jsonl'))
+check('subset_class_hash',subset['privacy_boundary']['record_level_classification_sha256']==sha('data/rldb/record-level-privacy-classification.jsonl'))
+check('subset_fixture_hash',subset['record_scope']['synthetic_fixture_bundles']['candidate_file_sha256']==sha('data/rldb/synthetic-public-fixtures.jsonl'))
+pg5=next(u for u in ledger['units'] if u['unit_id']=='PG-U05')
+check('ledger_gate_consumed',pg5['human_gate']['state']=='repaired_exact_record_set_gate_consumed_repository_commit_gate_pending')
+check('ledger_gate_exact',pg5['human_gate']['exact_scope']=='PG-U05-v0.1.3' and set(pg5['human_gate'])=={'state','action','exact_scope'})
+check('ledger_commit_null',pg5['repository_binding']['commit_sha'] is None)
+check('unit_approved_state',f'normalized_record_level_state: {APPROVED}' in unit)
+check('unit_gate_consumed','repaired_exact_record_set: consumed' in unit and f'consumed_gate: {GATE}' in unit)
+check('unit_approval_hash',sha('governance/public-units/PG_U05_REPAIRED_EXACT_RECORD_SET_APPROVAL_v0_1_2.json') in unit)
+check('README_gate_consumed','Repaired v0.1.2 exact record-set gate: consumed' in readme)
+check('README_registration','Post-gate approval registration: recorded and hash-bound' in readme)
+check('README_commit_pending','Repository commit gate: pending exact-tree proof and separate Human Gate' in readme)
+check('live_rows_0',subset['record_scope']['live_rows_exported']==0)
+check('no_db_binary',not list(ROOT.rglob('*.db')))
+with tempfile.TemporaryDirectory() as td:
+ target=Path(td)/'pg_u05.db'
+ p=subprocess.run([sys.executable,'-S',str(ROOT/'tools/build_pg_u05_public_rldb.py'),str(target)],capture_output=True,text=True)
+ check('builder_exit_0',p.returncode==0,p.stdout+p.stderr)
+ if target.exists():
+  con=sqlite3.connect(target)
+  check('generated_quick_check',con.execute('PRAGMA quick_check').fetchone()[0]=='ok')
+  check('generated_FK0',not con.execute('PRAGMA foreign_key_check').fetchall())
+  check('generated_tables_15',con.execute("SELECT COUNT(*) FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%'").fetchone()[0]==15)
+  check('generated_views_11',con.execute("SELECT COUNT(*) FROM sqlite_master WHERE type='view'").fetchone()[0]==11)
+  check('generated_system_rows',sum(con.execute(f'SELECT COUNT(*) FROM "{t}"').fetchone()[0] for t in ['learning_types','lifecycle_status','lifecycle_transition_rules','rldb_hold_protocols'])==30)
+  check('generated_synthetic_records',con.execute("SELECT COUNT(*) FROM learning_records WHERE project_code='PUBLIC_RLDB'").fetchone()[0]==4)
+  con.close()
+for u in ledger['units']:
+ for key in ['source_apply','DB_write','RLDB_writeback','canon','commit','push','publish','runtime_activation']:
+  check(f'{u["unit_id"]}_{key}_false',u['claim_boundary'][key] is False)
+passed=sum(x['result']=='PASS' for x in R);failed=len(R)-passed
+print(json.dumps({'validator':'validate_pg_u05_v0_1_3','total':len(R),'pass':passed,'fail':failed,'verdict':'PASS' if failed==0 else 'FAIL','results':R},indent=2))
+raise SystemExit(0 if failed==0 else 1)

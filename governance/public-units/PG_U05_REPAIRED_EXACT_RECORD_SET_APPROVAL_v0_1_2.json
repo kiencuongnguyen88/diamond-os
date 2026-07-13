@@ -1,0 +1,112 @@
+{
+  "registration_id": "PG_U05_REPAIRED_EXACT_RECORD_SET_APPROVAL_v0_1_2",
+  "created_at_utc": "2026-07-13T10:48:47+00:00",
+  "unit_id": "PG-U05",
+  "state": "APPROVED_REPAIRED_EXACT_RECORD_SET",
+  "Human_gate": {
+    "gate_id": "HUMAN_APPROVES_REPAIRED_EXACT_PG_U05_PUBLIC_RLDB_RECORD_SET_v0_1_2",
+    "consumed": true,
+    "scope": "repaired_record_set_bytes_only",
+    "approval_proof_sha256": "5070f6a7c5a29eb2d535556836e8fe83bbd6d140157d3715d514896001d5e8d5",
+    "does_not_authorize": [
+      "state_registration_candidate_build",
+      "repository_mutation",
+      "Codex_apply",
+      "exact_tree_computation",
+      "commit",
+      "push",
+      "source_apply",
+      "DB_write",
+      "RLDB_writeback",
+      "canon_promotion",
+      "runtime_activation",
+      "publish"
+    ]
+  },
+  "approved_pre_registration_hashes": {
+    "repair_packet_sha256": "8bbb7a90417eb99f907548606ae19e99cc78bace3a3d951cb0d006064c28fa38",
+    "system_protocol_rows_sha256": "8c226c5bd79d8621969ed3aa117e117a565e9b3acf052931764869ec29fb85b4",
+    "privacy_classification_sha256": "06718d2ccc652fcd9a423348cbbdb08485ea357a1255415e05b8f930f9f28377",
+    "synthetic_fixture_bundles_sha256": "17bbb3cc163af0a360a96ae2f67439b3f66914d29429bbc89993e61c02d376a3"
+  },
+  "post_registration_candidate_hashes": {
+    "system_protocol_rows_sha256": "c6afd40a0632cda8bc0bd6236868e6869522051474f0ac86b009517212ee69d7",
+    "privacy_classification_sha256": "52a2c0d777256406ab88eef01bda4db4c20614e366aae9273ae26d021a0c5cc9",
+    "synthetic_fixture_bundles_sha256": "123c947553772114d92260998fde9c765b71d3ea011aebad397bde54f409242c"
+  },
+  "semantic_preservation": {
+    "system_rows_pre_sha256": "221a900cd9147b4fc19aab8cab017d57a487d662ce5d1a0a849b46a270cc7eaa",
+    "system_rows_post_sha256": "221a900cd9147b4fc19aab8cab017d57a487d662ce5d1a0a849b46a270cc7eaa",
+    "privacy_classifications_pre_sha256": "11631205d3565e169614f7519da891005b99a46a63db39dcc26c0ab453042f4a",
+    "privacy_classifications_post_sha256": "11631205d3565e169614f7519da891005b99a46a63db39dcc26c0ab453042f4a",
+    "synthetic_fixtures_pre_sha256": "c9427f5e29c05769c72aa0d56812c02354076b3471fb1cd9f9b785ec7c1a63fb",
+    "synthetic_fixtures_post_sha256": "c9427f5e29c05769c72aa0d56812c02354076b3471fb1cd9f9b785ec7c1a63fb",
+    "semantic_content_changed": false
+  },
+  "state_registration": {
+    "from_state": "PENDING_REPAIRED_EXACT_RECORD_SET_APPROVAL",
+    "to_state": "APPROVED_REPAIRED_EXACT_RECORD_SET",
+    "system_row_state_changes": 30,
+    "privacy_classification_state_changes": 30,
+    "fixture_human_gate_state_changes": 4,
+    "fixture_state_changes": 4,
+    "current_truth_surfaces_updated": [
+      "data/rldb/public-subset-contract.json",
+      "data/rldb/public-system-protocol-rows.jsonl",
+      "data/rldb/record-level-privacy-classification.jsonl",
+      "data/rldb/synthetic-public-fixtures.jsonl",
+      "data/source-ledger/public-unit-ledger.json",
+      "governance/public-units/PG_U05_RLDB_PUBLIC_CORE.yaml",
+      "README.md"
+    ]
+  },
+  "record_scope": {
+    "system_protocol_rows": 30,
+    "privacy_classifications": 30,
+    "synthetic_fixture_bundles": 4,
+    "semantic_repairs": 8,
+    "live_RLDB_rows": 0,
+    "tracked_SQLite_binaries": 0
+  },
+  "claim_boundary": {
+    "repository_mutation": false,
+    "Codex_apply": false,
+    "exact_tree_computed": false,
+    "commit": false,
+    "push": false,
+    "source_apply": false,
+    "DB_write": false,
+    "RLDB_writeback": false,
+    "canon": false,
+    "runtime_activation": false,
+    "publish": false
+  },
+  "state_registration_build_gate": {
+    "gate_id": "HUMAN_APPROVES_BUILD_PG_U05_POST_GATE_STATE_REGISTRATION_CANDIDATE_v0_1_3",
+    "consumed": true,
+    "scope": "local_candidate_build_only_no_repository_mutation",
+    "authorizes": [
+      "build_post_gate_state_registration_candidate_v0_1_3"
+    ],
+    "does_not_authorize": [
+      "GitHub_object_write",
+      "repository_mutation",
+      "Codex_apply",
+      "exact_tree_computation",
+      "commit",
+      "push",
+      "source_apply",
+      "DB_write",
+      "RLDB_writeback",
+      "canon_promotion",
+      "runtime_activation",
+      "publish"
+    ]
+  },
+  "authority_separation": {
+    "record_set_approval_gate_role": "approve_exact_repaired_record_set_bytes_only",
+    "state_registration_build_gate_role": "authorize_local_candidate_construction_only",
+    "scope_collapse_forbidden": true,
+    "repository_commit_gate": "PENDING_SEPARATE_HUMAN_GATE"
+  }
+}

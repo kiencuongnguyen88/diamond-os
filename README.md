@@ -18,7 +18,8 @@ Publishes bounded task classification, IO orchestration, source-sync and Project
 
 - Candidate state: `GIT_CANDIDATE`
 - Dependencies: `PG-U00`, `PG-U01`, `PG-U02`
-- Repository commit gate: pending
+- Repository commit gate: consumed
+- Exact commit: `34f7caa61c9aa8afe8723170bb50982ab406e2f3`
 - Active source pair read for build: `v0.6.2.17`
 
 ### PG-U04 — Sun Graph Doctrine Git-native Core
@@ -26,7 +27,21 @@ Publishes the Human-approved 57-table/8-view schema and 140 doctrine/mechanism s
 
 - Candidate state: `GIT_CANDIDATE`
 - Dependencies: `PG-U00`, `PG-U01`, `PG-U03`
-- Repository commit gate: pending
+- Repository commit gate: consumed
+- Exact commit: `3bd2c1d4685d1519b02e559f33f09185ef20de79`
+
+### PG-U05 — RLDB Public Protocol and Schema Core
+Publishes a bounded RLDB lifecycle, recall, Human Gate and evaluation surface without publishing the live learning corpus.
+
+- Candidate state: `GIT_CANDIDATE`
+- Dependencies: `PG-U00`, `PG-U01`, `PG-U03`
+- Exact public record set: 30 system rows + 4 synthetic fixture bundles
+- Live RLDB rows: `0`
+- Tracked SQLite binaries: `0`
+- Original exact record-set gate: consumed for v0.1 bytes only
+- Repaired v0.1.2 exact record-set gate: consumed `HUMAN_APPROVES_REPAIRED_EXACT_PG_U05_PUBLIC_RLDB_RECORD_SET_v0_1_2`
+- Post-gate approval registration: recorded and hash-bound
+- Repository commit gate: pending exact-tree proof and separate Human Gate
 
 ## Authority state
 A Git commit proves repository history; it does not itself promote a unit to canon. Canonical authority: `false`. Source apply, DB write, publish and runtime activation remain Human-gated.
@@ -42,6 +57,7 @@ python -S tests/validate_pg_u01.py
 python -S tests/validate_pg_u02.py
 python -S tests/validate_pg_u03.py
 python -S tests/validate_pg_u04.py
+python -S tests/validate_pg_u05.py
 ```
 
 The validators use only the Python standard library.

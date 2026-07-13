@@ -1,0 +1,51 @@
+unit_id: PG-U05
+name: rldb_public_protocol_and_schema_core
+migration_order: 6
+state: GIT_CANDIDATE_APPROVED_RECORD_SET
+base_HEAD: 3bd2c1d4685d1519b02e559f33f09185ef20de79
+base_tree: 8be476f59d6b6595046c64a4b212878d57f261a3
+dependencies:
+  - PG-U00
+  - PG-U01
+  - PG-U03
+source_scope:
+  active_RLDB_SHA256: e22340e6b332a65dc50803c5f3f1f1dc17c422bc84fb5c219dbdee62d32caf9b
+  selected_tables: 15
+  selected_views: 11
+record_scope:
+  system_protocol_rows: 30
+  synthetic_fixture_bundles: 4
+  live_RLDB_rows: 0
+  tracked_SQLite_binaries: 0
+privacy:
+  default_policy: EXCLUDE
+  record_level_classification: required
+  automated_scan: PASS
+  normalized_record_level_state: APPROVED_REPAIRED_EXACT_RECORD_SET
+Human_gate:
+  original_exact_record_set: approved_original_v0_1_bytes_only
+  repaired_exact_record_set: consumed
+  consumed_gate: HUMAN_APPROVES_REPAIRED_EXACT_PG_U05_PUBLIC_RLDB_RECORD_SET_v0_1_2
+  repository_commit: pending_exact_tree_and_separate_Human_gate
+  push: pending_separate_Human_gate
+repair_packet:
+  path: governance/public-units/PG_U05_REPAIRED_EXACT_RECORD_SET_PACKET_v0_1_2.json
+  sha256: 8bbb7a90417eb99f907548606ae19e99cc78bace3a3d951cb0d006064c28fa38
+  semantic_delta_count: 8
+approval_registration:
+  path: governance/public-units/PG_U05_REPAIRED_EXACT_RECORD_SET_APPROVAL_v0_1_2.json
+  sha256: d9db731b2cc679d55b3701b916bf58a80459619ad5c4463085698695f403dce2
+  approval_proof_sha256: 5070f6a7c5a29eb2d535556836e8fe83bbd6d140157d3715d514896001d5e8d5
+repository_continuity:
+  closes_PG_U03_README_gate_residual: true
+  closes_PG_U04_README_gate_residual: true
+  closes_PG_U04_public_unit_ledger_residual: true
+claim_boundary:
+  source_apply: false
+  DB_write: false
+  RLDB_writeback: false
+  canon: false
+  commit: false
+  push: false
+  publish: false
+  runtime_activation: false
