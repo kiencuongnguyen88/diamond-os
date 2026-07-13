@@ -51,7 +51,7 @@
     "all_claim_boundaries_false",
     "PG_U03_ledger_record_present",
     "PG_U03_dependencies_exact",
-    "PG_U03_commit_gate_pending",
+    "PG_U03_commit_gate_consumed",
     "PG_U02_post_commit_residual_resolved",
     "PG_U02_exact_commit_bound",
     "PG_U03_source_refs_registered",

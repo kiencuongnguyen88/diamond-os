@@ -1,0 +1,4688 @@
+{
+  "inventory_id": "PG_U04_SUN_GRAPH_SCHEMA_INVENTORY_v0_1",
+  "unit_id": "PG-U04",
+  "tables": [
+    {
+      "name": "archive_lineage",
+      "sql_sha256": "923a5898e7a6fcc0aff921dd4cb8c1b0d93d6b089e3ce4f1fc1d6f88627de8e8",
+      "columns": [
+        {
+          "name": "lineage_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "object_ref",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "object_type",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "previous_state",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "new_state",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "lineage_role",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "archive_state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "human_gate",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "notes",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "lineage_id"
+      ],
+      "foreign_key_count": 0
+    },
+    {
+      "name": "artifact_bundle_records",
+      "sql_sha256": "c2fb79df54c8dfda4f63aaae43b30ea909dfb35674d3068e449bbfe8107a11e2",
+      "columns": [
+        {
+          "name": "artifact_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "filename",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "artifact_role",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "source_family_id",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "file_state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "exists_in_sandbox",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "size_bytes",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "sha256",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "linked_force_cell_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "placement_recommendation",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "human_gate",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "artifact_id"
+      ],
+      "foreign_key_count": 2
+    },
+    {
+      "name": "corpus_decision_outcomes",
+      "sql_sha256": "9ebd61c19298bd82a13669ab2585fbbc46b10f61bc362895fb730991f7da95ef",
+      "columns": [
+        {
+          "name": "outcome_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "corpus_object_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "decision_state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "correction_summary",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "outcome_summary",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "learning_summary",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "proof_state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "gate_state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "outcome_id"
+      ],
+      "foreign_key_count": 1
+    },
+    {
+      "name": "corpus_object_map",
+      "sql_sha256": "14b17225b84ee9757430c2a595e089573021ab9d88994b28cdd6d516fc2dcab3",
+      "columns": [
+        {
+          "name": "corpus_object_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "trace_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "object_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "object_type",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "object_summary",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "mapping_confidence",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "corpus_object_id"
+      ],
+      "foreign_key_count": 2
+    },
+    {
+      "name": "corpus_raw_traces",
+      "sql_sha256": "6ba626d129bfbcf40b05f382f3b92add049694ce0e6158a15c8dae521b28468c",
+      "columns": [
+        {
+          "name": "trace_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "data_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "raw_line",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "source_ref",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "trace_role",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "capture_status",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "writeback_state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "source_access_state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "privacy_sensitivity",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "trace_id"
+      ],
+      "foreign_key_count": 1
+    },
+    {
+      "name": "corpus_text_chunks",
+      "sql_sha256": "f6923f60da89c43c30aff3fe67d47c3779b4646750c26a9952b0538b3433d5aa",
+      "columns": [
+        {
+          "name": "chunk_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "trace_id",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "artifact_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "filename",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "chunk_index",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "chunk_count",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "char_start",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "char_end",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "chunk_sha256",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "text_preview",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "text_body",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "linked_force_cell_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "import_state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "human_gate",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "chunk_id"
+      ],
+      "foreign_key_count": 3
+    },
+    {
+      "name": "corpus_text_import_log",
+      "sql_sha256": "45e5d5851d78f9d44b800e6abace4a2a9e7e3932dca9d794bfebfd2ca523e512",
+      "columns": [
+        {
+          "name": "import_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "filename",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "artifact_role",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "linked_force_cell_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "readable_state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "chunk_count",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "char_count",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "import_state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "human_gate",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "import_id"
+      ],
+      "foreign_key_count": 1
+    },
+    {
+      "name": "corpus_thread_task_edges",
+      "sql_sha256": "c37de5125724331a5ed56c6dceb49761877fe29d836fc8681ce9e8dabcce987d",
+      "columns": [
+        {
+          "name": "corpus_edge_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "from_corpus_object_id",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "to_corpus_object_id",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "relation_type",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "thread_anchor",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "task_anchor",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "evidence_state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "corpus_edge_id"
+      ],
+      "foreign_key_count": 2
+    },
+    {
+      "name": "data_cell_growth",
+      "sql_sha256": "c8b228ecdaee66fe85acdcb4d12f6eab1912137d620555c7824d566db809e499",
+      "columns": [
+        {
+          "name": "growth_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "data_id",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "force_cell_id",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "growth_type",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "growth_summary",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "evidence_state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "action_state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "human_gate",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "growth_id"
+      ],
+      "foreign_key_count": 2
+    },
+    {
+      "name": "data_units",
+      "sql_sha256": "a5aa1634fbf2eadde6c70982cb9a4302a9544fe55d298059c03c45d65bf35499",
+      "columns": [
+        {
+          "name": "data_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "title",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "summary",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "raw_text",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "data_type",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "layer_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "owner_project_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "primary_force_cell_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "source_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "source_state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "proof_state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "usage_frequency",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "role_gravity",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "authority_impact",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "recommended_action",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "human_gate",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "data_id"
+      ],
+      "foreign_key_count": 4
+    },
+    {
+      "name": "db_meta",
+      "sql_sha256": "7ab296178cebf932214ae27cfeb0afd07acb09844c8ed4e5b504a0fba73b6237",
+      "columns": [
+        {
+          "name": "key",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "value",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "key"
+      ],
+      "foreign_key_count": 0
+    },
+    {
+      "name": "drc_import_eval_scenarios",
+      "sql_sha256": "f9949f2a2cd15d85c61b50ead27d189abfb97e63719dd815427dff5422a33e4f",
+      "columns": [
+        {
+          "name": "scenario_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "name",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "input",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "expected_output",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "verdict",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "state",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "readback",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "scenario_id"
+      ],
+      "foreign_key_count": 0
+    },
+    {
+      "name": "drc_import_force_cells",
+      "sql_sha256": "a6d59f5c1c296c0285c6a11d724b4171fc1b8560f3231d8fd252059bdf41ebee",
+      "columns": [
+        {
+          "name": "cell_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "name",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "tier",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "role",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "core_line",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "target_slots",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "gate",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "project_code",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "cell_id"
+      ],
+      "foreign_key_count": 0
+    },
+    {
+      "name": "drc_import_force_edges",
+      "sql_sha256": "61e23d43b0f91523d04d91e325539f490080d23e06c29de5fd7164b052986f62",
+      "columns": [
+        {
+          "name": "edge_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "source_node",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "target_node",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "edge_type",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "role",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "state",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "readback",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "edge_id"
+      ],
+      "foreign_key_count": 0
+    },
+    {
+      "name": "drc_import_force_phrases",
+      "sql_sha256": "d4e5ebbef9ee9b7e52e30b19350bf06f983456bb2b49d8805a1a7e32fa39129d",
+      "columns": [
+        {
+          "name": "phrase_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "cell_id",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "force_phrase",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "role",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "state",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "phrase_id"
+      ],
+      "foreign_key_count": 1
+    },
+    {
+      "name": "drc_import_load_ledger",
+      "sql_sha256": "3d3d78c5affd9213d7b7cbe83a4f42912dda5a690cd212b83e714bbf91c50298",
+      "columns": [
+        {
+          "name": "ledger_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "load_name",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "source_db",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "output_db",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "load_state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "integrity_before",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "integrity_after",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "original_db_mutated",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "readback",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "ledger_id"
+      ],
+      "foreign_key_count": 0
+    },
+    {
+      "name": "drc_import_microchips",
+      "sql_sha256": "cd702193fb91f04c6c4ddbb510ffc9d5170510cd26e120b0ae390ad23635cbcd",
+      "columns": [
+        {
+          "name": "microchip_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "cell_id",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "microchip",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "role",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "state",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "microchip_id"
+      ],
+      "foreign_key_count": 1
+    },
+    {
+      "name": "drc_import_placement_checks",
+      "sql_sha256": "a380550691b623292fce86480077d0cfca2c02f7485f154dd23cf3737150d313",
+      "columns": [
+        {
+          "name": "check_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "source_id",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "slot",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "verdict",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "role_fit",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "state_fit",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "gate_fit",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "route_fit",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "over_import_risk",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "readback",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "check_id"
+      ],
+      "foreign_key_count": 1
+    },
+    {
+      "name": "drc_import_source_records",
+      "sql_sha256": "220820a44ce5b267c64013b7e9fac59f3c01fdc99d45495e66e9bb26f06ab446",
+      "columns": [
+        {
+          "name": "source_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "slot",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "source_file",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "source_role",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "source_state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "sha256",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "size_bytes",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "readback",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "source_id"
+      ],
+      "foreign_key_count": 0
+    },
+    {
+      "name": "eval_scenarios",
+      "sql_sha256": "5779309fecb510ba02783a8e1a265a539352e7e979ddca077110a69a6e946d18",
+      "columns": [
+        {
+          "name": "eval_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "title",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "failure_mode",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "prompt",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "expected_output",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "force_cell_refs_json",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "human_gate",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "eval_id"
+      ],
+      "foreign_key_count": 0
+    },
+    {
+      "name": "fit_active_cell_index",
+      "sql_sha256": "0bbcb5cea34a427c0c6c1918240742a4ea651d5679698639b6767d90e2c05347",
+      "columns": [
+        {
+          "name": "index_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "force_cell_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "layer_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "cluster_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "name",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "line",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "source_state",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "proof_state",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "fit_role",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "fit_state",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "index_id"
+      ],
+      "foreign_key_count": 0
+    },
+    {
+      "name": "fit_audit_findings",
+      "sql_sha256": "cb708bdc0c98263b2f93fd9f18801c47a2bafb57eb3b2aa7b455b70487d6ebb0",
+      "columns": [
+        {
+          "name": "finding_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "axis",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "verdict",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "summary",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "risk",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "action",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "finding_id"
+      ],
+      "foreign_key_count": 0
+    },
+    {
+      "name": "fit_audit_plan",
+      "sql_sha256": "ab853eaaeca33f2cae0b3e917443bb0e3564780dba0bd9076459c87435e81eb0",
+      "columns": [
+        {
+          "name": "plan_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "step_order",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "step_name",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "purpose",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "pass_condition",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "output_ref",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "plan_id"
+      ],
+      "foreign_key_count": 0
+    },
+    {
+      "name": "fit_cluster_index",
+      "sql_sha256": "60bb964af5dd3932a7c23973f50418ea0adb4dd4ce113a82247470f6a2fa1aa3",
+      "columns": [
+        {
+          "name": "cluster_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "layer_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "layer_code",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "cluster_name",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "cluster_role",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "force_cell_count",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "active_force_cell_count",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "source_ref_count",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "sample_cells_json",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "route_hint",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "gate_hint",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "fit_state",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "cluster_id"
+      ],
+      "foreign_key_count": 0
+    },
+    {
+      "name": "fit_layer_summary",
+      "sql_sha256": "c7a33df778d8efa18f686c97b4248f5cb0dce1480af9f8b6803ece6528888416",
+      "columns": [
+        {
+          "name": "layer_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "layer_code",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "layer_name",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "total_force_cells",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "active_force_cells",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "merged_absorbed_cells",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "fit_cluster_count",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "fit_role",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "fit_verdict",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "layer_id"
+      ],
+      "foreign_key_count": 0
+    },
+    {
+      "name": "fit_merge_groups_v18",
+      "sql_sha256": "b8161a38eae60358024a5b7e917b01bd978d2e0d916fdd6c20d30f4fad68af4c",
+      "columns": [
+        {
+          "name": "group_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "layer_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "merge_key",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "representative_force_cell_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "absorbed_force_cell_ids_json",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "group_size",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "merge_reason",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "state",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "group_id"
+      ],
+      "foreign_key_count": 0
+    },
+    {
+      "name": "fit_project_coverage_v18",
+      "sql_sha256": "f66ef83e8c8fafef129c060e7ba1f1f54e93c16d56a5cacb987a4987afa32dae",
+      "columns": [
+        {
+          "name": "owner",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "active_force_cells",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "total_force_cells",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "orbit_force_cells",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "core_force_cells",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "coverage_role",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "gap_note",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "owner"
+      ],
+      "foreign_key_count": 0
+    },
+    {
+      "name": "fit_run_meta_v18",
+      "sql_sha256": "58b3112f390d63fa30c8bbb1cf9cf7d796c1de2490268d0639a261a2f7a84c96",
+      "columns": [
+        {
+          "name": "key",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "value",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "key"
+      ],
+      "foreign_key_count": 0
+    },
+    {
+      "name": "force_cell_code_aliases",
+      "sql_sha256": "480a146fff8a9e562dc39fed03cbdbdfeeeab57594dd41ebf0e02d16314697d4",
+      "columns": [
+        {
+          "name": "alias_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "force_cell_id",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "old_code",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "new_code",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "migration_version",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "migration_role",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "alias_id"
+      ],
+      "foreign_key_count": 1
+    },
+    {
+      "name": "force_cell_families",
+      "sql_sha256": "1094d5495164dc0ede36c971c9ac25c0ed1abf272936aac8ffc2d6a3f9baad9a",
+      "columns": [
+        {
+          "name": "family_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "family_name",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "role",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "core_line",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "default_layer_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "human_gate",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "notes",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "family_id"
+      ],
+      "foreign_key_count": 1
+    },
+    {
+      "name": "force_cell_numbering_map",
+      "sql_sha256": "635d4c39eb255c94b758d845921bcd96904a63a0620d5221d6de25fcb6e14438",
+      "columns": [
+        {
+          "name": "stable_code",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "force_cell_id",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "layer_number",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "cell_order",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "layer_code",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "label",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "number_role",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "human_gate",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "legacy_stable_code",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "numbering_version",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "stable_code"
+      ],
+      "foreign_key_count": 1
+    },
+    {
+      "name": "force_cell_priority_queue",
+      "sql_sha256": "70ac1fbf464eef0df73a3e399f97fae2e1728c08f991540923ed5dcb75fb474c",
+      "columns": [
+        {
+          "name": "queue_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "stable_code",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "force_cell_id",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "priority_band",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "reason",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "next_action",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "human_gate",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "queue_id"
+      ],
+      "foreign_key_count": 1
+    },
+    {
+      "name": "force_cells",
+      "sql_sha256": "75d4f2c2fb6601c35b75ec0da76f983431397c0f8408798bfd6a0db239e1193d",
+      "columns": [
+        {
+          "name": "force_cell_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "family_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "name",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "line",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "role",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "core_or_orbit",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "layer_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "owner",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "protects_json",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "default_route_json",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "growth_mode_json",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "source_state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "proof_state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "human_gate",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "object_class",
+          "type": "TEXT",
+          "notnull": true,
+          "default": "'force_cell'",
+          "pk_order": 0
+        },
+        {
+          "name": "object_mode",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "knowledge_tier",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "force_type_json",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "readback_line",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "blocked_misuse_json",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "notes",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "stable_code",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "layer_number",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "cell_order",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "registry_label",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "maturity_level",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "intake_priority",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "baseline_candidate_state",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "legacy_stable_code",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "force_cell_id"
+      ],
+      "foreign_key_count": 2
+    },
+    {
+      "name": "force_compression_log",
+      "sql_sha256": "a4aa907d24f12def260f7fbf3838497d6145b2d959852a4017395e20799a7aa0",
+      "columns": [
+        {
+          "name": "compression_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "source_chunk_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "force_phrase_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "microchip_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "linked_force_cell_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "compression_result",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "loss_risk",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "human_gate",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "reason_json",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "compression_id"
+      ],
+      "foreign_key_count": 4
+    },
+    {
+      "name": "force_edges",
+      "sql_sha256": "14519cb1e69e1d2b5ff53134c09cef8d0246f6daf5d975c1826127084559d11f",
+      "columns": [
+        {
+          "name": "edge_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "from_object_id",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "to_object_id",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "edge_type",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "role",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "gate",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "readback_line",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "evidence_state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "edge_id"
+      ],
+      "foreign_key_count": 2
+    },
+    {
+      "name": "force_flows",
+      "sql_sha256": "4d8487e7775ee9595927430d465883aaecc71612a700d14f053e5692ef49b2bb",
+      "columns": [
+        {
+          "name": "flow_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "name",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "role",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "steps_json",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "gate",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "linked_force_cell_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "readback_line",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "flow_id"
+      ],
+      "foreign_key_count": 1
+    },
+    {
+      "name": "force_phrases",
+      "sql_sha256": "f36f1aa603e9c6bfd519bda6d5b3b3a2cde90b1916f9f4086b18ae1f97004e98",
+      "columns": [
+        {
+          "name": "force_phrase_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "phrase_code",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "text",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "meaning_summary",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "phrase_role",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "linked_force_cell_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "source_artifact_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "source_chunk_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "source_type",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "force_score",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "wording_dependency",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "compression_state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "human_gate",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "force_phrase_id"
+      ],
+      "foreign_key_count": 3
+    },
+    {
+      "name": "force_skills",
+      "sql_sha256": "76fd12ec053c40c1dacc42d4011194f8e6a1d6cf07ad06f1b75828189255a1cf",
+      "columns": [
+        {
+          "name": "skill_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "name",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "role",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "trigger_json",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "output_json",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "gate",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "linked_force_cell_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "skill_id"
+      ],
+      "foreign_key_count": 1
+    },
+    {
+      "name": "full_artifact_import_log",
+      "sql_sha256": "efe57c3ee1d6d0184f83036ad4294f51690a4760cb50dce6f2f389906d8b8b9c",
+      "columns": [
+        {
+          "name": "import_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "filename",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "artifact_role",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "linked_force_cell_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "priority",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "target_mapping",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "import_phase",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "artifact_bundle_state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "source_record_state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "lineage_state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "hash_sha256",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "size_bytes",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "human_gate",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "import_id"
+      ],
+      "foreign_key_count": 1
+    },
+    {
+      "name": "full_force_objects",
+      "sql_sha256": "63af9479a4ab5f3cc98472de38cd8dc734fb7891a3e81fc8ff834da7d01b4ea6",
+      "columns": [
+        {
+          "name": "object_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "object_class",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "object_mode",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "title",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "summary",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "force_cell_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "layer_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "knowledge_tier",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "parent_object_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "owner",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "role",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "gate",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "source_state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "proof_state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "readback_line",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "payload_json",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "object_id"
+      ],
+      "foreign_key_count": 3
+    },
+    {
+      "name": "gates",
+      "sql_sha256": "0c227402a597938af25abab9b876e6a9bcd5ff1269936cca02ea65b7cdcd2841",
+      "columns": [
+        {
+          "name": "gate_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "gate_type",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "name",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "trigger_json",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "required_proof_json",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "stop_state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "owner",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "force_cell_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "gate_id"
+      ],
+      "foreign_key_count": 1
+    },
+    {
+      "name": "import_batches",
+      "sql_sha256": "ac619ae8b47e07cd4e21143da3cebdf4b1b692a5083e57b6c6dabaf27c5f593c",
+      "columns": [
+        {
+          "name": "batch_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "title",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "source_basis",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "import_state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "row_counts_json",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "human_gate",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "batch_id"
+      ],
+      "foreign_key_count": 0
+    },
+    {
+      "name": "microchip_variation_axes",
+      "sql_sha256": "c0d14bbbae2b412bade6029d5fae27569c1ca57e45aa367c8225953394331221",
+      "columns": [
+        {
+          "name": "axis_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "microchip_id",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "axis_name",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "axis_role",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "examples_json",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "axis_id"
+      ],
+      "foreign_key_count": 1
+    },
+    {
+      "name": "microchips",
+      "sql_sha256": "6a7f7392cd60ad2d7da1e0bafe0b2d6a4f2abb2a2b0b670527ea58c7f827c7af",
+      "columns": [
+        {
+          "name": "microchip_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "microchip_code",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "microchip_line",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "meaning_core",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "linked_force_cell_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "variant_capacity",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "transformation_axes_json",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "source_force_phrase_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "human_gate",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "microchip_id"
+      ],
+      "foreign_key_count": 2
+    },
+    {
+      "name": "patch_candidates",
+      "sql_sha256": "6f6cb1eb87550318c21befd2ffdf1a056c82e21b4f899f3db0bb1b519af93495",
+      "columns": [
+        {
+          "name": "candidate_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "gate_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "candidate_type",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "risk_level",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "target_table",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "target_record",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "proposed_values_json",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "proof",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "human_gate",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "apply_gate",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "candidate_hash",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "candidate_id"
+      ],
+      "foreign_key_count": 1
+    },
+    {
+      "name": "placement_checks",
+      "sql_sha256": "94200cf4f774acbebba6fb296301a6823f03fb923fa210d73a15be921c725fed",
+      "columns": [
+        {
+          "name": "check_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "data_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "role_gravity",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "authority_impact",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "system_dependency",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "source_proof",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "owner_clarity",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "gate_clarity",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "usage_frequency",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "recommended_layer_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "recommended_surface",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "verdict",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "human_gate",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "check_id"
+      ],
+      "foreign_key_count": 2
+    },
+    {
+      "name": "project_cell_refs",
+      "sql_sha256": "d5d9a28314c966db39b7dd69fe1bd7a3f1bbc4dd874807b828433e58ce745642",
+      "columns": [
+        {
+          "name": "project_id",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "force_cell_id",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 2
+        },
+        {
+          "name": "ref_role",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "project_id",
+        "force_cell_id"
+      ],
+      "foreign_key_count": 2
+    },
+    {
+      "name": "projects",
+      "sql_sha256": "e8f9f89305142eca4b9a0a5e10b5669a95d8252147e34b6373b4cc440fad7195",
+      "columns": [
+        {
+          "name": "project_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "project_name",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "role",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "core_or_orbit",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "layer_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "source_family",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "data_family",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "owner_state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "writeback_gate",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "current_gap",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "next_action",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "notes",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "project_id"
+      ],
+      "foreign_key_count": 1
+    },
+    {
+      "name": "raw_text_policy",
+      "sql_sha256": "e908566e40c1f23951858feb3f13a7789a04aa9b8142b9ea227031ae7393eb7b",
+      "columns": [
+        {
+          "name": "policy_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "source_artifact_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "source_chunk_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "raw_text_role",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "keep_mode",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "reason",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "force_score_threshold",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "human_gate",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "policy_id"
+      ],
+      "foreign_key_count": 2
+    },
+    {
+      "name": "readback_ledger",
+      "sql_sha256": "1871fba4b1c90f87aaf37e9b118689e4888157ea864d98b640c82f256efcc773",
+      "columns": [
+        {
+          "name": "readback_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "target_ref",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "check_type",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "result",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "expected_marker",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "evidence_summary",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "gap_summary",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "readback_id"
+      ],
+      "foreign_key_count": 0
+    },
+    {
+      "name": "source_families",
+      "sql_sha256": "81692f22a5a486471dad72053e9773ad2cd393ef80fbdd498ede4af74a3146c2",
+      "columns": [
+        {
+          "name": "source_family_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "name",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "role",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "source_type",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "authority_level",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "owner",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "default_layer_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "writeback_gate",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "readback_requirement",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "notes",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "source_family_id"
+      ],
+      "foreign_key_count": 1
+    },
+    {
+      "name": "source_records",
+      "sql_sha256": "ffcbe7258dfffc11e754724617e01a4da710f635131efde4fbdedbd7176a08bc",
+      "columns": [
+        {
+          "name": "source_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "source_family_id",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "title",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "ref",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "role",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "status",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "evidence_level",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "freshness_state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "writeback_state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "human_gate",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "hash_sha256",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "size_bytes",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "notes",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "source_id"
+      ],
+      "foreign_key_count": 1
+    },
+    {
+      "name": "sun_layers",
+      "sql_sha256": "2446c2be1552a60b6484279095fafe1e39dd26496aed82c9744b5165f1eb86bf",
+      "columns": [
+        {
+          "name": "layer_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "layer_code",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "layer_name",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "layer_type",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "role",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "admission_rule",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "blocked_misuse",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "force_cell",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "remove_test",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "default_state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "layer_id"
+      ],
+      "foreign_key_count": 0
+    },
+    {
+      "name": "training_surfaces",
+      "sql_sha256": "aa5fba930338c3feb2aa3d0043b5008d03826760fe3cfb84b35d0a8eb42c9c3f",
+      "columns": [
+        {
+          "name": "training_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "title",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "source_outcome_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "prompt",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "expected_behavior",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "rubric_json",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "human_gate",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "training_id"
+      ],
+      "foreign_key_count": 1
+    },
+    {
+      "name": "transaction_packets",
+      "sql_sha256": "0d72ffc1c0f5e7060880f54649e40d1354ef7faebd1e3f40334c2cbf563efe34",
+      "columns": [
+        {
+          "name": "packet_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "transaction_id",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "packet_type",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "owner",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "payload_json",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "human_gate",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "packet_id"
+      ],
+      "foreign_key_count": 1
+    },
+    {
+      "name": "transactions",
+      "sql_sha256": "8e1b8e8fc7e60c1d7c455ffd3b10701321c70c292be52d602d8e4d82d2fb260d",
+      "columns": [
+        {
+          "name": "transaction_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "input_summary",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "task_type",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "role_owner",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "route",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "source_state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "packet_type",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "gate_state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "output_state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "writeback_state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "trace_state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "transaction_id"
+      ],
+      "foreign_key_count": 0
+    },
+    {
+      "name": "writeback_ledger",
+      "sql_sha256": "6c93c6d0a19de15e3e19d5fb38f7878e0e4c4d07043af88d79cbc7ed9b89e09f",
+      "columns": [
+        {
+          "name": "writeback_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 1
+        },
+        {
+          "name": "target_family",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "target_ref",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "write_mode",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "source_basis",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "proof_available",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "readback_plan",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "human_gate",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "writeback_state",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk_order": 0
+        }
+      ],
+      "primary_key": [
+        "writeback_id"
+      ],
+      "foreign_key_count": 0
+    }
+  ],
+  "views": [
+    {
+      "name": "v_data_placement_review",
+      "sql_sha256": "06160a0a936852ca8ae98ee1f7883a05e8fd7db4697dede2f027639830b3282c"
+    },
+    {
+      "name": "v_force_cell_dashboard",
+      "sql_sha256": "ca6ea9925a66e21b0c58a0775371179e12877f362be5228d794e3aec3d7a2815"
+    },
+    {
+      "name": "v_force_phrase_dashboard",
+      "sql_sha256": "4c6b6ec3f730fcbd4e6223e8311fd4932c026738cf2d1fa4ee8b9d14bd2181b8"
+    },
+    {
+      "name": "v_gate_watch",
+      "sql_sha256": "30a6a92730d01e0dbb1a953a212949cd3bcc9896e2d6a9d410db9615ca66f64a"
+    },
+    {
+      "name": "v_microchip_dashboard",
+      "sql_sha256": "cc7b909a3a20eeca20d4fc0d0d489f553206069fd95649befd45b27b33195bc9"
+    },
+    {
+      "name": "v_project_cell_map",
+      "sql_sha256": "a492276b13571b40e490bbc187a7278f65443b67b34f128540555e66323ce501"
+    },
+    {
+      "name": "v_raw_text_policy_review",
+      "sql_sha256": "6752950ed44681a21b078448a40e30825713c27a72bedc2906999824d05c10a0"
+    },
+    {
+      "name": "v_writeback_status",
+      "sql_sha256": "494b2554dfa0c6e5b4b29b006b369b8bb103e6380cbbf39e67367b213079a669"
+    }
+  ],
+  "claim_boundary": {
+    "source_apply": false,
+    "DB_write": false,
+    "RLDB_writeback": false,
+    "canon": false,
+    "commit": false,
+    "push": false,
+    "publish": false,
+    "runtime_activation": false
+  }
+}

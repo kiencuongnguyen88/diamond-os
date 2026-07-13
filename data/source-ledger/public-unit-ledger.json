@@ -4,7 +4,7 @@
   "repository": {
     "full_name": "kiencuongnguyen88/diamond-os",
     "branch": "main",
-    "base_head": "d1e293703cbb5e504327228dff3aa32a8f71807c"
+    "base_head": "34f7caa61c9aa8afe8723170bb50982ab406e2f3"
   },
   "units": [
     {
@@ -190,18 +190,70 @@
         }
       ],
       "human_gate": {
-        "state": "candidate_build_allowed_commit_gate_pending",
-        "action": "approve_routing_core_and_atomic_unit_commit",
+        "state": "repository_commit_gate_consumed_canon_gate_pending",
+        "action": "atomic_authority_promotion",
         "exact_scope": "PG-U03"
       },
       "proof_refs": [
-        "tests/validate_pg_u03.py",
-        "PG_U03_SOURCE_MAPPING_v0_1",
-        "PG_U03_SOURCE_REFRESH_READBACK_PROOF_v0_1"
+        "https://github.com/kiencuongnguyen88/diamond-os/commit/34f7caa61c9aa8afe8723170bb50982ab406e2f3",
+        "PG_U03_POST_PUSH_READBACK_v0_1.yaml",
+        "tests/validate_pg_u03.py"
+      ],
+      "repository_binding": {
+        "mode": "exact_commit",
+        "base_commit": "d1e293703cbb5e504327228dff3aa32a8f71807c",
+        "commit_sha": "34f7caa61c9aa8afe8723170bb50982ab406e2f3"
+      },
+      "claim_boundary": {
+        "source_apply": false,
+        "DB_write": false,
+        "RLDB_writeback": false,
+        "canon": false,
+        "commit": false,
+        "push": false,
+        "publish": false,
+        "runtime_activation": false
+      }
+    },
+    {
+      "unit_id": "PG-U04",
+      "name": "sun_graph_doctrine_git_native_core",
+      "migration_order": 5,
+      "state": "GIT_CANDIDATE",
+      "authority": false,
+      "canon": false,
+      "dependency_unit_ids": [
+        "PG-U00",
+        "PG-U01",
+        "PG-U03"
+      ],
+      "source_hashes": [
+        {
+          "source_ref_id": "PGU04-SRC-A01",
+          "sha256": "eefa0b57f01d2f88e93f6351faf6a57773cc1995069c255f4afe9ed49ada08eb"
+        },
+        {
+          "source_ref_id": "PGU04-SRC-A02",
+          "sha256": "f48866b47098cd0a64471cc50cb53a89d32983d56db207a81c97727824afb1dc"
+        },
+        {
+          "source_ref_id": "PGU04-SRC-A03",
+          "sha256": "23f05ef8bc0144dbf8b6a74059ec037fde477327619d81ef949e18ca7802b09a"
+        }
+      ],
+      "human_gate": {
+        "state": "candidate_build_allowed_commit_gate_pending",
+        "action": "approve_sun_graph_git_native_core_and_atomic_unit_commit",
+        "exact_scope": "PG-U04"
+      },
+      "proof_refs": [
+        "tests/validate_pg_u04.py",
+        "PG_U04_SOURCE_MAPPING_v0_1",
+        "PG_U04_OPTION_A_HUMAN_SELECTION_v0_1"
       ],
       "repository_binding": {
         "mode": "containing_commit",
-        "base_commit": "d1e293703cbb5e504327228dff3aa32a8f71807c",
+        "base_commit": "34f7caa61c9aa8afe8723170bb50982ab406e2f3",
         "commit_sha": null
       },
       "claim_boundary": {

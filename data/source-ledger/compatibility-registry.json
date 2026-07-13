@@ -83,6 +83,34 @@
       "source_ref_ids": [
         "PGU03-SRC-A04"
       ]
+    },
+    {
+      "record_id": "PGU04-COMPAT-REPAIRED-CANDIDATE-v0_1_2",
+      "from_authority": "LEGACY_ACTIVE",
+      "to_unit": "PG-U04",
+      "relationship": "semantic_reference_not_replacement",
+      "state": "COMPATIBILITY_ONLY",
+      "can_promote_canon": false,
+      "requires_atomic_human_promotion": true,
+      "authority_effect": "none",
+      "source_ref_ids": [
+        "PGU04-SRC-A01",
+        "PGU04-SRC-A02",
+        "PGU04-SRC-A03"
+      ]
+    },
+    {
+      "record_id": "PGU04-COMPAT-GENERATED-SQLITE",
+      "from_authority": "LEGACY_ACTIVE",
+      "to_unit": "PG-U04",
+      "relationship": "semantic_reference_not_replacement",
+      "state": "COMPATIBILITY_ONLY",
+      "can_promote_canon": false,
+      "requires_atomic_human_promotion": true,
+      "authority_effect": "none",
+      "source_ref_ids": [
+        "PGU04-SRC-A02"
+      ]
     }
   ],
   "claim_boundary": {

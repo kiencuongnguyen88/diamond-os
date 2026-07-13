@@ -23,3 +23,5 @@ Raw runtime source, DBs, private records, ZIPs and proof packets remain outside 
 python -S tests/validate_pg_u00.py
 python -S tests/validate_pg_u01.py
 ```
+
+PG-U04 registers the selected Sun Graph review basis, Git-native schema/seeds and generated-artifact boundary.

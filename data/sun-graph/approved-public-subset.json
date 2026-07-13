@@ -1,0 +1,177 @@
+{
+  "contract_id": "PG_U04_APPROVED_PUBLIC_SUBSET_v0_1",
+  "unit_id": "PG-U04",
+  "state": "GIT_CANDIDATE",
+  "canon": false,
+  "human_selection": {
+    "decision_ref": "PG_U04_OPTION_A_HUMAN_SELECTION_v0_1",
+    "selected_option": "option_A",
+    "schema_scope": {
+      "tables": 57,
+      "views": 8
+    },
+    "seed_scope": {
+      "rows": 140,
+      "nonempty_tables": 11
+    },
+    "accepted_deltas": [
+      "full_force_objects_39_not_role_map_38",
+      "db_meta_12_not_role_map_9",
+      "project_cell_refs_20_inferred_candidate_rows",
+      "patch_candidates_1_public_ingest_rule_candidate"
+    ]
+  },
+  "source_refs": [
+    {
+      "source_ref_id": "PGU04-SRC-A01",
+      "sha256": "eefa0b57f01d2f88e93f6351faf6a57773cc1995069c255f4afe9ed49ada08eb"
+    },
+    {
+      "source_ref_id": "PGU04-SRC-A02",
+      "sha256": "f48866b47098cd0a64471cc50cb53a89d32983d56db207a81c97727824afb1dc"
+    },
+    {
+      "source_ref_id": "PGU04-SRC-A03",
+      "sha256": "23f05ef8bc0144dbf8b6a74059ec037fde477327619d81ef949e18ca7802b09a"
+    }
+  ],
+  "source_db": {
+    "role": "review_basis_only",
+    "sha256": "f48866b47098cd0a64471cc50cb53a89d32983d56db207a81c97727824afb1dc",
+    "tracked_in_Git": false
+  },
+  "git_native": {
+    "schema": "migrations/sun-graph/001_schema.sql",
+    "schema_inventory": "data/sun-graph/schema-inventory.json",
+    "seed_files": [
+      {
+        "table": "sun_layers",
+        "path": "data/sun-graph/seeds/sun_layers.jsonl",
+        "row_count": 7,
+        "primary_key": [
+          "layer_id"
+        ],
+        "source_canonical_rowset_sha256": "be227d96ad8bf73a56341cf706832c8239f47bf4b7df92430cb801eabd2c6ce0",
+        "jsonl_sha256": "a565993f7d458b2ef830d862c18125d9b957ac29b44387d99713fbb14022c24b"
+      },
+      {
+        "table": "gates",
+        "path": "data/sun-graph/seeds/gates.jsonl",
+        "row_count": 4,
+        "primary_key": [
+          "gate_id"
+        ],
+        "source_canonical_rowset_sha256": "b1fa29066615a1f8df8559d445a3c0e0a0ed91ae6e4dcfb16313b4f81e2c7f06",
+        "jsonl_sha256": "027a3ae79b4fc9f9c72535c52b4a40778e5dea9d074fe38839f89eee41828c6e"
+      },
+      {
+        "table": "force_flows",
+        "path": "data/sun-graph/seeds/force_flows.jsonl",
+        "row_count": 3,
+        "primary_key": [
+          "flow_id"
+        ],
+        "source_canonical_rowset_sha256": "9a4609f5b021fb0fb8542a279d3ca6160cdf3bcfe668fcc01e83a251abd44894",
+        "jsonl_sha256": "d4633584bb20d6e777f337a0cc1ba0cf8ff3cb83fcebaa64535bc5656b5e9257"
+      },
+      {
+        "table": "force_skills",
+        "path": "data/sun-graph/seeds/force_skills.jsonl",
+        "row_count": 8,
+        "primary_key": [
+          "skill_id"
+        ],
+        "source_canonical_rowset_sha256": "0c30b303bb4df5d2bc0d9b0460382950b00f10176b84df5a782a2d39a470340b",
+        "jsonl_sha256": "1e09b329d1312564f9ea6e3740d44788dbcd159be2605ff922ce70cc397875f7"
+      },
+      {
+        "table": "projects",
+        "path": "data/sun-graph/seeds/projects.jsonl",
+        "row_count": 14,
+        "primary_key": [
+          "project_id"
+        ],
+        "source_canonical_rowset_sha256": "1512f4db6b94804f7584a1012ba0a183d587ec01ea97932916ac9ad46f236139",
+        "jsonl_sha256": "b7d74613bd701a1abc99dbc10fab4be778af3d2ac68c1c5309e39ad664ba0fb4"
+      },
+      {
+        "table": "force_cell_families",
+        "path": "data/sun-graph/seeds/force_cell_families.jsonl",
+        "row_count": 8,
+        "primary_key": [
+          "family_id"
+        ],
+        "source_canonical_rowset_sha256": "4aa485bd981dccf84f4b7f0e8b7f731273211313affe25fd83d9f8fea749c748",
+        "jsonl_sha256": "f3b6152348b512796612099816377f1783b0ca9de7a4cbd08863b7623f28dfee"
+      },
+      {
+        "table": "force_cells",
+        "path": "data/sun-graph/seeds/force_cells.jsonl",
+        "row_count": 24,
+        "primary_key": [
+          "force_cell_id"
+        ],
+        "source_canonical_rowset_sha256": "d86aa2779f93cb2c7e1d2270e316c424b27a02c8e6b94cd277b0dea73e6644ff",
+        "jsonl_sha256": "f75157d707a84327e0dd9531dfc45daad1de24074b76f601a71cff4e973b031e"
+      },
+      {
+        "table": "full_force_objects",
+        "path": "data/sun-graph/seeds/full_force_objects.jsonl",
+        "row_count": 39,
+        "primary_key": [
+          "object_id"
+        ],
+        "source_canonical_rowset_sha256": "2a487a2c13021f63c5ec6d920ce66c6625235f28b408ea37814894b6d834155c",
+        "jsonl_sha256": "5f3ac974d8e288d1a1a693edb92c1351ba44324d0c41609c25288cab8fd70352"
+      },
+      {
+        "table": "project_cell_refs",
+        "path": "data/sun-graph/seeds/project_cell_refs.jsonl",
+        "row_count": 20,
+        "primary_key": [
+          "project_id",
+          "force_cell_id"
+        ],
+        "source_canonical_rowset_sha256": "2c98d692e278bc68a6df5f20fe8c34965a47d92d3df552574f06b4312eeba26a",
+        "jsonl_sha256": "920b0b5de1ff3801ff24266f7843ae37d1ff92bea0174da76baa715d552a9ca5"
+      },
+      {
+        "table": "patch_candidates",
+        "path": "data/sun-graph/seeds/patch_candidates.jsonl",
+        "row_count": 1,
+        "primary_key": [
+          "candidate_id"
+        ],
+        "source_canonical_rowset_sha256": "cbdaa5491e4df393e326d542c8df5449055e77c9eeca88bfcc1f3df5282b0e94",
+        "jsonl_sha256": "4daf53c9c7b53534f33ca1ec55bcf4587a70ff6a725bd60c0f7aa1b37e8f090b"
+      },
+      {
+        "table": "db_meta",
+        "path": "data/sun-graph/seeds/db_meta.jsonl",
+        "row_count": 12,
+        "primary_key": [
+          "key"
+        ],
+        "source_canonical_rowset_sha256": "ab89f73fab9e5828e6d63e28e12a4a9024dbe91bbecdbaaa3559414db98ef3e8",
+        "jsonl_sha256": "99367c973c9ac97344f6295b22c581175e04cdb5d7aa3c4f5617e485685b66de"
+      }
+    ],
+    "generated_sqlite_tracked": false
+  },
+  "public_boundary": {
+    "private_operational_records_included": false,
+    "P1_P2_P7_records_included": false,
+    "bulk_archive_rows_included": false,
+    "sqlite_binary_included": false
+  },
+  "claim_boundary": {
+    "source_apply": false,
+    "DB_write": false,
+    "RLDB_writeback": false,
+    "canon": false,
+    "commit": false,
+    "push": false,
+    "publish": false,
+    "runtime_activation": false
+  }
+}

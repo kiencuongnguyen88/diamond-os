@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/kiencuongnguyen88/diamond-os/schemas/sun-graph/seed-manifest-entry.schema.json",
+  "title": "Sun Graph seed manifest entry",
+  "type": "object",
+  "required": [
+    "table",
+    "path",
+    "row_count",
+    "primary_key",
+    "source_canonical_rowset_sha256",
+    "jsonl_sha256"
+  ],
+  "properties": {
+    "table": {
+      "type": "string"
+    },
+    "path": {
+      "type": "string"
+    },
+    "row_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "primary_key": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "source_canonical_rowset_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "jsonl_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  },
+  "additionalProperties": false
+}

@@ -167,6 +167,50 @@
       "public_copy_included": false,
       "authority_effect": "none",
       "proof_ref": "PG_U03_SOURCE_REFRESH_READBACK_PROOF_v0_1"
+    },
+    {
+      "source_ref_id": "PGU04-SRC-A01",
+      "path": "SUN_GRAPH_STRUCTURE_ROLE_MAP_v0_1.md",
+      "bytes": 9256,
+      "sha256": "eefa0b57f01d2f88e93f6351faf6a57773cc1995069c255f4afe9ed49ada08eb",
+      "role": "primary_migration_source",
+      "source_state": "LEGACY_ACTIVE",
+      "public_copy_included": false,
+      "authority_effect": "none",
+      "proof_ref": "PG_U04_OPTION_A_HUMAN_SELECTION_v0_1"
+    },
+    {
+      "source_ref_id": "PGU04-SRC-A02",
+      "path": "DZN32_SUN_GRAPH_DOCTRINE_CORE_v0_1_2_repaired.db",
+      "bytes": 577536,
+      "sha256": "f48866b47098cd0a64471cc50cb53a89d32983d56db207a81c97727824afb1dc",
+      "role": "compatibility_migration_source",
+      "source_state": "LEGACY_ACTIVE",
+      "public_copy_included": false,
+      "authority_effect": "none",
+      "proof_ref": "PG_U04_OPTION_A_HUMAN_SELECTION_v0_1"
+    },
+    {
+      "source_ref_id": "PGU04-SRC-A03",
+      "path": "50_DB_REGISTRY_AND_WRITEBACK_GATES/00_CORE_DB_ROLE_REGISTRY_v0_3_10.yaml",
+      "bytes": 3978,
+      "sha256": "23f05ef8bc0144dbf8b6a74059ec037fde477327619d81ef949e18ca7802b09a",
+      "role": "primary_migration_source",
+      "source_state": "LEGACY_ACTIVE",
+      "public_copy_included": false,
+      "authority_effect": "none",
+      "proof_ref": "PG_U04_OPTION_A_HUMAN_SELECTION_v0_1"
+    },
+    {
+      "source_ref_id": "PGU04-CONTINUITY-A01",
+      "path": "DZN32_PUBLIC_GITHUB_PROJECT_SOURCE_ANCHOR_v0_2_4.md",
+      "bytes": 12333,
+      "sha256": "fd41c43ac939a85bc4ac8bb8f28900bb3a4384e27d2e7aebc25af99ed26bc92b",
+      "role": "continuity_anchor",
+      "source_state": "PLANNING_CONTINUITY",
+      "public_copy_included": false,
+      "authority_effect": "none",
+      "proof_ref": "Human_neo_Project_Source_Anchor_v0_2_4"
     }
   ],
   "claim_boundary": {

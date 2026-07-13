@@ -1,0 +1,12 @@
+{"key":"created_at","value":"2026-07-07T00:00:00+07:00"}
+{"key":"data_layer_tables_state","value":"schema_ready_empty - danh cho P1/P2/P7 nap du lieu that sau nay, khong doan lai cau truc"}
+{"key":"doctrine_core_cells","value":"24 (22 Core layer 1-3 + FC-027 Orbit 4 + FC-012 Orbit 7). Note: FC-018/FC-024 da nam trong 22 Core, khong phai cell cong them. Sua tu gia tri cu ghi nham la 25 (audit 2026-07-08)."}
+{"key":"group3_bloat_status","value":"Da xoa vat ly (khong copy vao candidate nay). File goc v2.1 (125MB, co du Nhom 3) van con luu local ben ngoai he thong nay theo xac nhan cua Human 2026-07-07 — khong can giu ban archive trong candidate."}
+{"key":"human_gate","value":"required before baseline/source/canon/RLDB/memory/DB adoption"}
+{"key":"known_defect_status","value":"Da xac dinh root cause + pham vi (5555/12370 dong, xem PATCH-004). Du lieu loi khong con trong file nay vi thuoc Nhom 3 da bi xoa. PATCH-004 la rule phong ngua cho lan ingest that tiep theo."}
+{"key":"next_use","value":"File nay dung de nap dau moi phien lam context chong drift (thay vi zip). Data layer (P1/P2/P7 that) nap rieng, khong tron vao Sun Graph doctrine DB."}
+{"key":"p1_p2_p7_status","value":"Da co file nguon that ben Human, chua nap vao vi phien lam viec hien tai la Claude free / audit-only. Cho quyet dinh nap khi chuyen sang phien co the ghi source."}
+{"key":"purpose","value":"Doctrine Core candidate - tach tu DRC_DB_01_SUN_GRAPH_260610_v2_1. Giu nguyen ly loi (Core 1-3 + mechanism cells FC-018/024/027) + schema day du 57 bang cho data layer (chua co du lieu that)."}
+{"key":"repair_log_v0_1_2","value":"Audit 2026-07-08 (Claude, read-only source, sandbox candidate copy): 3 fix applied — (1) doctrine_core_cells count corrected 25->24; (2) FAM_ARTIFACT_SURFACE_ARCHIVE flagged orphan in notes; (3) project_cell_refs populated with 20 candidate rows inferred from force_cells.owner text match, ref_role=owner_field_inferred_candidate. Human Gate: chua canon, van la candidate."}
+{"key":"source_basis","value":"DRC_DB_01_SUN_GRAPH_260610_v2_1_PROJECT_IMPORT_LOADED.db (Claude audit read-only, file goc khong bi ghi de)"}
+{"key":"status","value":"candidate_only / not_canon / not_baseline / schema_complete_data_layer_empty"}

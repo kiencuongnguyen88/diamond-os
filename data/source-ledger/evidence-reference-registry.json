@@ -103,8 +103,53 @@
     {
       "evidence_id": "PGU03-E03",
       "type": "human_gate",
+      "state": "COMMIT_GATE_CONSUMED",
+      "ref": "https://github.com/kiencuongnguyen88/diamond-os/commit/34f7caa61c9aa8afe8723170bb50982ab406e2f3",
+      "content_in_repo": false,
+      "authority_effect": "none",
+      "sha256": null
+    },
+    {
+      "evidence_id": "PGU03-E04",
+      "type": "repository_readback",
+      "state": "PASS_POST_PUSH",
+      "ref": "PG_U03_POST_PUSH_READBACK_v0_1.yaml",
+      "content_in_repo": false,
+      "authority_effect": "none",
+      "sha256": "eb3cc4a784128b24222fb8c481e3dd0dccaa6e1dbe80a443f4d7cd06e829dc00"
+    },
+    {
+      "evidence_id": "PGU04-E01",
+      "type": "source_readback",
+      "state": "PASS_SOURCE_SCOPE_MAPPED",
+      "ref": "PG_U04_SOURCE_MAPPING_v0_1",
+      "content_in_repo": false,
+      "authority_effect": "none",
+      "sha256": "214c0dfc61e388e55a82519dcb7e384073ffece3a5e2e10c473f436041c3b9fa"
+    },
+    {
+      "evidence_id": "PGU04-E02",
+      "type": "human_gate",
+      "state": "PUBLIC_SUBSET_GATE_CONSUMED_OPTION_A",
+      "ref": "PG_U04_OPTION_A_HUMAN_SELECTION_v0_1",
+      "content_in_repo": false,
+      "authority_effect": "none",
+      "sha256": null
+    },
+    {
+      "evidence_id": "PGU04-E03",
+      "type": "validator",
+      "state": "REPRODUCIBLE_IN_REPO",
+      "ref": "tests/validate_pg_u04.py",
+      "content_in_repo": true,
+      "authority_effect": "none",
+      "sha256": null
+    },
+    {
+      "evidence_id": "PGU04-E04",
+      "type": "human_gate",
       "state": "COMMIT_GATE_PENDING",
-      "ref": "PG_U03_HUMAN_COMMIT_GATE",
+      "ref": "PG_U04_HUMAN_COMMIT_GATE",
       "content_in_repo": false,
       "authority_effect": "none",
       "sha256": null

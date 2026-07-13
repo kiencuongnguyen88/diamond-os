@@ -1,0 +1,126 @@
+{
+  "manifest_id": "PG_U04_CHECKSUM_MANIFEST_v0_1",
+  "unit_id": "PG-U04",
+  "hash_algorithm": "SHA256",
+  "normalization": "canonical_lf",
+  "self_included": false,
+  "ownership_mode": "unit_owned_files_only",
+  "shared_registry_policy": "record_level_validation_not_whole_file_hash",
+  "files": [
+    {
+      "path": "src/sun-graph/sun-graph-doctrine-contract.md",
+      "bytes": 746,
+      "sha256": "0a2eeb595536b7840e8ca83fa9fff390dcbb898e431ccb9448ab11df6342a4ab"
+    },
+    {
+      "path": "migrations/sun-graph/001_schema.sql",
+      "bytes": 25531,
+      "sha256": "3803d5a8248c8348d46e52e4e5f19e6929e6ef9dacc6723d67957dc68ca76f6a"
+    },
+    {
+      "path": "data/sun-graph/approved-public-subset.json",
+      "bytes": 6174,
+      "sha256": "87db27217e5339289908f943ade079f8a9b9519030d3a6b9910f5f16a1c4f475"
+    },
+    {
+      "path": "data/sun-graph/schema-inventory.json",
+      "bytes": 107419,
+      "sha256": "1621af2ed57973bead2a56bf833757b93d3a4304ee6062e88a42eb7798fe9076"
+    },
+    {
+      "path": "schemas/sun-graph/approved-public-subset.schema.json",
+      "bytes": 1060,
+      "sha256": "a7b6cd1d27714f5d69c81ef054eafe3118575c340409deb2231123c836c4e7e8"
+    },
+    {
+      "path": "schemas/sun-graph/seed-manifest-entry.schema.json",
+      "bytes": 884,
+      "sha256": "852fe855d8ce7a6478fddb00d89cc1f340fffe7bc28338d9c1e2cddf1574d594"
+    },
+    {
+      "path": "tools/build_sun_graph_db.py",
+      "bytes": 2071,
+      "sha256": "218492873b1a57155797ebb29ab77f5d373169f613e09a16c460e7e37a8c1b16"
+    },
+    {
+      "path": "docs/sun-graph/README.md",
+      "bytes": 547,
+      "sha256": "555aba0c487920b6db60eaeb38a988a87b44a6e4dd2c032ea4abe64121a49440"
+    },
+    {
+      "path": "tests/PG_U04_TEST_MATRIX.json",
+      "bytes": 2579,
+      "sha256": "84bfea293ab70ec76c930e6c4680ed1860ab6074fe33e885c8dd5a929defd26b"
+    },
+    {
+      "path": "tests/validate_pg_u04.py",
+      "bytes": 15088,
+      "sha256": "c17ef9b783cb833354c8ca68e5cdf0573fc88b5e0530160a6ad01672c2852d1f"
+    },
+    {
+      "path": "data/sun-graph/seeds/sun_layers.jsonl",
+      "bytes": 3800,
+      "sha256": "a565993f7d458b2ef830d862c18125d9b957ac29b44387d99713fbb14022c24b"
+    },
+    {
+      "path": "data/sun-graph/seeds/gates.jsonl",
+      "bytes": 1659,
+      "sha256": "027a3ae79b4fc9f9c72535c52b4a40778e5dea9d074fe38839f89eee41828c6e"
+    },
+    {
+      "path": "data/sun-graph/seeds/force_flows.jsonl",
+      "bytes": 1400,
+      "sha256": "d4633584bb20d6e777f337a0cc1ba0cf8ff3cb83fcebaa64535bc5656b5e9257"
+    },
+    {
+      "path": "data/sun-graph/seeds/force_skills.jsonl",
+      "bytes": 3306,
+      "sha256": "1e09b329d1312564f9ea6e3740d44788dbcd159be2605ff922ce70cc397875f7"
+    },
+    {
+      "path": "data/sun-graph/seeds/projects.jsonl",
+      "bytes": 7884,
+      "sha256": "b7d74613bd701a1abc99dbc10fab4be778af3d2ac68c1c5309e39ad664ba0fb4"
+    },
+    {
+      "path": "data/sun-graph/seeds/force_cell_families.jsonl",
+      "bytes": 3198,
+      "sha256": "f3b6152348b512796612099816377f1783b0ca9de7a4cbd08863b7623f28dfee"
+    },
+    {
+      "path": "data/sun-graph/seeds/force_cells.jsonl",
+      "bytes": 30702,
+      "sha256": "f75157d707a84327e0dd9531dfc45daad1de24074b76f601a71cff4e973b031e"
+    },
+    {
+      "path": "data/sun-graph/seeds/full_force_objects.jsonl",
+      "bytes": 39178,
+      "sha256": "5f3ac974d8e288d1a1a693edb92c1351ba44324d0c41609c25288cab8fd70352"
+    },
+    {
+      "path": "data/sun-graph/seeds/project_cell_refs.jsonl",
+      "bytes": 1803,
+      "sha256": "920b0b5de1ff3801ff24266f7843ae37d1ff92bea0174da76baa715d552a9ca5"
+    },
+    {
+      "path": "data/sun-graph/seeds/patch_candidates.jsonl",
+      "bytes": 1725,
+      "sha256": "4daf53c9c7b53534f33ca1ec55bcf4587a70ff6a725bd60c0f7aa1b37e8f090b"
+    },
+    {
+      "path": "data/sun-graph/seeds/db_meta.jsonl",
+      "bytes": 2234,
+      "sha256": "99367c973c9ac97344f6295b22c581175e04cdb5d7aa3c4f5617e485685b66de"
+    }
+  ],
+  "claim_boundary": {
+    "source_apply": false,
+    "DB_write": false,
+    "RLDB_writeback": false,
+    "canon": false,
+    "commit": false,
+    "push": false,
+    "publish": false,
+    "runtime_activation": false
+  }
+}

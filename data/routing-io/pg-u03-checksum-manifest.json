@@ -69,13 +69,13 @@
     },
     {
       "path": "tests/PG_U03_TEST_MATRIX.json",
-      "bytes": 2633,
-      "sha256": "7ba0bd86fbbbac3ffc432dd78b19022387caf1863db1a1fd1bff2d88d878d879"
+      "bytes": 2634,
+      "sha256": "51ad22a79c519106bf330c5ce51e44824447e125f7f55e175798b2c59bce8228"
     },
     {
       "path": "tests/validate_pg_u03.py",
-      "bytes": 16904,
-      "sha256": "4719692d7b6a78679af7e7c603109458eebe7af921816125d99a56083df290e2"
+      "bytes": 17013,
+      "sha256": "178f64377ee66ab9434b135d01d0046ca067a05c597ed5a3afa3b4625e22d895"
     }
   ],
   "claim_boundary": {

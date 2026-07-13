@@ -9,8 +9,8 @@
   "files": [
     {
       "path": "docs/source-ledger/README.md",
-      "bytes": 1268,
-      "sha256": "df4f6ef2d9d654bfac6e8523a86817c41ff2054c1efdfd98fdc53b25c3dd45bf"
+      "bytes": 1380,
+      "sha256": "6d4925090e3646c12c48359bebd64ad97fee738cd07c3d1af69106a458861591"
     },
     {
       "path": "schemas/source-ledger/public-unit-ledger.schema.json",

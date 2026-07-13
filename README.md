@@ -21,6 +21,13 @@ Publishes bounded task classification, IO orchestration, source-sync and Project
 - Repository commit gate: pending
 - Active source pair read for build: `v0.6.2.17`
 
+### PG-U04 — Sun Graph Doctrine Git-native Core
+Publishes the Human-approved 57-table/8-view schema and 140 doctrine/mechanism seed rows as Git-native source. SQLite is generated deterministically and is not tracked.
+
+- Candidate state: `GIT_CANDIDATE`
+- Dependencies: `PG-U00`, `PG-U01`, `PG-U03`
+- Repository commit gate: pending
+
 ## Authority state
 A Git commit proves repository history; it does not itself promote a unit to canon. Canonical authority: `false`. Source apply, DB write, publish and runtime activation remain Human-gated.
 
@@ -34,6 +41,7 @@ python -S tests/validate_pg_u00.py
 python -S tests/validate_pg_u01.py
 python -S tests/validate_pg_u02.py
 python -S tests/validate_pg_u03.py
+python -S tests/validate_pg_u04.py
 ```
 
 The validators use only the Python standard library.
