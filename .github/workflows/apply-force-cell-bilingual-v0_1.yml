@@ -1,0 +1,63 @@
+name: Apply Force Cell Bilingual Surface v0.1
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/apply-force-cell-bilingual-v0_1.yml"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: force-cell-bilingual-v0-1
+  cancel-in-progress: false
+
+jobs:
+  apply-and-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Verify baseline and reconstruct approved candidate
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(sha256sum learning-game-seed/index.html | awk '{print $1}')" = "69de1fb99235f39bb3f7c8d001c94e643b37c9338052f69c554fddf4d127f8d7"
+          test "$(sha256sum learning-game-seed/force-cells-drc03-v0_1.js | awk '{print $1}')" = "bc9026c26cfeaff635e0343fb4d5cf04ed02ff5e5a01c7a88c5e908a5fcc82fe"
+          cat .github/force-cell-bilingual-v0_1/index.part* | base64 -d | gzip -d > learning-game-seed/index.html
+          cat .github/force-cell-bilingual-v0_1/force.part* | base64 -d | gzip -d > learning-game-seed/force-cells-drc03-v0_1.js
+          test "$(sha256sum learning-game-seed/index.html | awk '{print $1}')" = "9ebb32ab9e40818d39dfc076f0f0d8e6bf41d389139880e03f4601924ba580a8"
+          test "$(sha256sum learning-game-seed/force-cells-drc03-v0_1.js | awk '{print $1}')" = "6e6bf1c97ae66c95023294dc520b65ead65de63d71c40d1de74cf7fe619b286f"
+
+      - name: Commit exact bilingual candidate and remove temporary files
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf .github/force-cell-bilingual-v0_1
+          rm -f .github/workflows/apply-force-cell-bilingual-v0_1.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "feat(learning-game): add bilingual Force Cell surface"
+          git push origin main
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload site artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: learning-game-seed
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
