@@ -49,6 +49,31 @@ window.DIAMOND_FORCE_CELLS = Object.freeze([
       "authorityStatus": "candidate_object_only_not_source_apply",
       "sourceApply": false,
       "sourceCleanClaim": false
+    },
+    "display": {
+      "vi": {
+        "whySource": "Nếu thiếu “Khung cấu trúc Force Cell”, DRC03 có thể trông sâu về cấu trúc nhưng vẫn không đưa ra được quyết định thực sự cho đúng slot.",
+        "triggers": [
+          "Một cụm từ lực đã được đánh dấu chỉ Human được quyền giữ hoặc sửa, nhưng model muốn rút gọn nó.",
+          "Một model tương lai phải đánh giá “Khung cấu trúc Force Cell” trong khi các quyền Human_replace, source_apply và source_clean vẫn bị khóa."
+        ],
+        "inspectRun": [
+          "Xác định đúng object DRC03 đang được xem xét, không chỉ nhìn trạng thái chung của cả gói.",
+          "Đối chiếu ngôn ngữ candidate hiện tại với cụm lực nguồn gốc: force cell schema.",
+          "Kiểm tra phụ thuộc chéo giữa các slot: DRC17 khóa câu chữ của Human, DRC19 định tuyến model, DRC18 giao dịch prompt và DRC16 cấu trúc phản hồi."
+        ],
+        "decisionBranches": {
+          "if_source_force_present_and_boundary_false": "Chỉ trả nhánh PASS để Human xem xét; không tự áp dụng.",
+          "if_force_present_but_hidden_in_lineage_only": "Trả FAIL_FORCE_COVERAGE_GAP và sửa unit đang hoạt động.",
+          "if_user_requests_apply_or_clean": "Trả danh sách claim bị chặn và giữ nguyên ranh giới không áp dụng."
+        },
+        "repairPath": [
+          "Khôi phục “Khung cấu trúc Force Cell” thành logic runtime đang hoạt động của DRC03.",
+          "Bổ sung negative test theo đúng vai trò cho “Khung cấu trúc Force Cell”.",
+          "Chạy lại semantic score trước khi đề xuất PASS để review."
+        ],
+        "readbackLine": "DRC03 semantic unit “Khung cấu trúc Force Cell” PASS: Force Cell có nguồn đã chạy bằng logic quyết định riêng của slot."
+      }
     }
   },
   {
@@ -101,6 +126,31 @@ window.DIAMOND_FORCE_CELLS = Object.freeze([
       "authorityStatus": "candidate_object_only_not_source_apply",
       "sourceApply": false,
       "sourceCleanClaim": false
+    },
+    "display": {
+      "vi": {
+        "whySource": "Nếu thiếu “Kho cụm từ lực”, DRC03 có thể trông sâu về cấu trúc nhưng vẫn không đưa ra được quyết định thực sự cho đúng slot.",
+        "triggers": [
+          "Một Force Cell đã có tên nhưng còn thiếu trigger, cách chạy hoặc output.",
+          "Một model tương lai phải đánh giá “Kho cụm từ lực” trong khi các quyền Human_replace, source_apply và source_clean vẫn bị khóa."
+        ],
+        "inspectRun": [
+          "Xác định đúng object DRC03 đang được xem xét, không chỉ nhìn trạng thái chung của cả gói.",
+          "Đối chiếu ngôn ngữ candidate hiện tại với cụm lực nguồn gốc: force phrase bank.",
+          "Kiểm tra phụ thuộc chéo giữa các slot: DRC17 khóa câu chữ của Human, DRC19 định tuyến model, DRC18 giao dịch prompt và DRC16 cấu trúc phản hồi."
+        ],
+        "decisionBranches": {
+          "if_source_force_present_and_boundary_false": "Chỉ trả nhánh PASS để Human xem xét; không tự áp dụng.",
+          "if_force_present_but_hidden_in_lineage_only": "Trả FAIL_FORCE_COVERAGE_GAP và sửa unit đang hoạt động.",
+          "if_user_requests_apply_or_clean": "Trả danh sách claim bị chặn và giữ nguyên ranh giới không áp dụng."
+        },
+        "repairPath": [
+          "Khôi phục “Kho cụm từ lực” thành logic runtime đang hoạt động của DRC03.",
+          "Bổ sung negative test theo đúng vai trò cho “Kho cụm từ lực”.",
+          "Chạy lại semantic score trước khi đề xuất PASS để review."
+        ],
+        "readbackLine": "DRC03 semantic unit “Kho cụm từ lực” PASS: Force Cell có nguồn đã chạy bằng logic quyết định riêng của slot."
+      }
     }
   },
   {
@@ -153,6 +203,31 @@ window.DIAMOND_FORCE_CELLS = Object.freeze([
       "authorityStatus": "candidate_object_only_not_source_apply",
       "sourceApply": false,
       "sourceCleanClaim": false
+    },
+    "display": {
+      "vi": {
+        "whySource": "Nếu thiếu “Cụm từ lực do Human khóa”, DRC03 có thể trông sâu về cấu trúc nhưng vẫn không đưa ra được quyết định thực sự cho đúng slot.",
+        "triggers": [
+          "Cần dùng Force Cell định tuyến model để đánh giá, nhưng chưa được kích hoạt route thật.",
+          "Một model tương lai phải đánh giá “Cụm từ lực do Human khóa” trong khi các quyền Human_replace, source_apply và source_clean vẫn bị khóa."
+        ],
+        "inspectRun": [
+          "Xác định đúng object DRC03 đang được xem xét, không chỉ nhìn trạng thái chung của cả gói.",
+          "Đối chiếu ngôn ngữ candidate hiện tại với cụm lực nguồn gốc: Human locked force phrases.",
+          "Kiểm tra phụ thuộc chéo giữa các slot: DRC17 khóa câu chữ của Human, DRC19 định tuyến model, DRC18 giao dịch prompt và DRC16 cấu trúc phản hồi."
+        ],
+        "decisionBranches": {
+          "if_source_force_present_and_boundary_false": "Chỉ trả nhánh PASS để Human xem xét; không tự áp dụng.",
+          "if_force_present_but_hidden_in_lineage_only": "Trả FAIL_FORCE_COVERAGE_GAP và sửa unit đang hoạt động.",
+          "if_user_requests_apply_or_clean": "Trả danh sách claim bị chặn và giữ nguyên ranh giới không áp dụng."
+        },
+        "repairPath": [
+          "Khôi phục “Cụm từ lực do Human khóa” thành logic runtime đang hoạt động của DRC03.",
+          "Bổ sung negative test theo đúng vai trò cho “Cụm từ lực do Human khóa”.",
+          "Chạy lại semantic score trước khi đề xuất PASS để review."
+        ],
+        "readbackLine": "DRC03 semantic unit “Cụm từ lực do Human khóa” PASS: Force Cell có nguồn đã chạy bằng logic quyết định riêng của slot."
+      }
     }
   },
   {
@@ -205,6 +280,31 @@ window.DIAMOND_FORCE_CELLS = Object.freeze([
       "authorityStatus": "candidate_object_only_not_source_apply",
       "sourceApply": false,
       "sourceCleanClaim": false
+    },
+    "display": {
+      "vi": {
+        "whySource": "Nếu thiếu “Trigger → Run → Output → Readback”, DRC03 có thể trông sâu về cấu trúc nhưng vẫn không đưa ra được quyết định thực sự cho đúng slot.",
+        "triggers": [
+          "Một cụm từ lực đã được đánh dấu chỉ Human được quyền giữ hoặc sửa, nhưng model muốn rút gọn nó.",
+          "Một model tương lai phải đánh giá “Trigger → Run → Output → Readback” trong khi các quyền Human_replace, source_apply và source_clean vẫn bị khóa."
+        ],
+        "inspectRun": [
+          "Xác định đúng object DRC03 đang được xem xét, không chỉ nhìn trạng thái chung của cả gói.",
+          "Đối chiếu ngôn ngữ candidate hiện tại với cụm lực nguồn gốc: trigger run output readback mechanics.",
+          "Kiểm tra phụ thuộc chéo giữa các slot: DRC17 khóa câu chữ của Human, DRC19 định tuyến model, DRC18 giao dịch prompt và DRC16 cấu trúc phản hồi."
+        ],
+        "decisionBranches": {
+          "if_source_force_present_and_boundary_false": "Chỉ trả nhánh PASS để Human xem xét; không tự áp dụng.",
+          "if_force_present_but_hidden_in_lineage_only": "Trả FAIL_FORCE_COVERAGE_GAP và sửa unit đang hoạt động.",
+          "if_user_requests_apply_or_clean": "Trả danh sách claim bị chặn và giữ nguyên ranh giới không áp dụng."
+        },
+        "repairPath": [
+          "Khôi phục “Trigger → Run → Output → Readback” thành logic runtime đang hoạt động của DRC03.",
+          "Bổ sung negative test theo đúng vai trò cho “Trigger → Run → Output → Readback”.",
+          "Chạy lại semantic score trước khi đề xuất PASS để review."
+        ],
+        "readbackLine": "DRC03 semantic unit “Trigger → Run → Output → Readback” PASS: Force Cell có nguồn đã chạy bằng logic quyết định riêng của slot."
+      }
     }
   },
   {
@@ -257,6 +357,31 @@ window.DIAMOND_FORCE_CELLS = Object.freeze([
       "authorityStatus": "candidate_object_only_not_source_apply",
       "sourceApply": false,
       "sourceCleanClaim": false
+    },
+    "display": {
+      "vi": {
+        "whySource": "Nếu thiếu “Định tuyến mô hình”, DRC03 có thể trông sâu về cấu trúc nhưng vẫn không đưa ra được quyết định thực sự cho đúng slot.",
+        "triggers": [
+          "Một Force Cell đã có tên nhưng còn thiếu trigger, cách chạy hoặc output.",
+          "Một model tương lai phải đánh giá “Định tuyến mô hình” trong khi các quyền Human_replace, source_apply và source_clean vẫn bị khóa."
+        ],
+        "inspectRun": [
+          "Xác định đúng object DRC03 đang được xem xét, không chỉ nhìn trạng thái chung của cả gói.",
+          "Đối chiếu ngôn ngữ candidate hiện tại với cụm lực nguồn gốc: model routing force cells.",
+          "Kiểm tra phụ thuộc chéo giữa các slot: DRC17 khóa câu chữ của Human, DRC19 định tuyến model, DRC18 giao dịch prompt và DRC16 cấu trúc phản hồi."
+        ],
+        "decisionBranches": {
+          "if_source_force_present_and_boundary_false": "Chỉ trả nhánh PASS để Human xem xét; không tự áp dụng.",
+          "if_force_present_but_hidden_in_lineage_only": "Trả FAIL_FORCE_COVERAGE_GAP và sửa unit đang hoạt động.",
+          "if_user_requests_apply_or_clean": "Trả danh sách claim bị chặn và giữ nguyên ranh giới không áp dụng."
+        },
+        "repairPath": [
+          "Khôi phục “Định tuyến mô hình” thành logic runtime đang hoạt động của DRC03.",
+          "Bổ sung negative test theo đúng vai trò cho “Định tuyến mô hình”.",
+          "Chạy lại semantic score trước khi đề xuất PASS để review."
+        ],
+        "readbackLine": "DRC03 semantic unit “Định tuyến mô hình” PASS: Force Cell có nguồn đã chạy bằng logic quyết định riêng của slot."
+      }
     }
   },
   {
@@ -309,6 +434,31 @@ window.DIAMOND_FORCE_CELLS = Object.freeze([
       "authorityStatus": "candidate_object_only_not_source_apply",
       "sourceApply": false,
       "sourceCleanClaim": false
+    },
+    "display": {
+      "vi": {
+        "whySource": "Nếu thiếu “Ngôn ngữ nền dễ hiểu”, DRC03 có thể trông sâu về cấu trúc nhưng vẫn không đưa ra được quyết định thực sự cho đúng slot.",
+        "triggers": [
+          "Cần dùng Force Cell định tuyến model để đánh giá, nhưng chưa được kích hoạt route thật.",
+          "Một model tương lai phải đánh giá “Ngôn ngữ nền dễ hiểu” trong khi các quyền Human_replace, source_apply và source_clean vẫn bị khóa."
+        ],
+        "inspectRun": [
+          "Xác định đúng object DRC03 đang được xem xét, không chỉ nhìn trạng thái chung của cả gói.",
+          "Đối chiếu ngôn ngữ candidate hiện tại với cụm lực nguồn gốc: underlanguage force cells.",
+          "Kiểm tra phụ thuộc chéo giữa các slot: DRC17 khóa câu chữ của Human, DRC19 định tuyến model, DRC18 giao dịch prompt và DRC16 cấu trúc phản hồi."
+        ],
+        "decisionBranches": {
+          "if_source_force_present_and_boundary_false": "Chỉ trả nhánh PASS để Human xem xét; không tự áp dụng.",
+          "if_force_present_but_hidden_in_lineage_only": "Trả FAIL_FORCE_COVERAGE_GAP và sửa unit đang hoạt động.",
+          "if_user_requests_apply_or_clean": "Trả danh sách claim bị chặn và giữ nguyên ranh giới không áp dụng."
+        },
+        "repairPath": [
+          "Khôi phục “Ngôn ngữ nền dễ hiểu” thành logic runtime đang hoạt động của DRC03.",
+          "Bổ sung negative test theo đúng vai trò cho “Ngôn ngữ nền dễ hiểu”.",
+          "Chạy lại semantic score trước khi đề xuất PASS để review."
+        ],
+        "readbackLine": "DRC03 semantic unit “Ngôn ngữ nền dễ hiểu” PASS: Force Cell có nguồn đã chạy bằng logic quyết định riêng của slot."
+      }
     }
   },
   {
@@ -361,6 +511,31 @@ window.DIAMOND_FORCE_CELLS = Object.freeze([
       "authorityStatus": "candidate_object_only_not_source_apply",
       "sourceApply": false,
       "sourceCleanClaim": false
+    },
+    "display": {
+      "vi": {
+        "whySource": "Nếu thiếu “Chống mùi AI”, DRC03 có thể trông sâu về cấu trúc nhưng vẫn không đưa ra được quyết định thực sự cho đúng slot.",
+        "triggers": [
+          "Một cụm từ lực đã được đánh dấu chỉ Human được quyền giữ hoặc sửa, nhưng model muốn rút gọn nó.",
+          "Một model tương lai phải đánh giá “Chống mùi AI” trong khi các quyền Human_replace, source_apply và source_clean vẫn bị khóa."
+        ],
+        "inspectRun": [
+          "Xác định đúng object DRC03 đang được xem xét, không chỉ nhìn trạng thái chung của cả gói.",
+          "Đối chiếu ngôn ngữ candidate hiện tại với cụm lực nguồn gốc: anti AI smell force cells.",
+          "Kiểm tra phụ thuộc chéo giữa các slot: DRC17 khóa câu chữ của Human, DRC19 định tuyến model, DRC18 giao dịch prompt và DRC16 cấu trúc phản hồi."
+        ],
+        "decisionBranches": {
+          "if_source_force_present_and_boundary_false": "Chỉ trả nhánh PASS để Human xem xét; không tự áp dụng.",
+          "if_force_present_but_hidden_in_lineage_only": "Trả FAIL_FORCE_COVERAGE_GAP và sửa unit đang hoạt động.",
+          "if_user_requests_apply_or_clean": "Trả danh sách claim bị chặn và giữ nguyên ranh giới không áp dụng."
+        },
+        "repairPath": [
+          "Khôi phục “Chống mùi AI” thành logic runtime đang hoạt động của DRC03.",
+          "Bổ sung negative test theo đúng vai trò cho “Chống mùi AI”.",
+          "Chạy lại semantic score trước khi đề xuất PASS để review."
+        ],
+        "readbackLine": "DRC03 semantic unit “Chống mùi AI” PASS: Force Cell có nguồn đã chạy bằng logic quyết định riêng của slot."
+      }
     }
   },
   {
@@ -413,6 +588,31 @@ window.DIAMOND_FORCE_CELLS = Object.freeze([
       "authorityStatus": "candidate_object_only_not_source_apply",
       "sourceApply": false,
       "sourceCleanClaim": false
+    },
+    "display": {
+      "vi": {
+        "whySource": "Nếu thiếu “Kiểm tra trước vòng chạy”, DRC03 có thể trông sâu về cấu trúc nhưng vẫn không đưa ra được quyết định thực sự cho đúng slot.",
+        "triggers": [
+          "Một Force Cell đã có tên nhưng còn thiếu trigger, cách chạy hoặc output.",
+          "Một model tương lai phải đánh giá “Kiểm tra trước vòng chạy” trong khi các quyền Human_replace, source_apply và source_clean vẫn bị khóa."
+        ],
+        "inspectRun": [
+          "Xác định đúng object DRC03 đang được xem xét, không chỉ nhìn trạng thái chung của cả gói.",
+          "Đối chiếu ngôn ngữ candidate hiện tại với cụm lực nguồn gốc: loop preflight force cells.",
+          "Kiểm tra phụ thuộc chéo giữa các slot: DRC17 khóa câu chữ của Human, DRC19 định tuyến model, DRC18 giao dịch prompt và DRC16 cấu trúc phản hồi."
+        ],
+        "decisionBranches": {
+          "if_source_force_present_and_boundary_false": "Chỉ trả nhánh PASS để Human xem xét; không tự áp dụng.",
+          "if_force_present_but_hidden_in_lineage_only": "Trả FAIL_FORCE_COVERAGE_GAP và sửa unit đang hoạt động.",
+          "if_user_requests_apply_or_clean": "Trả danh sách claim bị chặn và giữ nguyên ranh giới không áp dụng."
+        },
+        "repairPath": [
+          "Khôi phục “Kiểm tra trước vòng chạy” thành logic runtime đang hoạt động của DRC03.",
+          "Bổ sung negative test theo đúng vai trò cho “Kiểm tra trước vòng chạy”.",
+          "Chạy lại semantic score trước khi đề xuất PASS để review."
+        ],
+        "readbackLine": "DRC03 semantic unit “Kiểm tra trước vòng chạy” PASS: Force Cell có nguồn đã chạy bằng logic quyết định riêng của slot."
+      }
     }
   },
   {
@@ -465,6 +665,31 @@ window.DIAMOND_FORCE_CELLS = Object.freeze([
       "authorityStatus": "candidate_object_only_not_source_apply",
       "sourceApply": false,
       "sourceCleanClaim": false
+    },
+    "display": {
+      "vi": {
+        "whySource": "Nếu thiếu “Các bước bị chặn”, DRC03 có thể trông sâu về cấu trúc nhưng vẫn không đưa ra được quyết định thực sự cho đúng slot.",
+        "triggers": [
+          "Cần dùng Force Cell định tuyến model để đánh giá, nhưng chưa được kích hoạt route thật.",
+          "Một model tương lai phải đánh giá “Các bước bị chặn” trong khi các quyền Human_replace, source_apply và source_clean vẫn bị khóa."
+        ],
+        "inspectRun": [
+          "Xác định đúng object DRC03 đang được xem xét, không chỉ nhìn trạng thái chung của cả gói.",
+          "Đối chiếu ngôn ngữ candidate hiện tại với cụm lực nguồn gốc: blocked moves.",
+          "Kiểm tra phụ thuộc chéo giữa các slot: DRC17 khóa câu chữ của Human, DRC19 định tuyến model, DRC18 giao dịch prompt và DRC16 cấu trúc phản hồi."
+        ],
+        "decisionBranches": {
+          "if_source_force_present_and_boundary_false": "Chỉ trả nhánh PASS để Human xem xét; không tự áp dụng.",
+          "if_force_present_but_hidden_in_lineage_only": "Trả FAIL_FORCE_COVERAGE_GAP và sửa unit đang hoạt động.",
+          "if_user_requests_apply_or_clean": "Trả danh sách claim bị chặn và giữ nguyên ranh giới không áp dụng."
+        },
+        "repairPath": [
+          "Khôi phục “Các bước bị chặn” thành logic runtime đang hoạt động của DRC03.",
+          "Bổ sung negative test theo đúng vai trò cho “Các bước bị chặn”.",
+          "Chạy lại semantic score trước khi đề xuất PASS để review."
+        ],
+        "readbackLine": "DRC03 semantic unit “Các bước bị chặn” PASS: Force Cell có nguồn đã chạy bằng logic quyết định riêng của slot."
+      }
     }
   },
   {
@@ -517,6 +742,31 @@ window.DIAMOND_FORCE_CELLS = Object.freeze([
       "authorityStatus": "candidate_object_only_not_source_apply",
       "sourceApply": false,
       "sourceCleanClaim": false
+    },
+    "display": {
+      "vi": {
+        "whySource": "Nếu thiếu “Tính liên tục của nhóm nguồn”, DRC03 có thể trông sâu về cấu trúc nhưng vẫn không đưa ra được quyết định thực sự cho đúng slot.",
+        "triggers": [
+          "Một cụm từ lực đã được đánh dấu chỉ Human được quyền giữ hoặc sửa, nhưng model muốn rút gọn nó.",
+          "Một model tương lai phải đánh giá “Tính liên tục của nhóm nguồn” trong khi các quyền Human_replace, source_apply và source_clean vẫn bị khóa."
+        ],
+        "inspectRun": [
+          "Xác định đúng object DRC03 đang được xem xét, không chỉ nhìn trạng thái chung của cả gói.",
+          "Đối chiếu ngôn ngữ candidate hiện tại với cụm lực nguồn gốc: source cohort force continuity.",
+          "Kiểm tra phụ thuộc chéo giữa các slot: DRC17 khóa câu chữ của Human, DRC19 định tuyến model, DRC18 giao dịch prompt và DRC16 cấu trúc phản hồi."
+        ],
+        "decisionBranches": {
+          "if_source_force_present_and_boundary_false": "Chỉ trả nhánh PASS để Human xem xét; không tự áp dụng.",
+          "if_force_present_but_hidden_in_lineage_only": "Trả FAIL_FORCE_COVERAGE_GAP và sửa unit đang hoạt động.",
+          "if_user_requests_apply_or_clean": "Trả danh sách claim bị chặn và giữ nguyên ranh giới không áp dụng."
+        },
+        "repairPath": [
+          "Khôi phục “Tính liên tục của nhóm nguồn” thành logic runtime đang hoạt động của DRC03.",
+          "Bổ sung negative test theo đúng vai trò cho “Tính liên tục của nhóm nguồn”.",
+          "Chạy lại semantic score trước khi đề xuất PASS để review."
+        ],
+        "readbackLine": "DRC03 semantic unit “Tính liên tục của nhóm nguồn” PASS: Force Cell có nguồn đã chạy bằng logic quyết định riêng của slot."
+      }
     }
   },
   {
@@ -569,6 +819,31 @@ window.DIAMOND_FORCE_CELLS = Object.freeze([
       "authorityStatus": "candidate_object_only_not_source_apply",
       "sourceApply": false,
       "sourceCleanClaim": false
+    },
+    "display": {
+      "vi": {
+        "whySource": "Nếu thiếu “Không kích hoạt công cụ khi chưa có gate”, DRC03 có thể trông sâu về cấu trúc nhưng vẫn không đưa ra được quyết định thực sự cho đúng slot.",
+        "triggers": [
+          "Một Force Cell đã có tên nhưng còn thiếu trigger, cách chạy hoặc output.",
+          "Một model tương lai phải đánh giá “Không kích hoạt công cụ khi chưa có gate” trong khi các quyền Human_replace, source_apply và source_clean vẫn bị khóa."
+        ],
+        "inspectRun": [
+          "Xác định đúng object DRC03 đang được xem xét, không chỉ nhìn trạng thái chung của cả gói.",
+          "Đối chiếu ngôn ngữ candidate hiện tại với cụm lực nguồn gốc: no tool activation force.",
+          "Kiểm tra phụ thuộc chéo giữa các slot: DRC17 khóa câu chữ của Human, DRC19 định tuyến model, DRC18 giao dịch prompt và DRC16 cấu trúc phản hồi."
+        ],
+        "decisionBranches": {
+          "if_source_force_present_and_boundary_false": "Chỉ trả nhánh PASS để Human xem xét; không tự áp dụng.",
+          "if_force_present_but_hidden_in_lineage_only": "Trả FAIL_FORCE_COVERAGE_GAP và sửa unit đang hoạt động.",
+          "if_user_requests_apply_or_clean": "Trả danh sách claim bị chặn và giữ nguyên ranh giới không áp dụng."
+        },
+        "repairPath": [
+          "Khôi phục “Không kích hoạt công cụ khi chưa có gate” thành logic runtime đang hoạt động của DRC03.",
+          "Bổ sung negative test theo đúng vai trò cho “Không kích hoạt công cụ khi chưa có gate”.",
+          "Chạy lại semantic score trước khi đề xuất PASS để review."
+        ],
+        "readbackLine": "DRC03 semantic unit “Không kích hoạt công cụ khi chưa có gate” PASS: Force Cell có nguồn đã chạy bằng logic quyết định riêng của slot."
+      }
     }
   },
   {
@@ -621,6 +896,31 @@ window.DIAMOND_FORCE_CELLS = Object.freeze([
       "authorityStatus": "candidate_object_only_not_source_apply",
       "sourceApply": false,
       "sourceCleanClaim": false
+    },
+    "display": {
+      "vi": {
+        "whySource": "Nếu thiếu “Kiểm thử âm”, DRC03 có thể trông sâu về cấu trúc nhưng vẫn không đưa ra được quyết định thực sự cho đúng slot.",
+        "triggers": [
+          "Cần dùng Force Cell định tuyến model để đánh giá, nhưng chưa được kích hoạt route thật.",
+          "Một model tương lai phải đánh giá “Kiểm thử âm” trong khi các quyền Human_replace, source_apply và source_clean vẫn bị khóa."
+        ],
+        "inspectRun": [
+          "Xác định đúng object DRC03 đang được xem xét, không chỉ nhìn trạng thái chung của cả gói.",
+          "Đối chiếu ngôn ngữ candidate hiện tại với cụm lực nguồn gốc: negative force tests.",
+          "Kiểm tra phụ thuộc chéo giữa các slot: DRC17 khóa câu chữ của Human, DRC19 định tuyến model, DRC18 giao dịch prompt và DRC16 cấu trúc phản hồi."
+        ],
+        "decisionBranches": {
+          "if_source_force_present_and_boundary_false": "Chỉ trả nhánh PASS để Human xem xét; không tự áp dụng.",
+          "if_force_present_but_hidden_in_lineage_only": "Trả FAIL_FORCE_COVERAGE_GAP và sửa unit đang hoạt động.",
+          "if_user_requests_apply_or_clean": "Trả danh sách claim bị chặn và giữ nguyên ranh giới không áp dụng."
+        },
+        "repairPath": [
+          "Khôi phục “Kiểm thử âm” thành logic runtime đang hoạt động của DRC03.",
+          "Bổ sung negative test theo đúng vai trò cho “Kiểm thử âm”.",
+          "Chạy lại semantic score trước khi đề xuất PASS để review."
+        ],
+        "readbackLine": "DRC03 semantic unit “Kiểm thử âm” PASS: Force Cell có nguồn đã chạy bằng logic quyết định riêng của slot."
+      }
     }
   }
 ]);
