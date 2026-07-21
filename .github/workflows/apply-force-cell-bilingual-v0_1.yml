@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - ".github/workflows/apply-force-cell-bilingual-v0_1.yml"
+      - "learning-game-seed/.force-cell-bilingual-trigger"
 
 permissions:
   contents: write
@@ -44,6 +44,7 @@ jobs:
           set -euo pipefail
           rm -rf .github/force-cell-bilingual-v0_1
           rm -f .github/workflows/apply-force-cell-bilingual-v0_1.yml
+          rm -f learning-game-seed/.force-cell-bilingual-trigger
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
@@ -61,5 +62,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
-# trigger-existing-workflow: 2026-07-21T11:00Z
