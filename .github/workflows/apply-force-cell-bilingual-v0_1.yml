@@ -1,6 +1,7 @@
 name: Apply Force Cell Bilingual Surface v0.1
 
 on:
+  workflow_dispatch:
   push:
     branches: [main]
     paths:
