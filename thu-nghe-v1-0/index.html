@@ -1,0 +1,215 @@
+<!doctype html>
+<!-- THỬ NGHỀ public web v1.0; interaction core preserved from Human-accepted demo v0.6 -->
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="THỬ NGHỀ giúp học sinh trải nghiệm các nhiệm vụ ngắn mô phỏng công việc thực tế, tạo bằng chứng về cách mình xử lý vấn đề trước khi lựa chọn ngành học.">
+<meta name="theme-color" content="#0b2f73">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="THỬ NGHỀ – Trải nghiệm trước, lựa chọn sau">
+<meta property="og:description" content="Đừng chỉ hỏi học sinh nghĩ mình hợp nghề nào; hãy cho các em thử một phần công việc và tạo bằng chứng trước khi quyết định.">
+<meta property="og:type" content="website">
+<title>THỬ NGHỀ – Trải nghiệm trước, lựa chọn sau</title>
+<style>
+:root{--blue:#1246a3;--light:#edf4ff;--ink:#172033;--muted:#667085;--line:#d7e2f2;--green:#eaf8ef;--amber:#fff6df}*{box-sizing:border-box}body{font-family:Arial,Helvetica,sans-serif;margin:0;background:#f6f8fc;color:var(--ink);line-height:1.5}header{background:#0b2f73;color:white;padding:18px}.wrap{max-width:980px;margin:auto;padding:0 16px}.brand{font-size:28px;font-weight:800}.tag{opacity:.9}.notice{background:var(--amber);border:1px solid #f0d994;border-radius:12px;padding:12px 14px;margin:16px 0}.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;margin:16px 0;box-shadow:0 4px 18px rgba(25,52,92,.06)}.step{display:none}.step.active{display:block}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.job{border:2px solid var(--line);border-radius:14px;padding:14px;cursor:pointer;min-height:118px}.job.sel{border-color:#2368d9;background:var(--light)}.muted{color:var(--muted)}.small{font-size:14px}button{border:0;border-radius:10px;background:#1769e0;color:white;padding:11px 16px;font-weight:700;cursor:pointer}.secondary{background:#eef3fb;color:#164b9b}textarea,select{width:100%;padding:10px;border:1px solid #bccae0;border-radius:8px;font:inherit}textarea{min-height:88px}.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}.actions{display:flex;gap:10px;justify-content:flex-end;margin-top:18px;flex-wrap:wrap}.pill{display:inline-block;background:#e8f1ff;color:#0e4aa3;border-radius:999px;padding:6px 10px;font-weight:700}.selected-career{border-left:5px solid #1769e0;background:#edf4ff;padding:12px 14px;border-radius:10px;margin:10px 0 16px}.dataset table{border-collapse:collapse;width:100%;margin:12px 0}.dataset th,.dataset td{border:1px solid #cbd7e8;padding:8px;text-align:center}.feedback{background:#f7f9fd;border-left:4px solid #89a9db;padding:9px 11px;margin:8px 0}.evidence{background:var(--green);border-left:4px solid #37a35c;padding:10px 12px;margin:8px 0}.uncertain{background:var(--amber);border-left-color:#d39a21} .trace{white-space:pre-wrap;background:#f6f8fc;color:#24324a;border:1px solid var(--line);border-radius:10px;padding:12px;font-size:14px}.timeline{list-style:none;padding:0;margin:0}.timeline li{position:relative;margin:0 0 10px 0;padding:10px 12px 10px 38px;background:#f7f9fd;border:1px solid #e0e7f2;border-radius:10px}.timeline li:before{content:"✓";position:absolute;left:12px;top:10px;width:18px;height:18px;border-radius:50%;background:#e8f1ff;color:#1452ad;font-weight:800;text-align:center;line-height:18px}.compare{display:grid;grid-template-columns:1fr 1fr;gap:12px}.compare>div{border:1px solid var(--line);border-radius:12px;padding:12px;background:#fbfcff}.insight{background:#edf4ff;border-left:4px solid #1769e0;padding:12px 14px;margin:8px 0}.detailbox{margin-top:12px;border:1px dashed #bdcbe1;border-radius:10px;padding:10px 12px;background:#fbfcff}.detailbox summary{cursor:pointer;font-weight:700;color:#164b9b}@media(max-width:760px){.compare{grid-template-columns:1fr}}.footer{color:#7b8799;font-size:13px;text-align:center;padding:22px}.warning{color:#8b4a00;font-weight:700}.hint-box{margin-top:10px;background:#fff6df;border:1px solid #e7c65d;border-left:4px solid #d39a21;border-radius:10px;padding:10px 12px;color:#5d4200}.secondary:disabled{opacity:.65;cursor:default}@media(max-width:760px){.grid,.row{grid-template-columns:1fr}.brand{font-size:24px}}
+
+.hero{padding:54px 18px 36px;background:linear-gradient(145deg,#08285f 0%,#1246a3 60%,#1769e0 100%);color:#fff}
+.hero-inner{max-width:980px;margin:auto;display:grid;grid-template-columns:1.3fr .7fr;gap:28px;align-items:center}
+.hero-kicker{display:inline-block;border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.1);padding:6px 10px;border-radius:999px;font-size:13px;font-weight:700;margin-bottom:12px}
+.hero h1{font-size:46px;line-height:1.08;margin:0 0 14px;letter-spacing:-.5px}.hero p{font-size:19px;line-height:1.6;margin:0 0 22px;max-width:720px;color:#eef5ff}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap}.hero-actions a{display:inline-block;text-decoration:none;border-radius:10px;padding:12px 16px;font-weight:800}.cta-primary{background:#fff;color:#0b2f73}.cta-secondary{border:1px solid rgba(255,255,255,.4);color:#fff;background:rgba(255,255,255,.08)}
+.hero-panel{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.22);border-radius:18px;padding:18px}.hero-panel b{font-size:16px}.hero-panel ul{padding-left:20px;margin:10px 0 0}.hero-panel li{margin:8px 0;color:#edf4ff}
+.public-wrap{max-width:980px;margin:auto;padding:0 16px}.section-public{padding:34px 0}.section-public h2{font-size:28px;margin:0 0 8px}.lead{font-size:17px;color:#4b5870;margin-top:0}.value-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}.value-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:0 4px 18px rgba(25,52,92,.05)}.value-card .num{font-size:13px;font-weight:800;color:#1769e0;text-transform:uppercase;letter-spacing:.4px}.value-card h3{font-size:18px;margin:8px 0}.value-card p{margin:0;color:#5d6a7f}
+.how{background:#eef4ff;border-top:1px solid #dfe9f7;border-bottom:1px solid #dfe9f7}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}.how-step{background:white;border:1px solid #d9e4f4;border-radius:12px;padding:16px}.how-step b{display:block;color:#1246a3;margin-bottom:5px}.how-step p{margin:0;color:#5d6a7f;font-size:14px}
+.demo-anchor{scroll-margin-top:12px}.demo-label{display:flex;align-items:center;gap:8px;max-width:980px;margin:26px auto -6px;padding:0 16px}.demo-label span{display:inline-block;background:#e8f1ff;color:#0e4aa3;border-radius:999px;padding:6px 10px;font-size:13px;font-weight:800}.demo-label p{margin:0;color:#5d6a7f;font-size:14px}
+.site-footer{background:#0a1e43;color:#cbd7e8;padding:28px 18px;margin-top:28px}.site-footer .inner{max-width:980px;margin:auto;display:flex;justify-content:space-between;gap:20px;align-items:flex-start}.site-footer strong{color:#fff}.site-footer p{margin:5px 0 0;max-width:700px}.mini{font-size:12px;opacity:.85}
+@media(max-width:760px){.hero{padding-top:38px}.hero-inner{grid-template-columns:1fr}.hero h1{font-size:36px}.hero p{font-size:17px}.value-grid,.steps{grid-template-columns:1fr}.site-footer .inner{display:block}.hero-panel{display:none}}
+
+</style></head><body>
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-kicker">Đề BTL86-01 · Data for Life 2026</div>
+      <h1>THỬ NGHỀ</h1>
+      <p><strong>Trải nghiệm trước, lựa chọn sau.</strong> Thay vì chỉ hỏi học sinh nghĩ mình hợp nghề nào, THỬ NGHỀ cho các em thử một phần công việc và tạo bằng chứng từ chính cách mình xử lý nhiệm vụ.</p>
+      <div class="hero-actions">
+        <a class="cta-primary" href="#thu-nghe">Bắt đầu thử nghề</a>
+        <a class="cta-secondary" href="#cach-hoat-dong">Xem cách hoạt động</a>
+      </div>
+    </div>
+    <div class="hero-panel">
+      <b>Điểm khác biệt</b>
+      <ul>
+        <li>Không gán một con số “hợp nghề” tuyệt đối.</li>
+        <li>Mọi nhận định đều phải truy ngược được về hành động cụ thể.</li>
+        <li>Giữ riêng điều đã quan sát, điều học sinh tự cảm nhận và phần còn chưa chắc chắn.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="section-public">
+  <div class="public-wrap">
+    <h2>Từ tưởng tượng về nghề đến bằng chứng thực tế</h2>
+    <p class="lead">Một trải nghiệm ngắn chưa thể quyết định nghề nghiệp thay học sinh. Nó có thể giúp các em biết thêm mình đã thực sự làm gì, điều gì còn chưa rõ và nên thử gì tiếp theo.</p>
+    <div class="value-grid">
+      <div class="value-card"><div class="num">01 · Thử</div><h3>Nhiệm vụ đúng nghề</h3><p>Mỗi nghề đi kèm một nhiệm vụ mô phỏng riêng, không dùng một bài chung rồi thay nhãn nghề.</p></div>
+      <div class="value-card"><div class="num">02 · Ghi nhận</div><h3>Bằng chứng có nguồn</h3><p>Hệ thống lưu cách học sinh đưa ra quyết định, sử dụng bằng chứng, thay đổi phương án và có dùng gợi ý hay không.</p></div>
+      <div class="value-card"><div class="num">03 · Thử tiếp</div><h3>Không kết luận quá sớm</h3><p>Kết quả nêu điều đã có bằng chứng, điều chưa chắc chắn và một trải nghiệm tiếp theo để kiểm tra.</p></div>
+    </div>
+  </div>
+</section>
+<section id="cach-hoat-dong" class="section-public how">
+  <div class="public-wrap">
+    <h2>Cách hoạt động</h2>
+    <div class="steps">
+      <div class="how-step"><b>1. Hình dung ban đầu</b><p>Học sinh ghi lại mình nghĩ nghề đó làm gì và điều mình dự đoán sẽ thích hoặc không thích.</p></div>
+      <div class="how-step"><b>2. Làm nhiệm vụ</b><p>Thực hiện một lát cắt công việc với dữ liệu, ràng buộc và thông tin mới phát sinh.</p></div>
+      <div class="how-step"><b>3. Tạo bằng chứng</b><p>Hệ thống tách hành vi quan sát được khỏi tự phản ánh và giữ lại phần chưa đủ căn cứ.</p></div>
+      <div class="how-step"><b>4. Chọn bước tiếp</b><p>Đề xuất một trải nghiệm mới nhằm kiểm tra đúng điểm còn chưa chắc chắn.</p></div>
+    </div>
+  </div>
+</section>
+<div id="thu-nghe" class="demo-label demo-anchor"><span>Bản thử tương tác</span><p>Ba nghề đầu tiên · dữ liệu chỉ nằm trong trình duyệt của bạn</p></div>
+<header><div class="wrap"><div class="brand">THỬ NGHỀ</div><div class="tag">Bản thử tương tác</div></div></header>
+<main class="wrap">
+<div class="notice"><b>Phạm vi bản thử:</b> hệ thống chỉ hỗ trợ ba nghề hiển thị bên dưới. Nếu nghề bạn muốn thử chưa có trong danh sách, bản thử sẽ báo “chưa hỗ trợ” và không tự thay bằng nhiệm vụ của nghề khác.</div>
+<section id="s1" class="step active card">
+<h2>1. Chọn một nghề để thử</h2><p class="muted">Mỗi nghề đi kèm đúng một nhiệm vụ mô phỏng đã được thiết kế riêng. Bản trình diễn rút gọn còn vài phút; phiên sử dụng thực tế dự kiến 15-20 phút.</p>
+<div class="grid">
+<div class="job sel" data-job="engineer"><b>Kỹ sư quy trình</b><p class="small muted">Tìm điểm nghẽn -> cân nhắc ràng buộc -> cải tiến hệ thống.</p></div>
+<div class="job" data-job="data"><b>Nhà phân tích dữ liệu</b><p class="small muted">Đặt giả thuyết -> kiểm tra số liệu -> điều chỉnh kết luận.</p></div>
+<div class="job" data-job="ux"><b>Nhà nghiên cứu trải nghiệm người dùng</b><p class="small muted">Giữ nhiều góc nhìn -> tổng hợp -> chọn vấn đề ưu tiên.</p></div>
+</div><div class="actions"><button onclick="goPrecheck()">Bắt đầu</button></div></section>
+<section id="s2" class="step card">
+<h2>2. Trước trải nghiệm</h2><div class="selected-career"><b id="selectedCareer1"></b><br><span class="muted">Tên nghề đã được chọn ở bước trước. Các ô dưới đây chỉ ghi nhận hình dung ban đầu của bạn về nghề đó.</span></div>
+<div class="row"><div><label id="preWhatLabel">Bạn nghĩ người làm nghề này chủ yếu làm gì?</label><textarea id="preWhat" placeholder="Viết 1-2 câu"></textarea></div><div><label>Bạn nghĩ mình sẽ thích hoặc không thích điểm nào?</label><textarea id="preLike" placeholder="Viết ngắn"></textarea></div></div>
+<label>Mức tự tin hiện tại rằng bạn hiểu nghề này</label><select id="preConf"><option>Thấp</option><option selected>Vừa</option><option>Cao</option></select>
+<div class="actions"><button class="secondary" onclick="go(1)">Quay lại</button><button onclick="startTask()">Vào nhiệm vụ thử nghề</button></div></section>
+<section id="s3" class="step card"><div class="pill" id="jobPill"></div><h2 id="taskTitle" style="margin-top:10px"></h2><p id="taskBrief" class="muted"></p><div id="taskBody"></div><div class="actions"><button onclick="submitTask()">Nộp kết quả nhiệm vụ</button></div></section>
+<section id="s4" class="step card"><h2>4. Sau trải nghiệm</h2><div class="selected-career"><b id="selectedCareer2"></b></div><div class="row"><div><label>Điều nào khác với tưởng tượng ban đầu?</label><textarea id="postDiff"></textarea></div><div><label>Nếu có thêm 30 phút, bạn có muốn làm tiếp dạng nhiệm vụ này?</label><select id="postContinue"><option>Có</option><option selected>Chưa chắc</option><option>Không</option></select></div></div><label>Điều gì khiến bạn thấy có năng lượng hoặc mệt?</label><textarea id="postEnergy"></textarea><div class="actions"><button onclick="buildReport()">Tạo báo cáo bằng chứng</button></div></section>
+<section id="s5" class="step card">
+<h2>5. Báo cáo sau trải nghiệm</h2>
+<p class="muted">Báo cáo ưu tiên điều học sinh có thể hiểu và sử dụng. Dữ liệu chi tiết vẫn được giữ để có thể truy ngược khi cần.</p>
+
+<h3>1. Bạn vừa thử nghề gì?</h3>
+<div id="careerSummary" class="selected-career"></div>
+
+<h3>2. Trước khi thử, bạn hình dung thế nào?</h3>
+<div id="preSummary" class="evidence"></div>
+
+<h3>3. Những gì bạn thực sự đã làm</h3>
+<ul id="timelineBox" class="timeline"></ul>
+
+<h3>4. Bằng chứng đã ghi nhận</h3>
+<div id="evidenceBox"></div>
+
+<h3>5. Điều chưa đủ bằng chứng</h3>
+<div id="uncertaintyBox"></div>
+
+<h3>6. Trước và sau trải nghiệm đã thay đổi thế nào?</h3>
+<div id="beforeAfterBox" class="compare"></div>
+
+<h3>7. Sau trải nghiệm này, bạn đã biết thêm gì về mình?</h3>
+<div id="selfInsightBox" class="insight"></div>
+
+<h3>8. Nhận định tạm thời</h3>
+<div id="hypothesisBox"></div>
+
+<h3>9. Trải nghiệm tiếp theo nên thử</h3>
+<div id="nextBox" class="evidence"></div>
+
+<details class="detailbox"><summary>Xem dữ liệu chi tiết của trải nghiệm</summary><p class="small muted">Phần này phục vụ kiểm tra và truy ngược bằng chứng. Hệ thống vẫn lưu cấu trúc dữ liệu bên dưới, nhưng hiển thị bằng tiếng Việt thay vì mã máy.</p><div id="traceBox" class="trace"></div></details>
+<div class="actions"><button class="secondary" onclick="resetDemo()">Thử nghề khác</button></div>
+</section>
+<div class="footer">Bản thử chạy hoàn toàn trong trình duyệt và không truyền dữ liệu ra máy chủ.</div></main>
+<script>
+let job='engineer', trace=[], taskAnswer={}, hintUsed=false;
+const jobs={
+ engineer:{name:'Kỹ sư quy trình',title:'Dây chuyền đang nghẽn ở đâu?',brief:'Một dây chuyền đóng gói có bốn công đoạn. Mục tiêu là đạt ít nhất 45 sản phẩm/giờ, nhưng ngân sách chỉ đủ cải tiến một công đoạn trước.',body:()=>`<div class="dataset"><table><tr><th>Công đoạn</th><th>Năng suất hiện tại</th><th>Chi phí cải tiến</th><th>Năng suất sau cải tiến</th></tr><tr><td>A - Chuẩn bị</td><td>55 sp/giờ</td><td>4 triệu</td><td>65 sp/giờ</td></tr><tr><td>B - Đóng gói</td><td>32 sp/giờ</td><td>5 triệu</td><td>48 sp/giờ</td></tr><tr><td>C - Kiểm tra</td><td>50 sp/giờ</td><td>5 triệu</td><td>58 sp/giờ</td></tr><tr><td>D - Xuất kho</td><td>48 sp/giờ</td><td>4 triệu</td><td>56 sp/giờ</td></tr></table></div><p><label>Công đoạn nào nên cải tiến trước và vì sao?</label><textarea id="a1"></textarea></p><p><label>Bằng chứng hoặc ràng buộc bạn dựa vào</label><textarea id="a2" placeholder="Nêu số liệu cụ thể"></textarea></p><p><b>Thông tin mới:</b> sau khi nâng công đoạn B, công đoạn C trong giờ cao điểm chỉ đạt khoảng 42 sản phẩm/giờ.</p><p><label>Bạn điều chỉnh phương án tiếp theo như thế nào? Điều gì vẫn chưa chắc?</label><textarea id="a3"></textarea></p><button class="secondary" type="button" onclick="showHint('Đầu ra của một dây chuyền thường bị giới hạn bởi công đoạn chậm nhất. Hãy xem điểm nghẽn thay đổi thế nào sau cải tiến.', this)">Xin một gợi ý</button><div class="hint-box" hidden></div>`},
+ data:{name:'Nhà phân tích dữ liệu',title:'Doanh thu giảm - nguyên nhân nào đáng kiểm tra trước?',brief:'Một cửa hàng trực tuyến báo doanh thu tuần 4 giảm. Hãy dùng dữ liệu để chọn nguyên nhân có khả năng nhất, nêu bằng chứng và điều còn chưa chắc.',body:()=>`<div class="dataset"><table><tr><th>Tuần</th><th>Lượt truy cập</th><th>Tỷ lệ mua hàng</th><th>Giá trị đơn trung bình</th><th>Khuyến mãi</th></tr><tr><td>1</td><td>10.000</td><td>3,2%</td><td>420 nghìn</td><td>Có</td></tr><tr><td>2</td><td>10.400</td><td>3,1%</td><td>425 nghìn</td><td>Có</td></tr><tr><td>3</td><td>10.200</td><td>3,0%</td><td>430 nghìn</td><td>Không</td></tr><tr><td>4</td><td>10.300</td><td>2,1%</td><td>428 nghìn</td><td>Không</td></tr></table></div><p><label>Giả thuyết ban đầu</label><textarea id="a1" placeholder="Nguyên nhân nào có khả năng nhất?"></textarea></p><p><label>Bằng chứng bạn dựa vào</label><textarea id="a2" placeholder="Chỉ ra con số hoặc so sánh cụ thể"></textarea></p><p><label>Điều còn chưa chắc</label><textarea id="a3" placeholder="Bạn cần thêm dữ liệu gì?"></textarea></p><button class="secondary" type="button" onclick="showHint('Có thể tách doanh thu thành ba yếu tố: lượt truy cập, tỷ lệ mua hàng và giá trị đơn hàng trung bình.', this)">Xin một gợi ý</button><div class="hint-box" hidden></div>`},
+ ux:{name:'Nhà nghiên cứu trải nghiệm người dùng',title:'Các phản hồi mâu thuẫn - vấn đề thật sự là gì?',brief:'Một ứng dụng học tập nhận nhiều phản hồi trái chiều. Hãy tìm vấn đề cốt lõi, nhóm bị ảnh hưởng và một thay đổi ưu tiên.',body:()=>`<div class="feedback">“Em không tìm thấy bài cũ sau khi học xong.”</div><div class="feedback">“Trang chủ nhiều thứ quá, em chỉ muốn tiếp tục bài đang học.”</div><div class="feedback">“Em thích có nhiều gợi ý trên trang chủ.”</div><div class="feedback">“Tìm kiếm trả về quá nhiều kết quả.”</div><div class="feedback">“Mẹ em muốn xem tiến độ nhưng em không muốn bảng điểm hiện ngay.”</div><div class="feedback">“Phần lịch sử học khá khó hiểu.”</div><p><label>Vấn đề cốt lõi bạn chọn</label><textarea id="a1"></textarea></p><p><label>Những phản hồi nào hỗ trợ nhận định?</label><textarea id="a2"></textarea></p><p><label>Góc nhìn nào đang mâu thuẫn hoặc chưa đủ rõ?</label><textarea id="a3"></textarea></p><button class="secondary" type="button" onclick="showHint('Hãy thử phân biệt ba lớp: biểu hiện bề mặt, nhu cầu thật và xung đột giữa các nhóm người dùng.', this)">Xin một gợi ý</button><div class="hint-box" hidden></div>`}
+};
+function esc(s){return String(s).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]))}
+function log(action,detail=''){trace.push({t:new Date().toLocaleTimeString('vi-VN'),action,detail})}
+const actionNames={chon_nghe:'Chọn nghề',ghi_nhan_ban_dau:'Ghi nhận ban đầu',bat_dau_nhiem_vu:'Bắt đầu nhiệm vụ',xin_goi_y:'Xin gợi ý',nop_nhiem_vu:'Nộp nhiệm vụ',phan_hoi_sau:'Phản hồi sau trải nghiệm'};
+document.querySelectorAll('.job').forEach(el=>el.onclick=()=>{document.querySelectorAll('.job').forEach(x=>x.classList.remove('sel'));el.classList.add('sel');job=el.dataset.job;});
+function go(n){document.querySelectorAll('.step').forEach(x=>x.classList.remove('active'));document.getElementById('s'+n).classList.add('active');window.scrollTo({top:0,behavior:'smooth'})}
+function goPrecheck(){const n=jobs[job].name;selectedCareer1.textContent='Bạn đang thử nghề: '+n;preWhatLabel.textContent='Theo bạn, người làm nghề “'+n+'” chủ yếu làm gì?';log('chon_nghe',n);go(2)}
+function startTask(){hintUsed=false;log('ghi_nhan_ban_dau',{hinh_dung:preWhat.value,so_thich:preLike.value,muc_tu_tin:preConf.value});const j=jobs[job];jobPill.textContent='Nghề đang thử: '+j.name;taskTitle.textContent=j.title;taskBrief.textContent=j.brief;taskBody.innerHTML=j.body();selectedCareer2.textContent='Bạn vừa thử nghề: '+j.name;log('bat_dau_nhiem_vu',j.name);go(3)}
+function showHint(msg,btn){if(hintUsed)return;hintUsed=true;log('xin_goi_y',msg);const box=btn&&btn.nextElementSibling;if(box&&box.classList.contains('hint-box')){box.hidden=false;box.innerHTML='<b>Gợi ý:</b> '+esc(msg);}if(btn){btn.disabled=true;btn.textContent='Đã xem gợi ý';}}
+function submitTask(){taskAnswer={a1:document.getElementById('a1').value,a2:document.getElementById('a2').value,a3:document.getElementById('a3').value};log('nop_nhiem_vu',taskAnswer);go(4)}
+function detailText(x){
+  const d=x.detail;
+  if(x.action==='chon_nghe') return 'Bạn chọn '+String(d||jobs[job].name)+'.';
+  if(x.action==='ghi_nhan_ban_dau') return 'Bạn ghi lại hình dung ban đầu, điều mình mong đợi và mức tự tin về nghề.';
+  if(x.action==='bat_dau_nhiem_vu') return 'Bạn bắt đầu nhiệm vụ mô phỏng của nghề '+String(d||jobs[job].name)+'.';
+  if(x.action==='xin_goi_y') return 'Bạn sử dụng một gợi ý trong quá trình làm nhiệm vụ.';
+  if(x.action==='nop_nhiem_vu') return 'Bạn nộp phương án và nêu căn cứ cho cách làm của mình.';
+  if(x.action==='phan_hoi_sau') return 'Bạn tự phản ánh điều khác với tưởng tượng ban đầu và mức muốn tiếp tục.';
+  return actionNames[x.action]||x.action;
+}
+function technicalDetail(x){
+  const d=x.detail;
+  if(typeof d==='string') return d;
+  if(!d||typeof d!=='object') return '';
+  if(x.action==='ghi_nhan_ban_dau') return `Hình dung: ${d.hinh_dung||'chưa ghi'} | Sở thích dự đoán: ${d.so_thich||'chưa ghi'} | Tự tin: ${d.muc_tu_tin||'chưa ghi'}`;
+  if(x.action==='nop_nhiem_vu') return `Câu trả lời 1: ${d.a1||'chưa ghi'} | Căn cứ: ${d.a2||'chưa ghi'} | Điều chưa chắc: ${d.a3||'chưa ghi'}`;
+  if(x.action==='phan_hoi_sau') return `Khác biệt nhận ra: ${d.khac_biet||'chưa ghi'} | Muốn làm tiếp: ${d.muon_lam_tiep||'chưa ghi'} | Năng lượng/mệt: ${d.nang_luong||'chưa ghi'}`;
+  return '';
+}
+function buildReport(){
+  log('phan_hoi_sau',{khac_biet:postDiff.value,muon_lam_tiep:postContinue.value,nang_luong:postEnergy.value});
+  const j=jobs[job];
+  careerSummary.innerHTML=`<b>Bạn vừa thử nghề: ${esc(j.name)}</b><br><span class="muted">Kết quả bên dưới chỉ mô tả những gì đã quan sát được trong trải nghiệm này, chưa phải kết luận về cả nghề.</span>`;
+  preSummary.innerHTML=`<b>Hình dung ban đầu:</b> ${esc(preWhat.value||'Chưa mô tả')}<br><b>Điều dự đoán sẽ thích/không thích:</b> ${esc(preLike.value||'Chưa mô tả')}<br><b>Mức tự tin rằng mình hiểu nghề:</b> ${esc(preConf.value)}`;
+
+  const rawVisibleActions=trace.filter(x=>['chon_nghe','ghi_nhan_ban_dau','bat_dau_nhiem_vu','xin_goi_y','nop_nhiem_vu','phan_hoi_sau'].includes(x.action));
+  const visibleActions=rawVisibleActions.filter((x,i,a)=>!(i>0 && x.action==='chon_nghe' && a[i-1].action==='chon_nghe' && String(x.detail)===String(a[i-1].detail)));
+  timelineBox.innerHTML=visibleActions.map(x=>`<li><b>${esc(actionNames[x.action]||x.action)}</b><br><span class="muted">${esc(detailText(x))}</span></li>`).join('');
+  traceBox.textContent=visibleActions.map(x=>`${x.t} — ${actionNames[x.action]||x.action}${technicalDetail(x)?'\n   '+technicalDetail(x):''}`).join('\n\n');
+
+  let ev=[],hyp=[],unc=[],next='',self=[];
+  const hints=trace.filter(x=>x.action==='xin_goi_y').length;
+  if(job==='engineer'){
+    if(taskAnswer.a1&&/B|đóng gói|32/i.test(taskAnswer.a1)) ev.push('Bạn xác định công đoạn B là điểm nghẽn ban đầu và có căn cứ từ năng suất thấp nhất của dây chuyền.');
+    else unc.push('Chưa thấy đủ căn cứ bằng số liệu để xác định điểm nghẽn ban đầu của dây chuyền.');
+    if(taskAnswer.a3) ev.push('Khi có dữ kiện mới về công đoạn C, bạn đã xem lại phương án thay vì giữ nguyên quyết định ban đầu.');
+    hyp.push('Trong nhiệm vụ này, bạn có dấu hiệu nhìn vấn đề theo quan hệ giữa các công đoạn và sẵn sàng cập nhật phương án khi trạng thái hệ thống thay đổi.');
+    self.push('Qua nhiệm vụ này, bạn đã thử cách mình tìm điểm nghẽn, cân nhắc ràng buộc và điều chỉnh một hệ thống khi điều kiện thay đổi.');
+    next='Tiếp theo, hãy thử một nhiệm vụ kỹ thuật có đồng thời hai ràng buộc: chi phí và độ tin cậy. Mục tiêu là xem bạn xử lý đánh đổi trong thiết kế như thế nào.';
+  }
+  if(job==='data'){
+    if(taskAnswer.a2&&/2[,\.]?1|3[,\.]?0|tỷ lệ|mua hàng/i.test(taskAnswer.a2)) ev.push('Bạn đã dùng một tín hiệu định lượng cụ thể để giải thích vì sao tỷ lệ mua hàng là điểm cần kiểm tra trước.');
+    else unc.push('Bạn đã nêu nguyên nhân, nhưng chưa dùng đủ con số để chứng minh vì sao nguyên nhân đó quan trọng nhất.');
+    if(taskAnswer.a3) ev.push('Bạn chủ động nêu dữ liệu còn thiếu, cho thấy bạn phân biệt điều đã biết với phần chưa thể khẳng định.');
+    hyp.push('Trong nhiệm vụ này, bạn có xu hướng kiểm tra bằng chứng trước khi kết luận. Cần thêm nhiệm vụ khác để biết cách làm này có ổn định hay không.');
+    self.push('Qua nhiệm vụ này, bạn đã có thêm bằng chứng về cách mình phản ứng khi phải đưa ra kết luận từ dữ liệu chưa đầy đủ.');
+    next='Tiếp theo, hãy thử một bài có dữ liệu gây nhiễu và hai cách giải thích đều có vẻ hợp lý. Mục tiêu là xem bạn kiểm tra và loại trừ từng khả năng như thế nào.';
+  }
+  if(job==='ux'){
+    if(taskAnswer.a2) ev.push('Bạn gắn nhận định của mình với các phản hồi cụ thể thay vì chỉ đưa ra ý kiến chung.');
+    else unc.push('Chưa thấy phần giải thích liên hệ rõ với phản hồi cụ thể của người dùng.');
+    if(taskAnswer.a3) ev.push('Bạn giữ lại góc nhìn mâu thuẫn thay vì ép tất cả phản hồi thành một kết luận duy nhất.');
+    hyp.push('Trong nhiệm vụ này, bạn có dấu hiệu tổng hợp được nhiều góc nhìn mà vẫn giữ phần còn mâu thuẫn.');
+    self.push('Qua nhiệm vụ này, bạn đã thử cách mình lắng nghe nhiều góc nhìn, tìm nhu cầu phía sau và làm rõ điểm mâu thuẫn.');
+    next='Tiếp theo, hãy thử một nhiệm vụ có hai nhóm người dùng với nhu cầu đối lập và tự thiết kế câu hỏi phỏng vấn để làm rõ điều chưa biết.';
+  }
+  if(hints) unc.push(`Bạn đã dùng ${hints} gợi ý; cần thêm một lượt không dùng gợi ý để biết mức độ độc lập của cách làm này.`);
+  if(postContinue.value==='Không') unc.push('Bạn không muốn tiếp tục dạng nhiệm vụ này thêm 30 phút. Đây là tín hiệu về hứng thú đối với nhiệm vụ vừa thử, nhưng chưa đủ để kết luận về cả nghề.');
+  if(postContinue.value==='Chưa chắc') unc.push('Mức hứng thú sau trải nghiệm vẫn chưa rõ. Cần thử một nhiệm vụ khác của cùng nghề để phân biệt “không thích nghề” với “không thích nhiệm vụ này”.');
+  if(!unc.length) unc.push('Một trải nghiệm đơn lẻ vẫn chưa đủ để kết luận về mức phù hợp với nghề trong dài hạn.');
+
+  evidenceBox.innerHTML=ev.map(x=>`<div class="evidence">${esc(x)}</div>`).join('')||'<div class="evidence uncertain">Chưa có đủ bằng chứng rõ để đưa ra nhận định.</div>';
+  hypothesisBox.innerHTML=hyp.map(x=>`<div class="evidence">${esc(x)}</div>`).join('');
+  uncertaintyBox.innerHTML=unc.map(x=>`<div class="evidence uncertain">${esc(x)}</div>`).join('');
+  beforeAfterBox.innerHTML=`<div><b>Trước khi thử</b><p>${esc(preWhat.value||'Bạn chưa ghi rõ hình dung ban đầu.')}</p><p class="muted">Dự đoán thích/không thích: ${esc(preLike.value||'chưa ghi')}</p></div><div><b>Sau khi thử</b><p>${esc(postDiff.value||'Bạn chưa ghi điều khác với tưởng tượng ban đầu.')}</p><p class="muted">Muốn làm tiếp thêm 30 phút: ${esc(postContinue.value)}${postEnergy.value?'<br>Cảm nhận về năng lượng/mệt: '+esc(postEnergy.value):''}</p></div>`;
+  if(postContinue.value==='Có') self.push('Bạn tự cho biết sau trải nghiệm rằng mình muốn tiếp tục dạng nhiệm vụ này thêm khoảng 30 phút. Đây là tín hiệu về hứng thú với nhiệm vụ vừa thử, chưa phải kết luận về cả nghề.');
+  if(postContinue.value==='Không') self.push('Bạn tự cho biết sau trải nghiệm rằng mình không muốn tiếp tục dạng nhiệm vụ này thêm khoảng 30 phút. Đây là tín hiệu về hứng thú với nhiệm vụ vừa thử, chưa phải kết luận về cả nghề.');
+  if(postContinue.value==='Chưa chắc') self.push('Bạn tự cho biết sau trải nghiệm rằng mình chưa chắc có muốn tiếp tục dạng nhiệm vụ này thêm khoảng 30 phút. Vì vậy hệ thống chưa đủ cơ sở nói bạn thích hay không thích nghề này.');
+  if(postEnergy.value) self.push('Cảm nhận bạn tự ghi sau trải nghiệm: “'+postEnergy.value+'”. Phần này là tự phản ánh của bạn, được giữ riêng với bằng chứng quan sát từ cách bạn làm nhiệm vụ.');
+  selfInsightBox.innerHTML=`${self.map(x=>'<div class="evidence self">'+esc(x)+'</div>').join('')}<div class="evidence uncertain"><b>Điều cần nhớ:</b> các nhận định chỉ dựa trên trải nghiệm vừa hoàn thành. Phần chưa chắc chắn vẫn được giữ lại để kiểm tra ở lượt sau.</div>`;
+  nextBox.textContent=next;
+  go(5);
+}
+function resetDemo(){trace=[];taskAnswer={};hintUsed=false;preWhat.value='';preLike.value='';postDiff.value='';postEnergy.value='';go(1)}
+</script>
+<footer class="site-footer"><div class="inner"><div><strong>THỬ NGHỀ – Trải nghiệm trước, lựa chọn sau</strong><p>Bản trình diễn phục vụ hồ sơ đề BTL86-01. Kết quả chỉ mô tả bằng chứng trong trải nghiệm, không thay thế tư vấn hướng nghiệp chuyên sâu và không tự quyết định ngành học thay học sinh.</p></div><div class="mini">Thiết kế theo nguyên tắc: quan sát ≠ tự phản ánh ≠ diễn giải ≠ kết luận.</div></div></footer>
+</body></html>
